@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>⏰ Zeit & Hobby · Belajar Jerman</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-['Inter']">
+
+    <div id="app" class="flex min-h-screen">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside id="sidebarContainer"
+            class="fixed top-0 left-0 w-[220px] h-full bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 p-5 flex flex-col z-50 shadow-sm overflow-y-auto">
+            <!-- diisi oleh components/sidebar.js -->
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="flex-1 ml-[220px] p-7 md:p-9 min-h-screen">
+
+            <section class="page">
+
+                <!-- ===== HERO HEADER ===== -->
+                <div
+                    class="relative mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 p-6 md:p-8 text-white shadow-xl">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-3xl">⏰</span>
+                            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Zeit &
+                                Hobby</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">Waktu &amp; <span
+                                class="text-yellow-300">Hobi</span></h1>
+                        <p class="text-white/80 text-base max-w-xl">Menyatakan waktu, hobi, dan penggunaan <span
+                                class="font-semibold">am, um, im</span>.</p>
+                    </div>
+                </div>
+
+                <!-- ===== PERTANYAAN WAKTU ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🕐 Pertanyaan Waktu</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Wie spät ist es?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Jam berapa sekarang?</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">→ Es ist 10 Uhr.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Um wie viel Uhr?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Jam berapa?</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">→ Um 10 Uhr.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== TAGESZEITEN (WAKTU DALAM SEHARI) ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🌅 Tageszeiten <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Waktu dalam Sehari)</span>
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Morgen -->
+                        <div
+                            class="relative overflow-hidden rounded-xl p-5 bg-gradient-to-br from-amber-400/20 via-orange-400/10 to-yellow-400/5 dark:from-amber-500/20 dark:via-orange-500/10 dark:to-yellow-500/5 border border-amber-200 dark:border-amber-800/30 hover:shadow-lg transition-all group">
+                            <div
+                                class="absolute top-0 right-0 text-6xl opacity-10 group-hover:opacity-20 transition-all">
+                                🌅</div>
+                            <div class="relative z-10">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="text-3xl">🌅</span>
+                                    <h3 class="text-xl font-bold text-amber-700 dark:text-amber-400">Morgen</h3>
+                                    <span
+                                        class="text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 px-2 py-0.5 rounded-full">pagi</span>
+                                </div>
+                                <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                                    <div class="flex items-start gap-2">
+                                        <span class="font-medium text-amber-600 dark:text-amber-400 min-w-[60px]">am
+                                            Morgen</span>
+                                        <span>— pada pagi hari</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-amber-600 dark:text-amber-400 min-w-[60px]">um</span>
+                                        <span>— <span class="italic">um 8 Uhr</span> (jam 8 pagi)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-amber-600 dark:text-amber-400 min-w-[60px]">im</span>
+                                        <span>— ❌ (tidak digunakan untuk Morgen)</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mt-3 p-2 bg-amber-50 dark:bg-amber-950/30 rounded-lg text-xs text-gray-500 dark:text-gray-400">
+                                    <span class="font-medium text-amber-600 dark:text-amber-400">💡 Contoh:</span> Ich
+                                    stehe <span class="font-medium">am Morgen</span> um 7 Uhr auf.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vormittag -->
+                        <div
+                            class="relative overflow-hidden rounded-xl p-5 bg-gradient-to-br from-yellow-400/20 via-amber-400/10 to-orange-400/5 dark:from-yellow-500/20 dark:via-amber-500/10 dark:to-orange-500/5 border border-yellow-200 dark:border-yellow-800/30 hover:shadow-lg transition-all group">
+                            <div
+                                class="absolute top-0 right-0 text-6xl opacity-10 group-hover:opacity-20 transition-all">
+                                ☀️</div>
+                            <div class="relative z-10">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="text-3xl">☀️</span>
+                                    <h3 class="text-xl font-bold text-yellow-700 dark:text-yellow-400">Vormittag</h3>
+                                    <span
+                                        class="text-xs bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 px-2 py-0.5 rounded-full">pagi
+                                        hari</span>
+                                </div>
+                                <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                                    <div class="flex items-start gap-2">
+                                        <span class="font-medium text-yellow-600 dark:text-yellow-400 min-w-[60px]">am
+                                            Vormittag</span>
+                                        <span>— pada pagi hari (10-12)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-yellow-600 dark:text-yellow-400 min-w-[60px]">um</span>
+                                        <span>— <span class="italic">um 11 Uhr</span> (jam 11 pagi)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-yellow-600 dark:text-yellow-400 min-w-[60px]">im</span>
+                                        <span>— ❌ (tidak digunakan)</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mt-3 p-2 bg-yellow-50 dark:bg-yellow-950/30 rounded-lg text-xs text-gray-500 dark:text-gray-400">
+                                    <span class="font-medium text-yellow-600 dark:text-yellow-400">💡 Contoh:</span> Wir
+                                    haben <span class="font-medium">am Vormittag</span> eine Besprechung.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mittag -->
+                        <div
+                            class="relative overflow-hidden rounded-xl p-5 bg-gradient-to-br from-orange-400/20 via-red-400/10 to-amber-400/5 dark:from-orange-500/20 dark:via-red-500/10 dark:to-amber-500/5 border border-orange-200 dark:border-orange-800/30 hover:shadow-lg transition-all group">
+                            <div
+                                class="absolute top-0 right-0 text-6xl opacity-10 group-hover:opacity-20 transition-all">
+                                🌞</div>
+                            <div class="relative z-10">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="text-3xl">🌞</span>
+                                    <h3 class="text-xl font-bold text-orange-700 dark:text-orange-400">Mittag</h3>
+                                    <span
+                                        class="text-xs bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 px-2 py-0.5 rounded-full">siang</span>
+                                </div>
+                                <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                                    <div class="flex items-start gap-2">
+                                        <span class="font-medium text-orange-600 dark:text-orange-400 min-w-[60px]">am
+                                            Mittag</span>
+                                        <span>— pada siang hari (12-13)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-orange-600 dark:text-orange-400 min-w-[60px]">um</span>
+                                        <span>— <span class="italic">um 12 Uhr</span> (jam 12 siang)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-orange-600 dark:text-orange-400 min-w-[60px]">im</span>
+                                        <span>— ❌ (tidak digunakan)</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mt-3 p-2 bg-orange-50 dark:bg-orange-950/30 rounded-lg text-xs text-gray-500 dark:text-gray-400">
+                                    <span class="font-medium text-orange-600 dark:text-orange-400">💡 Contoh:</span> Wir
+                                    essen <span class="font-medium">am Mittag</span>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nachmittag -->
+                        <div
+                            class="relative overflow-hidden rounded-xl p-5 bg-gradient-to-br from-blue-400/20 via-sky-400/10 to-indigo-400/5 dark:from-blue-500/20 dark:via-sky-500/10 dark:to-indigo-500/5 border border-blue-200 dark:border-blue-800/30 hover:shadow-lg transition-all group">
+                            <div
+                                class="absolute top-0 right-0 text-6xl opacity-10 group-hover:opacity-20 transition-all">
+                                ⛅</div>
+                            <div class="relative z-10">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="text-3xl">⛅</span>
+                                    <h3 class="text-xl font-bold text-blue-700 dark:text-blue-400">Nachmittag</h3>
+                                    <span
+                                        class="text-xs bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded-full">sore</span>
+                                </div>
+                                <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                                    <div class="flex items-start gap-2">
+                                        <span class="font-medium text-blue-600 dark:text-blue-400 min-w-[60px]">am
+                                            Nachmittag</span>
+                                        <span>— pada sore hari (13-17)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-blue-600 dark:text-blue-400 min-w-[60px]">um</span>
+                                        <span>— <span class="italic">um 15 Uhr</span> (jam 3 sore)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-blue-600 dark:text-blue-400 min-w-[60px]">im</span>
+                                        <span>— ❌ (tidak digunakan)</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mt-3 p-2 bg-blue-50 dark:bg-blue-950/30 rounded-lg text-xs text-gray-500 dark:text-gray-400">
+                                    <span class="font-medium text-blue-600 dark:text-blue-400">💡 Contoh:</span> Ich
+                                    arbeite <span class="font-medium">am Nachmittag</span>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Abend -->
+                        <div
+                            class="relative overflow-hidden rounded-xl p-5 bg-gradient-to-br from-indigo-400/20 via-purple-400/10 to-violet-400/5 dark:from-indigo-500/20 dark:via-purple-500/10 dark:to-violet-500/5 border border-indigo-200 dark:border-indigo-800/30 hover:shadow-lg transition-all group">
+                            <div
+                                class="absolute top-0 right-0 text-6xl opacity-10 group-hover:opacity-20 transition-all">
+                                🌆</div>
+                            <div class="relative z-10">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="text-3xl">🌆</span>
+                                    <h3 class="text-xl font-bold text-indigo-700 dark:text-indigo-400">Abend</h3>
+                                    <span
+                                        class="text-xs bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 px-2 py-0.5 rounded-full">malam</span>
+                                </div>
+                                <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                                    <div class="flex items-start gap-2">
+                                        <span class="font-medium text-indigo-600 dark:text-indigo-400 min-w-[60px]">am
+                                            Abend</span>
+                                        <span>— pada malam hari (17-21)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-indigo-600 dark:text-indigo-400 min-w-[60px]">um</span>
+                                        <span>— <span class="italic">um 19 Uhr</span> (jam 7 malam)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-indigo-600 dark:text-indigo-400 min-w-[60px]">im</span>
+                                        <span>— ❌ (tidak digunakan)</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mt-3 p-2 bg-indigo-50 dark:bg-indigo-950/30 rounded-lg text-xs text-gray-500 dark:text-gray-400">
+                                    <span class="font-medium text-indigo-600 dark:text-indigo-400">💡 Contoh:</span> Wir
+                                    sehen uns <span class="font-medium">am Abend</span>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nacht -->
+                        <div
+                            class="relative overflow-hidden rounded-xl p-5 bg-gradient-to-br from-slate-600/20 via-gray-700/10 to-zinc-800/5 dark:from-slate-500/20 dark:via-gray-600/10 dark:to-zinc-700/5 border border-slate-300 dark:border-slate-700/50 hover:shadow-lg transition-all group">
+                            <div
+                                class="absolute top-0 right-0 text-6xl opacity-10 group-hover:opacity-20 transition-all">
+                                🌙</div>
+                            <div class="relative z-10">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="text-3xl">🌙</span>
+                                    <h3 class="text-xl font-bold text-slate-700 dark:text-slate-300">Nacht</h3>
+                                    <span
+                                        class="text-xs bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded-full">tengah
+                                        malam</span>
+                                </div>
+                                <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                                    <div class="flex items-start gap-2">
+                                        <span class="font-medium text-slate-600 dark:text-slate-400 min-w-[60px]">in der
+                                            Nacht</span>
+                                        <span>— pada malam hari (21-6)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-slate-600 dark:text-slate-400 min-w-[60px]">um</span>
+                                        <span>— <span class="italic">um Mitternacht</span> (tengah malam)</span>
+                                    </div>
+                                    <div class="flex items-start gap-2">
+                                        <span
+                                            class="font-medium text-slate-600 dark:text-slate-400 min-w-[60px]">im</span>
+                                        <span>— ❌ (tidak digunakan)</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mt-3 p-2 bg-slate-50 dark:bg-slate-800/30 rounded-lg text-xs text-gray-500 dark:text-gray-400">
+                                    <span class="font-medium text-slate-600 dark:text-slate-400">💡 Contoh:</span> Ich
+                                    schlafe <span class="font-medium">in der Nacht</span>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== TABEL RINGKASAN TAGESZEITEN ===== -->
+                    <div class="mt-6 p-4 bg-gray-50 dark:bg-slate-700/30 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-3">📌 Ringkasan Tageszeiten</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="bg-gradient-to-r from-amber-500 via-blue-500 to-indigo-500 text-white">
+                                        <th class="text-left px-4 py-2 rounded-tl-lg">Waktu</th>
+                                        <th class="text-left px-4 py-2">Arti</th>
+                                        <th class="text-left px-4 py-2">Rentang</th>
+                                        <th class="text-left px-4 py-2">Preposisi</th>
+                                        <th class="text-left px-4 py-2 rounded-tr-lg">Contoh</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 dark:divide-slate-700">
+                                    <tr class="hover:bg-amber-50/50 dark:hover:bg-amber-900/10 transition-colors">
+                                        <td class="px-4 py-2 font-medium text-amber-700 dark:text-amber-400">Morgen</td>
+                                        <td class="text-gray-600 dark:text-gray-300">pagi</td>
+                                        <td class="text-gray-600 dark:text-gray-300">5-10</td>
+                                        <td class="text-gray-600 dark:text-gray-300"><span
+                                                class="font-medium text-amber-600">am</span></td>
+                                        <td class="text-gray-600 dark:text-gray-300 italic">am Morgen</td>
+                                    </tr>
+                                    <tr class="hover:bg-yellow-50/50 dark:hover:bg-yellow-900/10 transition-colors">
+                                        <td class="px-4 py-2 font-medium text-yellow-700 dark:text-yellow-400">Vormittag
+                                        </td>
+                                        <td class="text-gray-600 dark:text-gray-300">pagi hari</td>
+                                        <td class="text-gray-600 dark:text-gray-300">10-12</td>
+                                        <td class="text-gray-600 dark:text-gray-300"><span
+                                                class="font-medium text-yellow-600">am</span></td>
+                                        <td class="text-gray-600 dark:text-gray-300 italic">am Vormittag</td>
+                                    </tr>
+                                    <tr class="hover:bg-orange-50/50 dark:hover:bg-orange-900/10 transition-colors">
+                                        <td class="px-4 py-2 font-medium text-orange-700 dark:text-orange-400">Mittag
+                                        </td>
+                                        <td class="text-gray-600 dark:text-gray-300">siang</td>
+                                        <td class="text-gray-600 dark:text-gray-300">12-13</td>
+                                        <td class="text-gray-600 dark:text-gray-300"><span
+                                                class="font-medium text-orange-600">am</span></td>
+                                        <td class="text-gray-600 dark:text-gray-300 italic">am Mittag</td>
+                                    </tr>
+                                    <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors">
+                                        <td class="px-4 py-2 font-medium text-blue-700 dark:text-blue-400">Nachmittag
+                                        </td>
+                                        <td class="text-gray-600 dark:text-gray-300">sore</td>
+                                        <td class="text-gray-600 dark:text-gray-300">13-17</td>
+                                        <td class="text-gray-600 dark:text-gray-300"><span
+                                                class="font-medium text-blue-600">am</span></td>
+                                        <td class="text-gray-600 dark:text-gray-300 italic">am Nachmittag</td>
+                                    </tr>
+                                    <tr class="hover:bg-indigo-50/50 dark:hover:bg-indigo-900/10 transition-colors">
+                                        <td class="px-4 py-2 font-medium text-indigo-700 dark:text-indigo-400">Abend
+                                        </td>
+                                        <td class="text-gray-600 dark:text-gray-300">malam</td>
+                                        <td class="text-gray-600 dark:text-gray-300">17-21</td>
+                                        <td class="text-gray-600 dark:text-gray-300"><span
+                                                class="font-medium text-indigo-600">am</span></td>
+                                        <td class="text-gray-600 dark:text-gray-300 italic">am Abend</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-700/30 transition-colors">
+                                        <td class="px-4 py-2 font-medium text-slate-700 dark:text-slate-300">Nacht</td>
+                                        <td class="text-gray-600 dark:text-gray-300">tengah malam</td>
+                                        <td class="text-gray-600 dark:text-gray-300">21-5</td>
+                                        <td class="text-gray-600 dark:text-gray-300"><span
+                                                class="font-medium text-slate-600">in der</span></td>
+                                        <td class="text-gray-600 dark:text-gray-300 italic">in der Nacht</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-3 text-xs text-gray-400 dark:text-gray-500">
+                            <span class="font-medium">💡 Catatan:</span> Semua Tageszeiten menggunakan <span
+                                class="font-medium text-indigo-600">am</span> kecuali <span
+                                class="font-medium text-slate-600">Nacht</span> yang menggunakan <span
+                                class="font-medium text-slate-600">in der</span>.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== PENGGUNAAN AM, UM, IM ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">📝 Penggunaan <span
+                            class="text-indigo-600 dark:text-indigo-400">am</span>, <span
+                            class="text-indigo-600 dark:text-indigo-400">um</span>, <span
+                            class="text-indigo-600 dark:text-indigo-400">im</span></h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div
+                            class="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-4 border border-blue-200 dark:border-blue-800/30">
+                            <h3 class="font-bold text-blue-600 dark:text-blue-400 text-lg">am</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1"><span class="font-medium">= an
+                                    dem</span> (pada hari/tanggal)</p>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 mt-2 space-y-1">
+                                <li>• <span class="font-medium">am Montag</span> — pada hari Senin</li>
+                                <li>• <span class="font-medium">am 1. Januar</span> — pada tanggal 1 Januari</li>
+                                <li>• <span class="font-medium">am Morgen</span> — pada pagi hari</li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="bg-emerald-50 dark:bg-emerald-950/30 rounded-lg p-4 border border-emerald-200 dark:border-emerald-800/30">
+                            <h3 class="font-bold text-emerald-600 dark:text-emerald-400 text-lg">um</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1"><span class="font-medium">= pada
+                                    jam</span> (waktu spesifik)</p>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 mt-2 space-y-1">
+                                <li>• <span class="font-medium">um 8 Uhr</span> — pada jam 8</li>
+                                <li>• <span class="font-medium">um 14:30</span> — pada jam 14.30</li>
+                                <li>• <span class="font-medium">um Mitternacht</span> — pada tengah malam</li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="bg-purple-50 dark:bg-purple-950/30 rounded-lg p-4 border border-purple-200 dark:border-purple-800/30">
+                            <h3 class="font-bold text-purple-600 dark:text-purple-400 text-lg">im</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1"><span class="font-medium">= in
+                                    dem</span> (pada bulan/tahun/musim)</p>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 mt-2 space-y-1">
+                                <li>• <span class="font-medium">im Januar</span> — pada bulan Januari</li>
+                                <li>• <span class="font-medium">im Sommer</span> — pada musim panas</li>
+                                <li>• <span class="font-medium">im Jahr 2024</span> — pada tahun 2024</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== HARI & BULAN ===== -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm">
+                        <h3 class="font-bold text-gray-800 dark:text-gray-200 mb-3">📅 Hari dalam Seminggu</h3>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div><span class="font-medium">Montag</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Senin</span></div>
+                            <div><span class="font-medium">Dienstag</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Selasa</span></div>
+                            <div><span class="font-medium">Mittwoch</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Rabu</span></div>
+                            <div><span class="font-medium">Donnerstag</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Kamis</span></div>
+                            <div><span class="font-medium">Freitag</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Jumat</span></div>
+                            <div><span class="font-medium">Samstag</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Sabtu</span></div>
+                            <div><span class="font-medium">Sonntag</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Minggu</span></div>
+                        </div>
+                        <div class="mt-3 text-xs text-gray-400 dark:text-gray-500">Gunakan <span
+                                class="font-medium text-indigo-600">am</span> + hari: <span class="font-medium">am
+                                Montag</span></div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm">
+                        <h3 class="font-bold text-gray-800 dark:text-gray-200 mb-3">📆 Bulan dalam Setahun</h3>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div><span class="font-medium">Januar</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Januari</span></div>
+                            <div><span class="font-medium">Februar</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Februari</span></div>
+                            <div><span class="font-medium">März</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Maret</span></div>
+                            <div><span class="font-medium">April</span> <span
+                                    class="text-gray-500 dark:text-gray-400">April</span></div>
+                            <div><span class="font-medium">Mai</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Mei</span></div>
+                            <div><span class="font-medium">Juni</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Juni</span></div>
+                            <div><span class="font-medium">Juli</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Juli</span></div>
+                            <div><span class="font-medium">August</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Agustus</span></div>
+                            <div><span class="font-medium">September</span> <span
+                                    class="text-gray-500 dark:text-gray-400">September</span></div>
+                            <div><span class="font-medium">Oktober</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Oktober</span></div>
+                            <div><span class="font-medium">November</span> <span
+                                    class="text-gray-500 dark:text-gray-400">November</span></div>
+                            <div><span class="font-medium">Dezember</span> <span
+                                    class="text-gray-500 dark:text-gray-400">Desember</span></div>
+                        </div>
+                        <div class="mt-3 text-xs text-gray-400 dark:text-gray-500">Gunakan <span
+                                class="font-medium text-indigo-600">im</span> + bulan: <span class="font-medium">im
+                                Januar</span></div>
+                    </div>
+                </div>
+
+                <!-- ===== KATA KERJA UNTUK HOBI ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">⚽ Kata Kerja untuk Hobi</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">⚽</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Fußball spielen</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">main sepak bola</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">📖</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">lesen</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">membaca</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">🍳</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">kochen</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">memasak</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">✈️</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">reisen</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">berpergian</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">🎵</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Musik hören</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">mendengarkan musik</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">🎨</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">malen</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">melukis</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">🏊</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">schwimmen</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">berenang</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">🎮</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">zocken</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">main game</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">📸</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">fotografieren</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">fotografi</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">💃</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">tanzen</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">menari</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">🎬</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Filme schauen</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">nonton film</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md transition-all">
+                            <div class="text-2xl mb-1">🏋️</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">trainieren</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">berolahraga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== PENGGUNAAN GERN, NICHT GERN, DOCH ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">💬 Penggunaan <span
+                            class="text-indigo-600 dark:text-indigo-400">gern</span>, <span class="text-red-500">nicht
+                            gern</span>, &amp; <span class="text-emerald-500">doch</span></h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- GERN -->
+                        <div
+                            class="bg-indigo-50 dark:bg-indigo-950/30 rounded-lg p-4 border border-indigo-200 dark:border-indigo-800/30">
+                            <h3 class="font-bold text-indigo-600 dark:text-indigo-400 text-lg">✅ gern</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1"><span class="font-medium">=
+                                    suka</span> (menyatakan kesukaan)</p>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 mt-2 space-y-2">
+                                <li>• <span class="font-medium">Ich <span
+                                            class="text-indigo-600 dark:text-indigo-400">koche</span>
+                                        gern.</span><br><span class="text-xs text-gray-400">Saya suka memasak.</span>
+                                </li>
+                                <li>• <span class="font-medium">Ich <span
+                                            class="text-indigo-600 dark:text-indigo-400">lese</span>
+                                        gern.</span><br><span class="text-xs text-gray-400">Saya suka membaca.</span>
+                                </li>
+                                <li>• <span class="font-medium">Ich <span
+                                            class="text-indigo-600 dark:text-indigo-400">spiele</span> gern
+                                        Fußball.</span><br><span class="text-xs text-gray-400">Saya suka main sepak
+                                        bola.</span></li>
+                            </ul>
+                            <div
+                                class="mt-3 pt-3 border-t border-indigo-200 dark:border-indigo-800/30 text-xs text-gray-400">
+                                <span class="font-medium text-indigo-600">Letak:</span> setelah kata kerja
+                            </div>
+                        </div>
+
+                        <!-- NICHT GERN -->
+                        <div
+                            class="bg-red-50 dark:bg-red-950/30 rounded-lg p-4 border border-red-200 dark:border-red-800/30">
+                            <h3 class="font-bold text-red-600 dark:text-red-400 text-lg">❌ nicht gern</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1"><span class="font-medium">= tidak
+                                    suka</span> (menyatakan ketidaksukaan)</p>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 mt-2 space-y-2">
+                                <li>• <span class="font-medium">Ich <span
+                                            class="text-red-600 dark:text-red-400">koche</span> nicht
+                                        gern.</span><br><span class="text-xs text-gray-400">Saya tidak suka
+                                        memasak.</span></li>
+                                <li>• <span class="font-medium">Ich <span
+                                            class="text-red-600 dark:text-red-400">lese</span> nicht
+                                        gern.</span><br><span class="text-xs text-gray-400">Saya tidak suka
+                                        membaca.</span></li>
+                                <li>• <span class="font-medium">Ich <span
+                                            class="text-red-600 dark:text-red-400">spiele</span> nicht gern
+                                        Fußball.</span><br><span class="text-xs text-gray-400">Saya tidak suka main
+                                        sepak bola.</span></li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-red-200 dark:border-red-800/30 text-xs text-gray-400">
+                                <span class="font-medium text-red-600">Letak:</span> <span
+                                    class="font-medium">nicht</span> sebelum <span class="font-medium">gern</span>
+                            </div>
+                        </div>
+
+                        <!-- DOCH -->
+                        <div
+                            class="bg-emerald-50 dark:bg-emerald-950/30 rounded-lg p-4 border border-emerald-200 dark:border-emerald-800/30">
+                            <h3 class="font-bold text-emerald-600 dark:text-emerald-400 text-lg">🔄 doch</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1"><span class="font-medium">= tapi /
+                                    justru</span> (menyatakan kontras/koreksi)</p>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 mt-2 space-y-2">
+                                <li>• <span class="font-medium">Ich koche nicht gern, <span
+                                            class="text-emerald-600 dark:text-emerald-400">doch</span> ich esse
+                                        gern.</span><br><span class="text-xs text-gray-400">Saya tidak suka memasak,
+                                        tapi saya suka makan.</span></li>
+                                <li>• <span class="font-medium">Ich lese nicht gern, <span
+                                            class="text-emerald-600 dark:text-emerald-400">doch</span> ich schreibe
+                                        gern.</span><br><span class="text-xs text-gray-400">Saya tidak suka membaca,
+                                        tapi saya suka menulis.</span></li>
+                                <li>• <span class="font-medium">Ich spiele nicht gern Fußball, <span
+                                            class="text-emerald-600 dark:text-emerald-400">doch</span> ich schaue gern
+                                        Fußball.</span><br><span class="text-xs text-gray-400">Saya tidak suka main
+                                        sepak bola, tapi saya suka nonton sepak bola.</span></li>
+                            </ul>
+                            <div
+                                class="mt-3 pt-3 border-t border-emerald-200 dark:border-emerald-800/30 text-xs text-gray-400">
+                                <span class="font-medium text-emerald-600">Fungsi:</span> menghubungkan dua kalimat yang
+                                berlawanan
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== TABEL RINGKASAN ===== -->
+                    <div class="mt-6 p-4 bg-gray-50 dark:bg-slate-700/30 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">📌 Ringkasan</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                            <div
+                                class="bg-white dark:bg-slate-800 rounded-lg p-3 border border-gray-200 dark:border-slate-700">
+                                <span class="font-bold text-indigo-600 dark:text-indigo-400">gern</span>
+                                <span class="text-gray-500 dark:text-gray-400">→ suka</span>
+                                <div class="text-xs text-gray-400 mt-1">Ich koche <span
+                                        class="font-medium text-indigo-600">gern</span>.</div>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-slate-800 rounded-lg p-3 border border-gray-200 dark:border-slate-700">
+                                <span class="font-bold text-red-600 dark:text-red-400">nicht gern</span>
+                                <span class="text-gray-500 dark:text-gray-400">→ tidak suka</span>
+                                <div class="text-xs text-gray-400 mt-1">Ich koche <span
+                                        class="font-medium text-red-600">nicht gern</span>.</div>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-slate-800 rounded-lg p-3 border border-gray-200 dark:border-slate-700">
+                                <span class="font-bold text-emerald-600 dark:text-emerald-400">doch</span>
+                                <span class="text-gray-500 dark:text-gray-400">→ tapi / justru</span>
+                                <div class="text-xs text-gray-400 mt-1">Ich koche nicht gern, <span
+                                        class="font-medium text-emerald-600">doch</span> ich esse gern.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== KOMPONEN ===== -->
+    <script src="components/sidebar.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderSidebar();
+            loadTheme();
+        });
+    </script>
+</body>
+
+</html>
