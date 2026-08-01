@@ -1,0 +1,191 @@
+{
+    "kategori": [
+        {
+            "nama": "Nanya Kabar",
+            "icon": "👋",
+            "items": [
+                {
+                    "pertanyaan": "Wie geht es dir?",
+                    "jawaban": "Mir geht es gut, danke! / Mir geht es super! / Mir geht es nicht so gut.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wie geht es Ihnen?",
+                    "jawaban": "Mir geht es gut, danke! / Mir geht es super! / Mir geht es nicht so gut.",
+                    "tingkat": "formal"
+                },
+                {
+                    "pertanyaan": "Wie geht's?",
+                    "jawaban": "Gut! / Super! / So lala.",
+                    "tingkat": "informal"
+                }
+            ]
+        },
+        {
+            "nama": "Nanya Nama",
+            "icon": "📛",
+            "items": [
+                {
+                    "pertanyaan": "Wie heißt du?",
+                    "jawaban": "Ich heiße [Nama]. / Ich bin [Nama].",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wie heißen Sie?",
+                    "jawaban": "Ich heiße [Nama]. / Ich bin [Nama].",
+                    "tingkat": "formal"
+                },
+                {
+                    "pertanyaan": "Wie ist dein Name?",
+                    "jawaban": "Mein Name ist [Nama].",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wie ist Ihr Name?",
+                    "jawaban": "Mein Name ist [Nama].",
+                    "tingkat": "formal"
+                },
+                {
+                    "pertanyaan": "Wer bist du?",
+                    "jawaban": "Ich bin [Nama]. / Ich bin [Profesi/Status].",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wer sind Sie?",
+                    "jawaban": "Ich bin [Nama]. / Ich bin [Profesi/Status].",
+                    "tingkat": "formal"
+                }
+            ]
+        },
+        {
+            "nama": "Nanya Tempat Tinggal",
+            "icon": "🏠",
+            "items": [
+                {
+                    "pertanyaan": "Wo wohnst du?",
+                    "jawaban": "Ich wohne in [Kota/Negara].",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wo wohnen Sie?",
+                    "jawaban": "Ich wohne in [Kota/Negara].",
+                    "tingkat": "formal"
+                },
+                {
+                    "pertanyaan": "Wo lebst du?",
+                    "jawaban": "Ich lebe in [Kota/Negara].",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wo leben Sie?",
+                    "jawaban": "Ich lebe in [Kota/Negara].",
+                    "tingkat": "formal"
+                },
+                {
+                    "pertanyaan": "Woher kommst du?",
+                    "jawaban": "Ich komme aus [Negara/Kota].",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Woher kommen Sie?",
+                    "jawaban": "Ich komme aus [Negara/Kota].",
+                    "tingkat": "formal"
+                }
+            ]
+        },
+        {
+            "nama": "Nanya Nomor Telepon",
+            "icon": "📞",
+            "items": [
+                {
+                    "pertanyaan": "Wie ist deine Telefonnummer?",
+                    "jawaban": "Meine Telefonnummer ist [Nomor].",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wie ist Ihre Telefonnummer?",
+                    "jawaban": "Meine Telefonnummer ist [Nomor].",
+                    "tingkat": "formal"
+                },
+                {
+                    "pertanyaan": "Hast du eine Handynummer?",
+                    "jawaban": "Ja, meine Handynummer ist [Nomor].",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Haben Sie eine Handynummer?",
+                    "jawaban": "Ja, meine Handynummer ist [Nomor].",
+                    "tingkat": "formal"
+                }
+            ]
+        },
+        {
+            "nama": "Nanya Bahasa",
+            "icon": "🗣️",
+            "items": [
+                {
+                    "pertanyaan": "Welche Sprache sprichst du?",
+                    "jawaban": "Ich spreche [Bahasa].",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Welche Sprache sprechen Sie?",
+                    "jawaban": "Ich spreche [Bahasa].",
+                    "tingkat": "formal"
+                },
+                {
+                    "pertanyaan": "Sprichst du Deutsch?",
+                    "jawaban": "Ja, ich spreche Deutsch. / Nein, ich spreche kein Deutsch.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Sprechen Sie Deutsch?",
+                    "jawaban": "Ja, ich spreche Deutsch. / Nein, ich spreche kein Deutsch.",
+                    "tingkat": "formal"
+                }
+            ]
+        },
+        {
+            "nama": "Nanya Umur",
+            "icon": "🎂",
+            "items": [
+                {
+                    "pertanyaan": "Wie alt bist du?",
+                    "jawaban": "Ich bin [Angka] Jahre alt.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wie alt sind Sie?",
+                    "jawaban": "Ich bin [Angka] Jahre alt.",
+                    "tingkat": "formal"
+                }
+            ]
+        },
+        {
+            "nama": "Nanya Asal",
+            "icon": "🌍",
+            "items": [
+                {
+                    "pertanyaan": "Woher kommst du?",
+                    "jawaban": "Ich komme aus [Negara/Kota].",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Woher kommen Sie?",
+                    "jawaban": "Ich komme aus [Negara/Kota].",
+                    "tingkat": "formal"
+                },
+                {
+                    "pertanyaan": "Wo bist du geboren?",
+                    "jawaban": "Ich bin in [Kota/Negara] geboren.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wo sind Sie geboren?",
+                    "jawaban": "Ich bin in [Kota/Negara] geboren.",
+                    "tingkat": "formal"
+                }
+            ]
+        }
+    ]
+}

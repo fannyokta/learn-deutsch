@@ -292,3 +292,183 @@ function loadTheme() {
     if (icon) icon.className = saved === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     if (label) label.textContent = saved === 'dark' ? 'Terang' : 'Gelap';
 }
+
+// ============================================================
+//  DATA PELAJARAN (LOAD DARI JSON)
+// ============================================================
+let DATA_PELAJARAN = [];
+
+async function loadPelajaran() {
+    const statusEl = document.getElementById('dataStatus');
+    const container = document.getElementById('pelajaran-container');
+    const filterBar = document.getElementById('filterBar');
+    
+    try {
+        const res = await fetch('data/pelajaran.json');
+        if (!res.ok) throw new Error('pelajaran.json tidak ditemukan');
+        const data = await res.json();
+        DATA_PELAJARAN = data.kategori || [];
+        
+        if (statusEl) {
+            statusEl.innerHTML = `<span class="status-badge success">✅ ${DATA_PELAJARAN.length} kategori dimuat</span>`;
+        }
+        
+        // Buat filter buttons
+        renderFilterButtons(DATA_PELAJARAN);
+        
+        // Render semua
+        renderPelajaran(DATA_PELAJARAN);
+        
+        // Setup search
+        setupPelajaranSearch(DATA_PELAJARAN);
+        
+    } catch (err) {
+        console.error('Gagal load pelajaran:', err);
+        if (statusEl) {
+            statusEl.innerHTML = `<span class="status-badge error">❌ ${err.message}</span>`;
+        }
+        if (container) {
+            container.innerHTML = `
+                <div class="error-placeholder">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Gagal memuat data pelajaran.</p>
+                    <small>Pastikan file <code>data/pelajaran.json</code> ada dan valid.</small>
+                </div>
+            `;
+        }
+    }
+}
+
+function renderFilterButtons(kategori) {
+    const filterBar = document.getElementById('filterBar');
+    if (!filterBar) return;
+    
+    // Hapus semua kecuali tombol "Semua"
+    filterBar.innerHTML = `<button class="filter-btn active" data-filter="all">📋 Semua</button>`;
+    
+    kategori.forEach(k => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.filter = k.nama;
+        btn.textContent = `${k.icon || '📌'} ${k.nama}`;
+        filterBar.appendChild(btn);
+    });
+    
+    // Event listener untuk filter
+    filterBar.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.dataset.filter;
+            const searchInput = document.getElementById('searchPelajaran');
+            applyPelajaranFilter(DATA_PELAJARAN, filter, searchInput ? searchInput.value : '');
+        });
+    });
+}
+
+function renderPelajaran(kategori, filter = 'all', query = '') {
+    const container = document.getElementById('pelajaran-container');
+    if (!container) return;
+    
+    let filteredKategori = kategori;
+    
+    // Filter by kategori
+    if (filter !== 'all') {
+        filteredKategori = filteredKategori.filter(k => k.nama === filter);
+    }
+    
+    // Filter by search query
+    const q = query.toLowerCase().trim();
+    if (q) {
+        filteredKategori = filteredKategori.map(k => {
+            const items = k.items.filter(item => 
+                item.pertanyaan.toLowerCase().includes(q) ||
+                item.jawaban.toLowerCase().includes(q) ||
+                item.tingkat.toLowerCase().includes(q)
+            );
+            return { ...k, items };
+        }).filter(k => k.items.length > 0);
+    }
+    
+    if (!filteredKategori || filteredKategori.length === 0 || filteredKategori.every(k => k.items.length === 0)) {
+        container.innerHTML = `<div class="no-result">😕 Tidak ada hasil yang cocok</div>`;
+        return;
+    }
+    
+    let html = '';
+    filteredKategori.forEach(kat => {
+        if (kat.items.length === 0) return;
+        
+        html += `
+            <div class="pelajaran-kategori">
+                <div class="kategori-header">
+                    <h2>${kat.icon || '📌'} ${kat.nama}</h2>
+                    <span class="kategori-count">${kat.items.length} pertanyaan</span>
+                </div>
+                <div class="kategori-items">
+        `;
+        
+        kat.items.forEach(item => {
+            const tingkatBadge = item.tingkat === 'formal' 
+                ? '<span class="badge-formal">🔵 Formal</span>' 
+                : '<span class="badge-informal">🟢 Informal</span>';
+            
+            html += `
+                <div class="item-card card-glass">
+                    <div class="item-header">
+                        <span class="item-pertanyaan">${item.pertanyaan}</span>
+                        ${tingkatBadge}
+                    </div>
+                    <div class="item-jawaban">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>${item.jawaban}</span>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += `
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
+function setupPelajaranSearch(kategori) {
+    const input = document.getElementById('searchPelajaran');
+    const clear = document.getElementById('clearPelajaran');
+    if (!input) return;
+    
+    let currentFilter = 'all';
+    
+    // Ambil filter aktif
+    document.querySelectorAll('#filterBar .filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            currentFilter = this.dataset.filter;
+        });
+    });
+    
+    input.addEventListener('input', function() {
+        clear.classList.toggle('visible', this.value.length > 0);
+        const filter = document.querySelector('#filterBar .filter-btn.active');
+        const filterValue = filter ? filter.dataset.filter : 'all';
+        renderPelajaran(kategori, filterValue, this.value);
+    });
+    
+    if (clear) {
+        clear.addEventListener('click', function() {
+            input.value = '';
+            this.classList.remove('visible');
+            const filter = document.querySelector('#filterBar .filter-btn.active');
+            const filterValue = filter ? filter.dataset.filter : 'all';
+            renderPelajaran(kategori, filterValue, '');
+            input.focus();
+        });
+    }
+}
+
+function applyPelajaranFilter(kategori, filter, query) {
+    renderPelajaran(kategori, filter, query);
+}
