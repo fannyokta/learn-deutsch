@@ -5,684 +5,123 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>📖 Pelajaran · Belajar Jerman</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <style>
-        /* ===== RESET & VARIABLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-primary: #f0f4f8;
-            --bg-secondary: #ffffff;
-            --bg-glass: rgba(255, 255, 255, 0.7);
-            --bg-glass-hover: rgba(255, 255, 255, 0.9);
-            --text-primary: #0b1124;
-            --text-secondary: #4a5568;
-            --text-muted: #8b9bb5;
-            --border-color: rgba(255, 255, 255, 0.2);
-            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
-            --gradient-start: #667eea;
-            --gradient-end: #764ba2;
-            --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --radius-sm: 10px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --radius-full: 9999px;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --sidebar-width: 220px;
-        }
-
-        [data-theme="dark"] {
-            --bg-primary: #0a0e1a;
-            --bg-secondary: #141b2d;
-            --bg-glass: rgba(20, 27, 45, 0.8);
-            --bg-glass-hover: rgba(30, 40, 65, 0.95);
-            --text-primary: #e8edf5;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --border-color: rgba(255, 255, 255, 0.06);
-            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.4);
-            --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.5);
-            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            transition: background var(--transition), color var(--transition);
-            min-height: 100vh;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        #app {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* ===== SIDEBAR ===== */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: var(--sidebar-width);
-            height: 100vh;
-            background: var(--bg-secondary);
-            border-right: 1px solid var(--border-color);
-            padding: 20px 14px;
-            display: flex;
-            flex-direction: column;
-            transition: all var(--transition);
-            z-index: 100;
-            overflow-y: auto;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .sidebar-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 12px 20px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 16px;
-        }
-
-        .brand-icon {
-            font-size: 1.8rem;
-        }
-
-        .brand-text {
-            font-size: 1.4rem;
-            font-weight: 700;
-            background: var(--gradient-hero);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .brand-badge {
-            background: var(--gradient-hero);
-            color: #fff;
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: var(--radius-full);
-            margin-left: auto;
-        }
-
-        .sidebar-nav {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 14px;
-            border: none;
-            border-radius: var(--radius-sm);
-            background: transparent;
-            color: var(--text-secondary);
-            font-family: inherit;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all var(--transition);
-            width: 100%;
-            text-align: left;
-            text-decoration: none;
-        }
-
-        .nav-btn i {
-            width: 20px;
-            font-size: 1rem;
-            text-align: center;
-            color: var(--text-muted);
-            transition: color var(--transition);
-        }
-
-        .nav-btn:hover {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            transform: translateX(4px);
-        }
-
-        .nav-btn:hover i {
-            color: var(--gradient-start);
-        }
-
-        .nav-btn.active {
-            background: var(--gradient-hero);
-            color: #fff;
-            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
-        }
-
-        .nav-btn.active i {
-            color: #fff;
-        }
-
-        .sidebar-footer {
-            border-top: 1px solid var(--border-color);
-            padding-top: 12px;
-            margin-top: 8px;
-        }
-
-        .btn-dark-sidebar {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 14px;
-            border: none;
-            border-radius: var(--radius-sm);
-            background: var(--bg-primary);
-            color: var(--text-secondary);
-            font-family: inherit;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all var(--transition);
-            width: 100%;
-            text-decoration: none;
-        }
-
-        .btn-dark-sidebar:hover {
-            background: var(--border-color);
-            transform: translateX(4px);
-        }
-
-        /* ===== MAIN CONTENT ===== */
-        .main-content {
-            margin-left: var(--sidebar-width);
-            flex: 1;
-            padding: 28px 36px 40px;
-            min-height: 100vh;
-            transition: margin-left var(--transition);
-        }
-
-        .page {
-            display: block;
-            animation: fadeSlide 0.4s ease;
-        }
-
-        @keyframes fadeSlide {
-            from {
-                opacity: 0;
-                transform: translateY(16px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
             }
         }
-
-        .page-header {
-            margin-bottom: 28px;
-        }
-
-        .page-header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .page-header .page-subtitle {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-top: 4px;
-        }
-
-        /* ===== SEARCH ===== */
-        .search-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-            background: var(--bg-secondary);
-            border-radius: var(--radius-full);
-            padding: 0 8px 0 18px;
-            border: 2px solid transparent;
-            transition: all var(--transition);
-            box-shadow: var(--shadow-sm);
-            margin-bottom: 16px;
-            max-width: 500px;
-        }
-
-        .search-wrapper:focus-within {
-            border-color: var(--gradient-start);
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
-        }
-
-        .search-wrapper .search-icon {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-right: 8px;
-        }
-
-        .search-wrapper input {
-            flex: 1;
-            border: none;
-            outline: none;
-            background: transparent;
-            padding: 10px 0;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-            font-family: inherit;
-        }
-
-        .search-wrapper input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .search-clear {
-            background: none;
-            border: none;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            cursor: pointer;
-            padding: 4px 8px;
-            border-radius: var(--radius-full);
-            display: none;
-            transition: all var(--transition);
-        }
-
-        .search-clear.visible {
-            display: block;
-        }
-
-        .search-clear:hover {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-        }
-
-        /* ===== FILTER ===== */
-        .filter-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 16px;
-        }
-
-        .filter-btn {
-            padding: 6px 16px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-full);
-            background: var(--bg-secondary);
-            color: var(--text-secondary);
-            font-family: inherit;
-            font-size: 0.8rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all var(--transition);
-        }
-
-        .filter-btn:hover {
-            background: var(--bg-primary);
-        }
-
-        .filter-btn.active {
-            background: var(--gradient-hero);
-            color: #fff;
-            border-color: transparent;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-        }
-
-        /* ===== DATA STATUS ===== */
-        .data-status {
-            margin-top: 8px;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 4px 14px;
-            border-radius: var(--radius-full);
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .status-badge.loading {
-            background: #fbbf24;
-            color: #78350f;
-        }
-
-        .status-badge.success {
-            background: #10b981;
-            color: #fff;
-        }
-
-        .status-badge.error {
-            background: #ef4444;
-            color: #fff;
-        }
-
-        .loading-placeholder {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-muted);
-        }
-
-        .error-placeholder {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-muted);
-        }
-
-        .error-placeholder i {
-            font-size: 2rem;
-            color: #ef4444;
-            margin-bottom: 8px;
-        }
-
-        .error-placeholder code {
-            background: var(--bg-primary);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-
-        .no-result {
-            text-align: center;
-            padding: 40px !important;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        /* ===== PELAJARAN KATEGORI ===== */
-        .pelajaran-kategori {
-            margin-bottom: 28px;
-            background: var(--bg-secondary);
-            border-radius: var(--radius-md);
-            padding: 20px 24px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-            transition: all var(--transition);
-        }
-
-        .pelajaran-kategori:hover {
-            box-shadow: var(--shadow-md);
-        }
-
-        .kategori-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-color);
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .kategori-header h2 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .kategori-count {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            background: var(--bg-primary);
-            padding: 2px 14px;
-            border-radius: var(--radius-full);
-            font-weight: 500;
-        }
-
-        .kategori-items {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-
-        /* ===== ITEM CARD ===== */
-        .item-card {
-            background: var(--bg-glass);
-            backdrop-filter: blur(8px);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            padding: 14px 18px;
-            transition: all var(--transition);
-            cursor: default;
-        }
-
-        .item-card:hover {
-            transform: translateX(6px);
-            background: var(--bg-glass-hover);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .item-header {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px 12px;
-            margin-bottom: 6px;
-        }
-
-        .item-pertanyaan {
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--text-primary);
-        }
-
-        .item-jawaban {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            padding-left: 4px;
-        }
-
-        .item-jawaban i {
-            color: var(--gradient-start);
-            font-size: 0.8rem;
-            margin-top: 5px;
-            flex-shrink: 0;
-        }
-
-        /* ===== BADGE TINGKAT ===== */
-        .badge-formal {
-            display: inline-block;
-            background: #3b82f6;
-            color: #fff;
-            font-size: 0.6rem;
-            font-weight: 600;
-            padding: 2px 12px;
-            border-radius: var(--radius-full);
-            letter-spacing: 0.3px;
-            text-transform: uppercase;
-        }
-
-        .badge-informal {
-            display: inline-block;
-            background: #10b981;
-            color: #fff;
-            font-size: 0.6rem;
-            font-weight: 600;
-            padding: 2px 12px;
-            border-radius: var(--radius-full);
-            letter-spacing: 0.3px;
-            text-transform: uppercase;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 60px;
-                padding: 12px 8px;
-            }
-
-            .sidebar .brand-text,
-            .sidebar .brand-badge,
-            .sidebar .nav-btn span,
-            .sidebar .btn-dark-sidebar span {
-                display: none;
-            }
-
-            .sidebar .nav-btn {
-                justify-content: center;
-                padding: 10px;
-                transform: none !important;
-            }
-
-            .sidebar .nav-btn i {
-                font-size: 1.2rem;
-                margin: 0;
-            }
-
-            .sidebar .btn-dark-sidebar {
-                justify-content: center;
-                padding: 10px;
-                transform: none !important;
-            }
-
-            .main-content {
-                margin-left: 60px;
-                padding: 16px 16px 32px;
-            }
-
-            .page-header h1 {
-                font-size: 1.5rem;
-            }
-
-            .kategori-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .item-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .item-jawaban {
-                font-size: 0.85rem;
-            }
-
-            .pelajaran-kategori {
-                padding: 14px 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .sidebar {
-                width: 50px;
-                padding: 8px 4px;
-            }
-
-            .main-content {
-                margin-left: 50px;
-                padding: 12px 12px 24px;
-            }
-
-            .search-wrapper {
-                max-width: 100%;
-            }
-
-            .filter-bar {
-                gap: 4px;
-            }
-
-            .filter-btn {
-                font-size: 0.7rem;
-                padding: 4px 10px;
-            }
-
-            .item-card {
-                padding: 10px 12px;
-            }
-
-            .item-pertanyaan {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    </script>
 </head>
 
-<body>
-    <div id="app">
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-['Inter']">
+
+    <div id="app" class="flex min-h-screen">
 
         <!-- ===== SIDEBAR ===== -->
-        <aside class="sidebar">
-            <div class="sidebar-brand">
-                <span class="brand-icon">🇩🇪</span>
-                <span class="brand-text">Lernen</span>
-                <span class="brand-badge">v3</span>
-            </div>
-            <nav class="sidebar-nav">
-                <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> <span>Beranda</span></a>
-                <a href="negara.html" class="nav-btn"><i class="fas fa-globe-asia"></i> <span>Negara</span></a>
-                <a href="kosakata.html" class="nav-btn"><i class="fas fa-book-open"></i> <span>Kosakata</span></a>
-                <a href="tata-bahasa.html" class="nav-btn"><i class="fas fa-graduation-cap"></i> <span>Tata
-                        Bahasa</span></a>
-                <a href="pronomen.html" class="nav-btn"><i class="fas fa-user-graduate"></i> <span>Pronomen</span></a>
-                <a href="pelajaran.html" class="nav-btn active"><i class="fas fa-bookmark"></i>
-                    <span>Pelajaran</span></a>
-            </nav>
-            <div class="sidebar-footer">
-                <button id="darkToggle" class="btn-dark-sidebar">
-                    <i class="fas fa-moon" id="darkIcon"></i>
-                    <span id="darkLabel">Gelap</span>
-                </button>
-            </div>
+        <aside id="sidebarContainer"
+            class="fixed top-0 left-0 w-[220px] h-full bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 p-5 flex flex-col z-50 shadow-sm overflow-y-auto">
+            <!-- diisi oleh components/sidebar.js -->
         </aside>
 
         <!-- ===== MAIN CONTENT ===== -->
-        <main class="main-content">
-            <section class="page active">
-                <div class="page-header">
-                    <h1>📖 Yang Sudah Aku Pelajari</h1>
-                    <p class="page-subtitle">Kumpulan pertanyaan dan jawaban dalam bahasa Jerman (formal &amp;
-                        informal).</p>
-                    <div class="data-status" id="dataStatus">
-                        <span class="status-badge loading">⏳ Memuat data...</span>
+        <main class="flex-1 ml-[220px] p-7 md:p-9 min-h-screen">
+
+            <section class="page">
+
+                <!-- ===== HERO HEADER ===== -->
+                <div
+                    class="relative mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 p-6 md:p-8 text-white shadow-xl">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-3xl">📖</span>
+                            <span
+                                class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Pelajaran</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">Yang Sudah <span class="text-yellow-300">Aku
+                                Pelajari</span></h1>
+                        <p class="text-white/80 text-base max-w-xl">Kumpulan pertanyaan dan jawaban dalam bahasa Jerman
+                            (formal &amp; informal).</p>
                     </div>
                 </div>
 
-                <!-- ===== SEARCH ===== -->
-                <div class="search-wrapper">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" id="searchPelajaran"
-                        placeholder="🔍 Cari pertanyaan, jawaban, atau kategori..." />
-                    <button class="search-clear" id="clearPelajaran">✕</button>
+                <!-- ===== FILTER ===== -->
+                <div class="flex flex-wrap gap-1.5 mb-4" id="filterBar">
+                    <button
+                        class="filter-btn active px-4 py-1.5 rounded-full border border-gray-200 dark:border-slate-700 bg-indigo-500 text-white text-sm font-medium shadow-sm shadow-indigo-500/30"
+                        data-filter="all">📋 Semua</button>
                 </div>
 
-                <!-- ===== FILTER KATEGORI ===== -->
-                <div class="filter-bar" id="filterBar">
-                    <button class="filter-btn active" data-filter="all">📋 Semua</button>
+                <!-- ===== SEARCH ===== -->
+                <div
+                    class="relative flex items-center bg-white dark:bg-slate-800 rounded-full px-4 border-2 border-gray-200 dark:border-slate-700 shadow-sm max-w-md mb-4 focus-within:border-indigo-500 focus-within:shadow-indigo-500/20 transition-all">
+                    <i class="fas fa-search text-gray-400 dark:text-gray-500 mr-2 text-sm"></i>
+                    <input type="text" id="searchPelajaran" placeholder="🔍 Cari pertanyaan, jawaban, atau kategori..."
+                        class="flex-1 border-none outline-none bg-transparent py-2.5 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500" />
+                    <button id="clearPelajaran"
+                        class="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hidden px-2">✕</button>
+                </div>
+
+                <!-- ===== DATA STATUS ===== -->
+                <div class="mb-3" id="dataStatus">
+                    <span
+                        class="inline-block px-3.5 py-1 rounded-full text-sm font-medium bg-yellow-400 text-yellow-900 dark:bg-yellow-500 dark:text-yellow-900">⏳
+                        Memuat data...</span>
                 </div>
 
                 <!-- ===== KONTEN ===== -->
                 <div id="pelajaran-container">
-                    <div class="loading-placeholder">📖 Memuat pelajaran...</div>
+                    <div class="text-center py-12 text-gray-400 dark:text-gray-500">
+                        <i class="fas fa-spinner fa-spin text-3xl block mb-3"></i>
+                        <span>📖 Memuat pelajaran...</span>
+                    </div>
                 </div>
+
             </section>
+
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <!-- ===== KOMPONEN ===== -->
+    <script src="components/sidebar.js"></script>
+    <script src="scripts/pelajaran.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            renderSidebar();
             loadPelajaran();
             loadTheme();
-            document.getElementById('darkToggle').addEventListener('click', toggleDark);
         });
     </script>
 </body>

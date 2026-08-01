@@ -5,62 +5,169 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🌍 Negara · Belajar Jerman</title>
+
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
         rel="stylesheet" />
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <div id="app">
-        <aside class="sidebar">
-            <div class="sidebar-brand">
-                <span class="brand-icon">🇩🇪</span>
-                <span class="brand-text">Lernen</span>
-                <span class="brand-badge">v3</span>
-            </div>
-            <nav class="sidebar-nav">
-                <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> <span>Beranda</span></a>
-                <a href="negara.html" class="nav-btn active"><i class="fas fa-globe-asia"></i> <span>Negara</span></a>
-                <a href="kosakata.html" class="nav-btn"><i class="fas fa-book-open"></i> <span>Kosakata</span></a>
-                <a href="tata-bahasa.html" class="nav-btn"><i class="fas fa-graduation-cap"></i> <span>Tata
-                        Bahasa</span></a>
-                <a href="pronomen.html" class="nav-btn"><i class="fas fa-user-graduate"></i> <span>Pronomen</span></a>
-            </nav>
-            <div class="sidebar-footer">
-                <button id="darkToggle" class="btn-dark-sidebar">
-                    <i class="fas fa-moon" id="darkIcon"></i>
-                    <span id="darkLabel">Gelap</span>
-                </button>
-            </div>
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-['Inter']">
+
+    <div id="app" class="flex min-h-screen">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside id="sidebarContainer"
+            class="fixed top-0 left-0 w-[220px] h-full bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 p-5 flex flex-col z-50 shadow-sm overflow-y-auto">
+            <!-- diisi oleh components/sidebar.js -->
         </aside>
-        <main class="main-content">
-            <section class="page active">
-                <div class="page-header">
-                    <h1>🌍 Daftar Negara</h1>
-                    <p class="page-subtitle">Nama negara dalam bahasa Jerman dan bahasa yang digunakan.</p>
-                    <div class="data-status" id="dataStatus"><span class="status-badge loading">⏳ Memuat data...</span>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="flex-1 ml-[220px] p-7 md:p-9 min-h-screen">
+
+            <section class="page">
+
+                <!-- ===== HERO HEADER ===== -->
+                <div
+                    class="relative mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 p-6 md:p-8 text-white shadow-xl">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-3xl">🌍</span>
+                            <span
+                                class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Negara</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">Daftar <span
+                                class="text-yellow-300">Negara</span> &amp; <span class="text-yellow-300">Bahasa</span>
+                        </h1>
+                        <p class="text-white/80 text-base max-w-xl">Nama negara dalam bahasa Jerman dan bahasa yang
+                            digunakan di setiap negara.</p>
+
+                        <div class="flex flex-wrap items-center gap-4 mt-3">
+                            <div
+                                class="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm">
+                                <span class="font-bold" id="totalNegaraHero">0</span>
+                                <span>negara</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm">
+                                <span class="font-bold" id="totalWilayahHero">0</span>
+                                <span>wilayah</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="search-wrapper">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" id="searchNegara" placeholder="Cari negara atau bahasa..." />
-                    <button class="search-clear" id="clearNegara">✕</button>
+
+                <!-- ===== STATISTIK CARD ===== -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl p-3 border border-gray-200 dark:border-slate-700 shadow-sm text-center">
+                        <div class="text-2xl font-bold text-blue-600 dark:text-blue-400" id="statTotal">0</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">Total Negara</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl p-3 border border-gray-200 dark:border-slate-700 shadow-sm text-center">
+                        <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400" id="statASEAN">0</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">🌏 ASEAN</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl p-3 border border-gray-200 dark:border-slate-700 shadow-sm text-center">
+                        <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400" id="statEROPA">0</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">🌍 Eropa</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-xl p-3 border border-gray-200 dark:border-slate-700 shadow-sm text-center">
+                        <div class="text-2xl font-bold text-purple-600 dark:text-purple-400" id="statLainnya">0</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">🌎 Lainnya</div>
+                    </div>
                 </div>
-                <div class="table-container" id="negara-table">
-                    <div class="loading-placeholder">📖 Memuat negara...</div>
+
+                <!-- ===== SEARCH ===== -->
+                <div
+                    class="relative flex items-center bg-white dark:bg-slate-800 rounded-full px-4 border-2 border-gray-200 dark:border-slate-700 shadow-sm max-w-md mb-4 focus-within:border-indigo-500 focus-within:shadow-indigo-500/20 transition-all">
+                    <i class="fas fa-search text-gray-400 dark:text-gray-500 mr-2 text-sm"></i>
+                    <input type="text" id="searchNegara" placeholder="🔍 Cari negara atau bahasa..."
+                        class="flex-1 border-none outline-none bg-transparent py-2.5 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500" />
+                    <button id="clearNegara"
+                        class="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 hidden px-2">✕</button>
                 </div>
+
+                <!-- ===== DATA STATUS ===== -->
+                <div class="mb-3" id="dataStatus">
+                    <span
+                        class="inline-block px-3.5 py-1 rounded-full text-sm font-medium bg-yellow-400 text-yellow-900 dark:bg-yellow-500 dark:text-yellow-900">⏳
+                        Memuat data...</span>
+                </div>
+
+                <!-- ===== TABEL NEGARA ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <div id="negara-table">
+                            <div class="text-center py-12 text-gray-400 dark:text-gray-500">
+                                <i class="fas fa-spinner fa-spin text-3xl block mb-3"></i>
+                                <span>📖 Memuat negara...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== FOOTER INFO ===== -->
+                <div class="mt-4 text-xs text-gray-400 dark:text-gray-500 text-center">
+                    <i class="fas fa-info-circle"></i> Gunakan pencarian untuk menemukan negara atau bahasa
+                </div>
+
             </section>
+
         </main>
     </div>
-    <script src="script.js"></script>
+
+    <!-- ===== KOMPONEN ===== -->
+    <script src="components/sidebar.js"></script>
+    <script src="scripts/negara.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            renderSidebar();
             loadNegara();
             loadTheme();
-            document.getElementById('darkToggle').addEventListener('click', toggleDark);
         });
     </script>
 </body>

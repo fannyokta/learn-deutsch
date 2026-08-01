@@ -5,61 +5,119 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🧩 Tata Bahasa · Belajar Jerman</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <div id="app">
-        <aside class="sidebar">
-            <div class="sidebar-brand">
-                <span class="brand-icon">🇩🇪</span>
-                <span class="brand-text">Lernen</span>
-                <span class="brand-badge">v3</span>
-            </div>
-            <nav class="sidebar-nav">
-                <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> <span>Beranda</span></a>
-                <a href="negara.html" class="nav-btn"><i class="fas fa-globe-asia"></i> <span>Negara</span></a>
-                <a href="kosakata.html" class="nav-btn"><i class="fas fa-book-open"></i> <span>Kosakata</span></a>
-                <a href="tata-bahasa.html" class="nav-btn active"><i class="fas fa-graduation-cap"></i> <span>Tata
-                        Bahasa</span></a>
-                <a href="pronomen.html" class="nav-btn"><i class="fas fa-user-graduate"></i> <span>Pronomen</span></a>
-            </nav>
-            <div class="sidebar-footer">
-                <button id="darkToggle" class="btn-dark-sidebar">
-                    <i class="fas fa-moon" id="darkIcon"></i>
-                    <span id="darkLabel">Gelap</span>
-                </button>
-            </div>
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-['Inter']">
+
+    <div id="app" class="flex min-h-screen">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside id="sidebarContainer"
+            class="fixed top-0 left-0 w-[220px] h-full bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 p-5 flex flex-col z-50 shadow-sm overflow-y-auto">
+            <!-- diisi oleh components/sidebar.js -->
         </aside>
-        <main class="main-content">
-            <section class="page active">
-                <div class="page-header">
-                    <h1>🧩 Tata Bahasa Jerman</h1>
-                    <p class="page-subtitle">4 Kasus dalam bahasa Jerman: fungsi, pertanyaan, dan contoh.</p>
-                    <div class="data-status" id="dataStatus"><span class="status-badge loading">⏳ Memuat data...</span>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="flex-1 ml-[220px] p-7 md:p-9 min-h-screen">
+
+            <section class="page">
+
+                <!-- ===== HERO HEADER ===== -->
+                <div
+                    class="relative mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-6 md:p-8 text-white shadow-xl">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-3xl">🧩</span>
+                            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Tata
+                                Bahasa</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">4 <span class="text-yellow-300">Kasus</span>
+                            dalam Bahasa Jerman</h1>
+                        <p class="text-white/80 text-base max-w-xl">Fungsi, pertanyaan, dan contoh untuk setiap kasus.
+                        </p>
                     </div>
                 </div>
-                <div class="card-grid" id="kasus-cards"></div>
-                <div class="section-title">
-                    <h3>📊 Perubahan Artikel berdasarkan Kasus</h3>
+
+                <!-- ===== DATA STATUS ===== -->
+                <div class="mb-3" id="dataStatus">
+                    <span
+                        class="inline-block px-3.5 py-1 rounded-full text-sm font-medium bg-yellow-400 text-yellow-900 dark:bg-yellow-500 dark:text-yellow-900">⏳
+                        Memuat data...</span>
                 </div>
-                <div class="table-container" id="kasus-table">
-                    <div class="loading-placeholder">📖 Memuat tabel kasus...</div>
+
+                <!-- ===== CARDS KASUS ===== -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8" id="kasus-cards">
+                    <div class="text-center py-12 text-gray-400 dark:text-gray-500 col-span-full">📖 Memuat kasus...
+                    </div>
                 </div>
+
+                <!-- ===== TABEL ARTIKEL ===== -->
+                <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">📊 Perubahan Artikel berdasarkan
+                    Kasus</h2>
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <div id="kasus-table">
+                            <div class="text-center py-12 text-gray-400 dark:text-gray-500">
+                                <i class="fas fa-spinner fa-spin text-3xl block mb-3"></i>
+                                <span>📖 Memuat tabel kasus...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </section>
+
         </main>
     </div>
-    <script src="script.js"></script>
+
+    <!-- ===== KOMPONEN ===== -->
+    <script src="components/sidebar.js"></script>
+    <script src="scripts/tata-bahasa.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            renderSidebar();
             loadTataBahasa();
             loadTheme();
-            document.getElementById('darkToggle').addEventListener('click', toggleDark);
         });
     </script>
 </body>
