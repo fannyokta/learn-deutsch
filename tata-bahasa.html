@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🔤 Pronomen · Belajar Jerman</title>
+    <title>🧩 Tata Bahasa · Belajar Jerman</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
@@ -25,10 +25,9 @@
                 <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> <span>Beranda</span></a>
                 <a href="negara.html" class="nav-btn"><i class="fas fa-globe-asia"></i> <span>Negara</span></a>
                 <a href="kosakata.html" class="nav-btn"><i class="fas fa-book-open"></i> <span>Kosakata</span></a>
-                <a href="tata-bahasa.html" class="nav-btn"><i class="fas fa-graduation-cap"></i> <span>Tata
+                <a href="tata-bahasa.html" class="nav-btn active"><i class="fas fa-graduation-cap"></i> <span>Tata
                         Bahasa</span></a>
-                <a href="pronomen.html" class="nav-btn active"><i class="fas fa-user-graduate"></i>
-                    <span>Pronomen</span></a>
+                <a href="pronomen.html" class="nav-btn"><i class="fas fa-user-graduate"></i> <span>Pronomen</span></a>
             </nav>
             <div class="sidebar-footer">
                 <button id="darkToggle" class="btn-dark-sidebar">
@@ -40,31 +39,25 @@
         <main class="main-content">
             <section class="page active">
                 <div class="page-header">
-                    <h1>🔤 Pronomen &amp; Konjugation</h1>
-                    <p class="page-subtitle">Personalpronomen dalam 4 kasus, konjugasi <em>machen</em>, dan
-                        <em>sein</em>.</p>
+                    <h1>🧩 Tata Bahasa Jerman</h1>
+                    <p class="page-subtitle">4 Kasus dalam bahasa Jerman: fungsi, pertanyaan, dan contoh.</p>
+                    <div class="data-status" id="dataStatus"><span class="status-badge loading">⏳ Memuat data...</span>
+                    </div>
                 </div>
+                <div class="card-grid" id="kasus-cards"></div>
                 <div class="section-title">
-                    <h3>👤 Personalpronomen</h3>
+                    <h3>📊 Perubahan Artikel berdasarkan Kasus</h3>
                 </div>
-                <div class="table-container" id="pronomen-table"></div>
-                <div class="section-title">
-                    <h3>⚙️ Konjugation Reguler: <span class="highlight">machen</span></h3>
+                <div class="table-container" id="kasus-table">
+                    <div class="loading-placeholder">📖 Memuat tabel kasus...</div>
                 </div>
-                <div class="table-container" id="endungen-table"></div>
-                <div class="section-title">
-                    <h3>✅ Konjugation Iregular: <span class="highlight">sein</span></h3>
-                </div>
-                <div class="table-container" id="sein-table"></div>
             </section>
         </main>
     </div>
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            renderPronomen();
-            renderEndungen();
-            renderSein();
+            loadTataBahasa();
             loadTheme();
             document.getElementById('darkToggle').addEventListener('click', toggleDark);
         });

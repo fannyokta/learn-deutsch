@@ -5,16 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🇩🇪 Lernen · Belajar Jerman</title>
-
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
         rel="stylesheet" />
-
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -22,36 +17,20 @@
     <div id="app">
 
         <!-- ===== SIDEBAR ===== -->
-        <aside class="sidebar" id="sidebar">
+        <aside class="sidebar">
             <div class="sidebar-brand">
                 <span class="brand-icon">🇩🇪</span>
                 <span class="brand-text">Lernen</span>
                 <span class="brand-badge">v3</span>
             </div>
-
             <nav class="sidebar-nav">
-                <a href="index.html" class="nav-btn active">
-                    <i class="fas fa-home"></i>
-                    <span>Beranda</span>
-                </a>
-                <a href="negara.html" class="nav-btn">
-                    <i class="fas fa-globe-asia"></i>
-                    <span>Negara</span>
-                </a>
-                <a href="kosakata.html" class="nav-btn">
-                    <i class="fas fa-book-open"></i>
-                    <span>Kosakata</span>
-                </a>
-                <a href="tata-bahasa.html" class="nav-btn">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Tata Bahasa</span>
-                </a>
-                <a href="pronomen.html" class="nav-btn">
-                    <i class="fas fa-user-graduate"></i>
-                    <span>Pronomen</span>
-                </a>
+                <a href="index.html" class="nav-btn active"><i class="fas fa-home"></i> <span>Beranda</span></a>
+                <a href="negara.html" class="nav-btn"><i class="fas fa-globe-asia"></i> <span>Negara</span></a>
+                <a href="kosakata.html" class="nav-btn"><i class="fas fa-book-open"></i> <span>Kosakata</span></a>
+                <a href="tata-bahasa.html" class="nav-btn"><i class="fas fa-graduation-cap"></i> <span>Tata
+                        Bahasa</span></a>
+                <a href="pronomen.html" class="nav-btn"><i class="fas fa-user-graduate"></i> <span>Pronomen</span></a>
             </nav>
-
             <div class="sidebar-footer">
                 <button id="darkToggle" class="btn-dark-sidebar">
                     <i class="fas fa-moon" id="darkIcon"></i>
@@ -62,13 +41,11 @@
 
         <!-- ===== MAIN CONTENT ===== -->
         <main class="main-content">
-
-            <section id="page-home" class="page active">
+            <section class="page active">
                 <div class="page-header">
                     <h1>👋 Hallo, Fanny!</h1>
                     <p class="page-subtitle">Selamat datang di pusat belajar bahasa Jerman interaktif.</p>
                 </div>
-
                 <div class="dashboard-grid">
                     <div class="stat-card glass">
                         <div class="stat-icon">🌍</div>
@@ -87,7 +64,7 @@
                     <div class="stat-card glass">
                         <div class="stat-icon">🧩</div>
                         <div class="stat-info">
-                            <span class="stat-number">4</span>
+                            <span class="stat-number" id="totalKasus">0</span>
                             <span class="stat-label">Kasus</span>
                         </div>
                     </div>
@@ -99,30 +76,23 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="quick-actions">
                     <h3>⚡ Mulai Cepat</h3>
                     <div class="quick-grid">
-                        <a href="negara.html" class="quick-btn">
-                            <i class="fas fa-globe-asia"></i> Lihat Negara
-                        </a>
-                        <a href="kosakata.html" class="quick-btn">
-                            <i class="fas fa-book-open"></i> Pelajari Kosakata
-                        </a>
-                        <a href="tata-bahasa.html" class="quick-btn">
-                            <i class="fas fa-graduation-cap"></i> Pahami Tata Bahasa
-                        </a>
+                        <a href="negara.html" class="quick-btn"><i class="fas fa-globe-asia"></i> Lihat Negara</a>
+                        <a href="kosakata.html" class="quick-btn"><i class="fas fa-book-open"></i> Pelajari Kosakata</a>
+                        <a href="tata-bahasa.html" class="quick-btn"><i class="fas fa-graduation-cap"></i> Pahami Tata
+                            Bahasa</a>
                     </div>
                 </div>
             </section>
-
         </main>
     </div>
 
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            updateStats();
+            loadAllData();
             loadTheme();
             document.getElementById('darkToggle').addEventListener('click', toggleDark);
         });

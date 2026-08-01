@@ -1,0 +1,70 @@
+{
+    "kasus": [
+        {
+            "id": "nominativ",
+            "nama": "Nominativ",
+            "icon": "📖",
+            "fungsi": "Subjek (pelaku)",
+            "tanya": "Wer? Was?",
+            "contoh": "Der Mann liest.",
+            "contoh_highlight": "Der Mann"
+        },
+        {
+            "id": "genitiv",
+            "nama": "Genitiv",
+            "icon": "🔗",
+            "fungsi": "Kepemilikan",
+            "tanya": "Wessen?",
+            "contoh": "Das Buch des Mannes.",
+            "contoh_highlight": "des Mannes"
+        },
+        {
+            "id": "dativ",
+            "nama": "Dativ",
+            "icon": "🎯",
+            "fungsi": "Objek tidak langsung",
+            "tanya": "Wem?",
+            "contoh": "Ich gebe dem Mann ein Buch.",
+            "contoh_highlight": "dem Mann"
+        },
+        {
+            "id": "akkusativ",
+            "nama": "Akkusativ",
+            "icon": "⚡",
+            "fungsi": "Objek langsung",
+            "tanya": "Wen? Was?",
+            "contoh": "Ich sehe den Mann.",
+            "contoh_highlight": "den Mann"
+        }
+    ],
+    "artikel_per_kasus": [
+        {
+            "kasus": "Nominativ",
+            "maskulin": "der",
+            "feminin": "die",
+            "netral": "das",
+            "plural": "die"
+        },
+        {
+            "kasus": "Genitiv",
+            "maskulin": "des",
+            "feminin": "der",
+            "netral": "des",
+            "plural": "der"
+        },
+        {
+            "kasus": "Dativ",
+            "maskulin": "dem",
+            "feminin": "der",
+            "netral": "dem",
+            "plural": "den (+n)"
+        },
+        {
+            "kasus": "Akkusativ",
+            "maskulin": "den",
+            "feminin": "die",
+            "netral": "das",
+            "plural": "die"
+        }
+    ]
+}
