@@ -4,61 +4,129 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🇩🇪 Belajar Jerman - Fanny</title>
+    <title>🇩🇪 Lernen · Belajar Jerman</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="container">
-        <h1>🇩🇪 Belajar Bahasa Jerman</h1>
-        <p class="subtitle">📚 Data dari file JSON · by Fanny</p>
+    <div id="app">
 
-        <!-- TOMBOL TAB -->
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="negara">🌍 Negara</button>
-            <button class="tab-btn" data-tab="artikel">📌 Artikel &amp; Kategori</button>
-            <button class="tab-btn" data-tab="kasus">🧠 Kasus</button>
-            <button class="tab-btn" data-tab="pronomen">🔤 Pronomen &amp; Verben</button>
-        </div>
-
-        <!-- KONTEN -->
-        <div id="negara" class="tab-content active">
-            <h2>🌏 Daftar Negara</h2>
-            <div id="negara-table"></div>
-        </div>
-
-        <div id="artikel" class="tab-content">
-            <h2>📌 Artikel &amp; Kategori</h2>
-            <div id="artikel-table"></div>
-        </div>
-
-        <div id="kasus" class="tab-content">
-            <h2>🧠 4 Kasus dalam Bahasa Jerman</h2>
-            <div class="card-grid">
-                <div class="card"><strong>Nominativ</strong><br>Subjek<br><small>Wer? Was?</small><br><em>Der Mann
-                        liest.</em></div>
-                <div class="card"><strong>Genitiv</strong><br>Kepemilikan<br><small>Wessen?</small><br><em>Das Buch des
-                        Mannes.</em></div>
-                <div class="card"><strong>Dativ</strong><br>Objek tidak langsung<br><small>Wem?</small><br><em>Ich gebe
-                        dem Mann ein Buch.</em></div>
-                <div class="card"><strong>Akkusativ</strong><br>Objek langsung<br><small>Wen? Was?</small><br><em>Ich
-                        sehe den Mann.</em></div>
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-icon">🇩🇪</span>
+                <span class="brand-text">Lernen</span>
+                <span class="brand-badge">v3</span>
             </div>
-            <h3 style="margin-top:20px;">📊 Perubahan Artikel</h3>
-            <div id="kasus-table"></div>
-        </div>
 
-        <div id="pronomen" class="tab-content">
-            <h2>🔤 Personalpronomen</h2>
-            <div id="pronomen-table"></div>
-            <h3 style="margin-top:20px;">⚙️ Konjugation: machen</h3>
-            <div id="endungen-table"></div>
-            <h3 style="margin-top:20px;">✅ Konjugation: sein</h3>
-            <div id="sein-table"></div>
-        </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-btn active">
+                    <i class="fas fa-home"></i>
+                    <span>Beranda</span>
+                </a>
+                <a href="negara.html" class="nav-btn">
+                    <i class="fas fa-globe-asia"></i>
+                    <span>Negara</span>
+                </a>
+                <a href="kosakata.html" class="nav-btn">
+                    <i class="fas fa-book-open"></i>
+                    <span>Kosakata</span>
+                </a>
+                <a href="tata-bahasa.html" class="nav-btn">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Tata Bahasa</span>
+                </a>
+                <a href="pronomen.html" class="nav-btn">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Pronomen</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="darkToggle" class="btn-dark-sidebar">
+                    <i class="fas fa-moon" id="darkIcon"></i>
+                    <span id="darkLabel">Gelap</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+
+            <section id="page-home" class="page active">
+                <div class="page-header">
+                    <h1>👋 Hallo, Fanny!</h1>
+                    <p class="page-subtitle">Selamat datang di pusat belajar bahasa Jerman interaktif.</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="stat-card glass">
+                        <div class="stat-icon">🌍</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="totalNegara">0</span>
+                            <span class="stat-label">Negara</span>
+                        </div>
+                    </div>
+                    <div class="stat-card glass">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="totalKata">0</span>
+                            <span class="stat-label">Kata Benda</span>
+                        </div>
+                    </div>
+                    <div class="stat-card glass">
+                        <div class="stat-icon">🧩</div>
+                        <div class="stat-info">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Kasus</span>
+                        </div>
+                    </div>
+                    <div class="stat-card glass">
+                        <div class="stat-icon">🔤</div>
+                        <div class="stat-info">
+                            <span class="stat-number">9</span>
+                            <span class="stat-label">Pronomen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h3>⚡ Mulai Cepat</h3>
+                    <div class="quick-grid">
+                        <a href="negara.html" class="quick-btn">
+                            <i class="fas fa-globe-asia"></i> Lihat Negara
+                        </a>
+                        <a href="kosakata.html" class="quick-btn">
+                            <i class="fas fa-book-open"></i> Pelajari Kosakata
+                        </a>
+                        <a href="tata-bahasa.html" class="quick-btn">
+                            <i class="fas fa-graduation-cap"></i> Pahami Tata Bahasa
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            updateStats();
+            loadTheme();
+            document.getElementById('darkToggle').addEventListener('click', toggleDark);
+        });
+    </script>
 </body>
 
 </html>

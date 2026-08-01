@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📚 Kosakata · Belajar Jerman</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <span class="brand-icon">🇩🇪</span>
+                <span class="brand-text">Lernen</span>
+                <span class="brand-badge">v3</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-home"></i> <span>Beranda</span>
+                </a>
+                <a href="negara.html" class="nav-btn">
+                    <i class="fas fa-globe-asia"></i> <span>Negara</span>
+                </a>
+                <a href="kosakata.html" class="nav-btn active">
+                    <i class="fas fa-book-open"></i> <span>Kosakata</span>
+                </a>
+                <a href="tata-bahasa.html" class="nav-btn">
+                    <i class="fas fa-graduation-cap"></i> <span>Tata Bahasa</span>
+                </a>
+                <a href="pronomen.html" class="nav-btn">
+                    <i class="fas fa-user-graduate"></i> <span>Pronomen</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="darkToggle" class="btn-dark-sidebar">
+                    <i class="fas fa-moon" id="darkIcon"></i>
+                    <span id="darkLabel">Gelap</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+
+            <section id="page-kosakata" class="page active">
+                <div class="page-header">
+                    <h1>📚 Kumpulan Kosakata</h1>
+                    <p class="page-subtitle">Kata benda Jerman dengan artikel dan kategorinya.</p>
+                    <div class="data-status" id="dataStatus">
+                        <span class="status-badge loading">⏳ Memuat data...</span>
+                    </div>
+                </div>
+
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="Tempat">🏛️ Tempat</button>
+                    <button class="filter-btn" data-filter="Orang">👤 Orang</button>
+                    <button class="filter-btn" data-filter="Benda">📦 Benda</button>
+                    <button class="filter-btn" data-filter="Abstrak">💭 Abstrak</button>
+                </div>
+
+                <div class="search-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchKosakata" placeholder="Cari kata atau arti..." />
+                    <button class="search-clear" id="clearKosakata">✕</button>
+                </div>
+
+                <div class="table-container" id="artikel-table">
+                    <div class="loading-placeholder">📖 Memuat kosakata...</div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load data dari JSON
+            loadKosakata();
+
+            // Load theme
+            loadTheme();
+            document.getElementById('darkToggle').addEventListener('click', toggleDark);
+        });
+    </script>
+</body>
+
+</html>

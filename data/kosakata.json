@@ -1,0 +1,166 @@
+{
+    "kata_benda": [
+        {
+            "kata": "Name",
+            "arti": "Nama",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Namen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Vorname",
+            "arti": "Nama Depan",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Vornamen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Nachname",
+            "arti": "Nama Belakang",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Nachnamen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Stadt",
+            "arti": "Kota",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "Städte",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "E-Mail-Adresse",
+            "arti": "Alamat Email",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "E-Mail-Adressen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Handynummer",
+            "arti": "Nomor HP",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "Handynummern",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Telefonnummer",
+            "arti": "Nomor Telepon",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "Telefonnummern",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Zahl",
+            "arti": "Angka",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "Zahlen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Antwort",
+            "arti": "Jawaban",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "Antworten",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Partner",
+            "arti": "Pasangan (lk)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "Partner",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Partnerin",
+            "arti": "Pasangan (pr)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "Partnerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Person",
+            "arti": "Orang",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "Personen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Text",
+            "arti": "Teks",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "Texte",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Wort",
+            "arti": "Kata",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "Wörter",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Autobahn",
+            "arti": "Jalan Tol",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "Autobahnen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Flasche",
+            "arti": "Botol",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "Flaschen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Kindergarten",
+            "arti": "Taman Anak-anak",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "Kindergärten",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Koffer",
+            "arti": "Koper",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "Koffer",
+            "kategori": "Benda"
+        }
+    ]
+}
