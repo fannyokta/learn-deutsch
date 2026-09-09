@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍽️ Essen · Belajar Jerman</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-['Inter']">
+
+    <div id="app" class="flex min-h-screen">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside id="sidebarContainer"
+            class="fixed top-0 left-0 w-[220px] h-full bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 p-5 flex flex-col z-50 shadow-sm overflow-y-auto">
+            <!-- diisi oleh components/sidebar.js -->
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="flex-1 ml-[220px] p-7 md:p-9 min-h-screen">
+
+            <section class="page">
+
+                <!-- ===== HERO HEADER ===== -->
+                <div
+                    class="relative mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 p-6 md:p-8 text-white shadow-xl">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-3xl">🍽️</span>
+                            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Essen &amp;
+                                Einkaufen</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">Makanan &amp; <span
+                                class="text-yellow-200">Belanja</span></h1>
+                        <p class="text-white/80 text-base max-w-xl">Kosakata bahan makanan, nama toko, kata kerja
+                            <b>möchten</b> + Akkusativ, dan ungkapan saat berbelanja &amp; makan.</p>
+                    </div>
+                </div>
+
+                <!-- ===== LEGENDA ARTIKEL ===== -->
+                <div class="flex flex-wrap gap-3 mb-6 text-sm">
+                    <span
+                        class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full px-3 py-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span> <span
+                            class="text-gray-600 dark:text-gray-300"><b class="text-indigo-600 dark:text-indigo-400">der</b>
+                            — maskulin</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full px-3 py-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span> <span
+                            class="text-gray-600 dark:text-gray-300"><b class="text-pink-600 dark:text-pink-400">die</b> —
+                            feminin</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full px-3 py-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> <span
+                            class="text-gray-600 dark:text-gray-300"><b
+                                class="text-emerald-600 dark:text-emerald-400">das</b> — netral</span>
+                    </span>
+                </div>
+
+                <!-- ===== MÖCHTEN + AKKUSATIV ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🙋 <b>möchten</b> — "ingin / mau"
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-3 text-sm uppercase tracking-wide">
+                                Konjugasi</h3>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm">
+                                    <tbody class="divide-y divide-gray-100 dark:divide-slate-700">
+                                        <tr>
+                                            <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">ich</td>
+                                            <td class="py-2 font-semibold text-gray-800 dark:text-gray-100">möchte</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">du</td>
+                                            <td class="py-2 font-semibold text-gray-800 dark:text-gray-100">möchtest</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">er / sie / es</td>
+                                            <td class="py-2 font-semibold text-gray-800 dark:text-gray-100">möchte</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">wir</td>
+                                            <td class="py-2 font-semibold text-gray-800 dark:text-gray-100">möchten</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">ihr</td>
+                                            <td class="py-2 font-semibold text-gray-800 dark:text-gray-100">möchtet</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 pr-4 text-gray-500 dark:text-gray-400">sie / Sie</td>
+                                            <td class="py-2 font-semibold text-gray-800 dark:text-gray-100">möchten</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-3 text-sm uppercase tracking-wide">
+                                Objeknya pakai Akkusativ</h3>
+                            <div class="space-y-2 text-sm">
+                                <div
+                                    class="bg-indigo-50 dark:bg-indigo-950/30 rounded-lg p-3 border border-indigo-200 dark:border-indigo-800/30">
+                                    <p class="text-gray-800 dark:text-gray-100">maskulin: <b>ein → einen</b></p>
+                                    <p class="text-gray-500 dark:text-gray-400">Ich möchte <b
+                                            class="text-indigo-600 dark:text-indigo-400">einen</b> Kaffee. — Saya mau
+                                        secangkir kopi.</p>
+                                </div>
+                                <div
+                                    class="bg-pink-50 dark:bg-pink-950/30 rounded-lg p-3 border border-pink-200 dark:border-pink-800/30">
+                                    <p class="text-gray-800 dark:text-gray-100">feminin: <b>eine → eine</b> (tetap)</p>
+                                    <p class="text-gray-500 dark:text-gray-400">Ich möchte <b
+                                            class="text-pink-600 dark:text-pink-400">eine</b> Pizza. — Saya mau sebuah
+                                        pizza.</p>
+                                </div>
+                                <div
+                                    class="bg-emerald-50 dark:bg-emerald-950/30 rounded-lg p-3 border border-emerald-200 dark:border-emerald-800/30">
+                                    <p class="text-gray-800 dark:text-gray-100">netral: <b>ein → ein</b> (tetap)</p>
+                                    <p class="text-gray-500 dark:text-gray-400">Ich möchte <b
+                                            class="text-emerald-600 dark:text-emerald-400">ein</b> Wasser. — Saya mau air.
+                                    </p>
+                                </div>
+                                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3">
+                                    <p class="text-gray-800 dark:text-gray-100">artikel tertentu: <b>der → den</b>, die/das
+                                        tetap</p>
+                                    <p class="text-gray-500 dark:text-gray-400">Du möchtest <b
+                                            class="text-indigo-600 dark:text-indigo-400">den</b> Apfel. · Wir möchten
+                                        <b>die</b> Bücher.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== LEBENSMITTEL ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">🛒 Bahan Makanan <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Lebensmittel)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Dikelompokkan per kategori, lengkap dengan
+                        artikel dan bentuk jamak.</p>
+                    <div id="lebensmittel" class="space-y-6"></div>
+                </div>
+
+                <!-- ===== GESCHÄFTE ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">🏪 Tempat Belanja <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Geschäfte)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Lokasi pakai <b>in / auf + Dativ</b>:
+                        <i>in der Bäckerei</i>, <i>auf dem Markt</i>, <i>im Supermarkt</i>.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="geschaefte"></div>
+                </div>
+
+                <!-- ===== PACKUNGEN & MASSE ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">📦 Kemasan &amp; Takaran <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Packungen und Maße)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Contoh: <i>eine Packung Nudeln</i>, <i>ein
+                            Becher Joghurt</i>, <i>500 Gramm Käse</i>, <i>ein Kilo Kartoffeln</i>.</p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="packungen"></div>
+                </div>
+
+                <!-- ===== VERBEN ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🔤 Kata Kerja</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3" id="verben"></div>
+                </div>
+
+                <!-- ===== REDEMITTEL ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">💬 Ungkapan Belanja &amp; Makan
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="redemittel"></div>
+                </div>
+
+                <!-- ===== ADJEKTIVE ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🏷️ Kata Sifat</h2>
+                    <div class="flex flex-wrap gap-2" id="adjektive"></div>
+                </div>
+
+                <!-- ===== DIALOG EINKAUFEN IM SUPERMARKT ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">🛍️ Contoh Percakapan — Einkaufen im
+                        Supermarkt</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Belanja di supermarket:
+                        <b class="text-indigo-600 dark:text-indigo-400">K</b> = Kunde (pembeli),
+                        <b class="text-pink-600 dark:text-pink-400">V</b> = Verkäufer/in (kasir/pegawai).</p>
+                    <div class="space-y-3 max-w-2xl" id="einkaufDialog"></div>
+                </div>
+
+                <!-- ===== ESSGEWOHNHEITEN ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">👨‍👩‍👧‍👦 Kebiasaan Makan <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Familie Hepp &amp;
+                            Baumeister)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Waktu makan: <b>morgens</b> (pagi) ·
+                        <b>mittags</b> (siang) · <b>abends</b> (malam).</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm border-collapse">
+                            <thead>
+                                <tr class="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 text-white">
+                                    <th class="text-left px-3 py-3 font-semibold rounded-tl-lg">Wer?</th>
+                                    <th class="text-left px-3 py-3 font-semibold">morgens</th>
+                                    <th class="text-left px-3 py-3 font-semibold">mittags</th>
+                                    <th class="text-left px-3 py-3 font-semibold rounded-tr-lg">abends</th>
+                                </tr>
+                            </thead>
+                            <tbody id="essgewohnheiten" class="divide-y divide-gray-100 dark:divide-slate-700"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== KOMPONEN ===== -->
+    <script src="components/sidebar.js"></script>
+
+    <script>
+        // ===== DATA (dari spreadsheet "Land in Deutsch" — sheet BAB 4, Kata Benda, Kata Kerja & Ungkapan) =====
+        const LEBENSMITTEL = [
+            {
+                gruppe: 'Obst', emoji: '🍎', label: 'Buah', items: [
+                    { art: 'der', wort: 'Apfel', pl: 'die Äpfel', arti: 'apel' },
+                    { art: 'die', wort: 'Banane', pl: 'die Bananen', arti: 'pisang' },
+                    { art: 'die', wort: 'Birne', pl: 'die Birnen', arti: 'pir' },
+                ]
+            },
+            {
+                gruppe: 'Gemüse', emoji: '🥕', label: 'Sayur', items: [
+                    { art: 'die', wort: 'Kartoffel', pl: 'die Kartoffeln', arti: 'kentang' },
+                    { art: 'die', wort: 'Tomate', pl: 'die Tomaten', arti: 'tomat' },
+                    { art: 'die', wort: 'Gurke', pl: 'die Gurken', arti: 'timun' },
+                    { art: 'die', wort: 'Zwiebel', pl: 'die Zwiebeln', arti: 'bawang bombay' },
+                    { art: 'die', wort: 'Olive', pl: 'die Oliven', arti: 'zaitun' },
+                    { art: 'der', wort: 'Salat', pl: 'die Salate', arti: 'selada / salad' },
+                ]
+            },
+            {
+                gruppe: 'Backwaren', emoji: '🥖', label: 'Roti & Kue', items: [
+                    { art: 'das', wort: 'Brot', pl: 'die Brote', arti: 'roti' },
+                    { art: 'das', wort: 'Brötchen', pl: 'die Brötchen', arti: 'roti kecil / roti gulung' },
+                    { art: 'der', wort: 'Kuchen', pl: 'die Kuchen', arti: 'kue' },
+                    { art: 'der', wort: 'Keks', pl: 'die Kekse', arti: 'biskuit' },
+                ]
+            },
+            {
+                gruppe: 'Fleisch & Fisch', emoji: '🥩', label: 'Daging & Ikan', items: [
+                    { art: 'das', wort: 'Fleisch', pl: '—', arti: 'daging' },
+                    { art: 'das', wort: 'Hähnchen', pl: 'die Hähnchen', arti: 'ayam' },
+                    { art: 'der', wort: 'Fisch', pl: 'die Fische', arti: 'ikan' },
+                    { art: 'der', wort: 'Schinken', pl: 'die Schinken', arti: 'ham' },
+                    { art: 'die', wort: 'Wurst', pl: 'die Würste', arti: 'sosis' },
+                    { art: 'das', wort: 'Würstchen', pl: 'die Würstchen', arti: 'sosis kecil' },
+                ]
+            },
+            {
+                gruppe: 'Milchprodukte', emoji: '🧀', label: 'Produk Susu', items: [
+                    { art: 'die', wort: 'Milch', pl: '—', arti: 'susu' },
+                    { art: 'die', wort: 'Butter', pl: '—', arti: 'mentega' },
+                    { art: 'der', wort: 'Käse', pl: '—', arti: 'keju' },
+                    { art: 'der', wort: 'Joghurt', pl: 'die Joghurts', arti: 'yoghurt' },
+                    { art: 'die', wort: 'Sahne', pl: '—', arti: 'krim' },
+                    { art: 'das', wort: 'Ei', pl: 'die Eier', arti: 'telur' },
+                ]
+            },
+            {
+                gruppe: 'Andere Lebensmittel', emoji: '🧂', label: 'Bahan Lain', items: [
+                    { art: 'der', wort: 'Reis', pl: '—', arti: 'nasi / beras' },
+                    { art: 'die', wort: 'Nudel', pl: 'die Nudeln', arti: 'mi / pasta' },
+                    { art: 'der', wort: 'Zucker', pl: '—', arti: 'gula' },
+                    { art: 'das', wort: 'Salz', pl: 'die Salze', arti: 'garam' },
+                    { art: 'der', wort: 'Pfeffer', pl: '—', arti: 'merica / lada' },
+                    { art: 'das', wort: 'Öl', pl: 'die Öle', arti: 'minyak' },
+                    { art: 'der', wort: 'Essig', pl: 'die Essige', arti: 'cuka' },
+                    { art: 'das', wort: 'Müsli', pl: 'die Müslis', arti: 'musli' },
+                    { art: 'die', wort: 'Marmelade', pl: 'die Marmeladen', arti: 'selai' },
+                    { art: 'die', wort: 'Schokolade', pl: 'die Schokoladen', arti: 'cokelat' },
+                ]
+            },
+            {
+                gruppe: 'Getränke', emoji: '🥤', label: 'Minuman', items: [
+                    { art: 'das', wort: 'Wasser', pl: '—', arti: 'air' },
+                    { art: 'der', wort: 'Saft', pl: 'die Säfte', arti: 'jus' },
+                    { art: 'die', wort: 'Limonade', pl: 'die Limonaden', arti: 'limun' },
+                    { art: 'die', wort: 'Cola', pl: 'die Colas', arti: 'cola' },
+                    { art: 'der', wort: 'Kaffee', pl: 'die Kaffees', arti: 'kopi' },
+                    { art: 'der', wort: 'Tee', pl: 'die Tees', arti: 'teh' },
+                    { art: 'das', wort: 'Getränk', pl: 'die Getränke', arti: 'minuman' },
+                ]
+            },
+            {
+                gruppe: 'Gerichte & Mahlzeiten', emoji: '🍲', label: 'Hidangan & Waktu Makan', items: [
+                    { art: 'das', wort: 'Frühstück', pl: 'die Frühstücke', arti: 'sarapan' },
+                    { art: 'das', wort: 'Mittagessen', pl: 'die Mittagessen', arti: 'makan siang' },
+                    { art: 'das', wort: 'Abendessen', pl: 'die Abendessen', arti: 'makan malam' },
+                    { art: 'das', wort: 'Gericht', pl: 'die Gerichte', arti: 'hidangan / masakan' },
+                    { art: 'die', wort: 'Suppe', pl: 'die Suppen', arti: 'sup' },
+                    { art: 'die', wort: 'Pizza', pl: 'die Pizzas / Pizzen', arti: 'pizza' },
+                    { art: 'die', wort: 'Pommes frites (Pl.)', pl: 'die Pommes frites', arti: 'kentang goreng' },
+                    { art: 'die', wort: 'Kantine', pl: 'die Kantinen', arti: 'kantin' },
+                ]
+            },
+        ];
+
+        const GESCHAEFTE = [
+            { art: 'die', wort: 'Bäckerei', arti: 'toko roti', satz: 'Ich kaufe frische Brötchen in der Bäckerei.', satzId: 'Aku membeli roti segar di toko roti.' },
+            { art: 'der', wort: 'Markt', arti: 'pasar', satz: 'Wir kaufen frisches Obst auf dem Markt.', satzId: 'Kami membeli buah segar di pasar.' },
+            { art: 'die', wort: 'Metzgerei', arti: 'toko daging', satz: 'Er holt Fleisch in der Metzgerei.', satzId: 'Dia mengambil daging di toko daging.' },
+            { art: 'der', wort: 'Supermarkt', arti: 'supermarket', satz: 'Sie bezahlt die Lebensmittel im Supermarkt.', satzId: 'Dia membayar bahan makanan di supermarket.' },
+        ];
+
+        const PACKUNGEN = [
+            { art: 'die', wort: 'Packung', pl: 'die Packungen', arti: 'kemasan / bungkus' },
+            { art: 'der', wort: 'Becher', pl: 'die Becher', arti: 'cup / gelas' },
+            { art: 'die', wort: 'Dose', pl: 'die Dosen', arti: 'kaleng' },
+            { art: 'die', wort: 'Tüte', pl: 'die Tüten', arti: 'kantong' },
+            { art: 'das', wort: 'Stück', pl: 'die Stücke', arti: 'potong / buah' },
+            { art: 'das', wort: 'Gramm (g)', pl: 'die Gramm', arti: 'gram' },
+            { art: 'das', wort: 'Kilo(gramm) (kg)', pl: 'die Kilo(gramm)', arti: 'kilogram' },
+            { art: 'der', wort: 'Liter (l)', pl: 'die Liter', arti: 'liter' },
+            { art: 'der', wort: 'Preis', pl: 'die Preise', arti: 'harga' },
+            { art: 'der', wort: 'Kassenzettel', pl: 'die Kassenzettel', arti: 'struk belanja' },
+            { art: 'der', wort: 'Einkaufswagen', pl: 'die Einkaufswagen', arti: 'troli belanja' },
+            { art: 'die', wort: 'Einladung', pl: 'die Einladungen', arti: 'undangan' },
+        ];
+
+        const VERBEN = [
+            { de: 'kaufen', id: 'membeli' },
+            { de: 'ein·kaufen', id: 'berbelanja' },
+            { de: 'brauchen', id: 'membutuhkan' },
+            { de: 'möchten, er möchte', id: 'ingin, dia ingin' },
+            { de: 'nehmen, er nimmt', id: 'mengambil, dia mengambil' },
+            { de: 'essen, er isst', id: 'makan, dia makan' },
+            { de: 'trinken', id: 'minum' },
+            { de: 'mögen, er mag', id: 'suka, dia suka' },
+            { de: 'schmecken', id: 'terasa (enak)' },
+            { de: 'frühstücken', id: 'sarapan' },
+            { de: 'kosten', id: 'berharga (harganya …)' },
+            { de: 'wechseln', id: 'menukar (uang)' },
+            { de: 'finden', id: 'menemukan / berpendapat' },
+            { de: 'probieren', id: 'mencoba / mencicipi' },
+            { de: 'schneiden', id: 'memotong' },
+            { de: 'grillen', id: 'memanggang' },
+            { de: 'waschen, er wäscht', id: 'mencuci, dia mencuci' },
+        ];
+
+        const REDEMITTEL = [
+            { de: 'Entschuldigung, wo finde ich …?', id: 'Maaf, di mana saya bisa menemukan …?' },
+            { de: 'Wo gibt es …?', id: 'Di mana ada …?' },
+            { de: 'Was möchten Sie? — Ich möchte …', id: 'Anda mau apa? — Saya mau …' },
+            { de: 'Das macht … Euro, bitte.', id: 'Semuanya … Euro, ya.' },
+            { de: 'Können Sie wechseln, bitte?', id: 'Bisakah Anda menukar uang?' },
+            { de: 'Guten Appetit! — Danke, gleichfalls.', id: 'Selamat makan! — Terima kasih, sama-sama.' },
+            { de: "Schmeckt's? — Ja, sehr lecker!", id: 'Rasanya enak? — Ya, enak sekali!' },
+            { de: 'Das Essen ist gleich fertig.', id: 'Makanannya segera siap.' },
+        ];
+
+        const ADJEKTIVE = [
+            { de: 'lecker', id: 'enak / lezat' },
+            { de: 'frisch', id: 'segar' },
+            { de: 'süß', id: 'manis' },
+            { de: 'teuer', id: 'mahal' },
+            { de: 'gesund', id: 'sehat' },
+            { de: 'nett', id: 'ramah / baik hati' },
+            { de: 'wenig', id: 'sedikit' },
+            { de: 'wichtig', id: 'penting' },
+            { de: 'vielleicht', id: 'mungkin' },
+        ];
+
+        const ESSGEWOHNHEITEN = [
+            { wer: 'Maria Hepp', m: 'Brot mit Käse oder Schinken', mi: 'Nudeln, eine Suppe', a: 'Fisch oder Fleisch mit Gemüse und Reis oder Kartoffeln' },
+            { wer: 'Nikolaj Hepp', m: 'Brot mit Käse oder Schinken', mi: 'ein Brötchen', a: 'Fisch oder Fleisch mit Gemüse und Reis oder Kartoffeln' },
+            { wer: 'Lina Hepp', m: 'Müsli mit Milch', mi: '(im Kindergarten)', a: 'Fisch oder Fleisch mit Gemüse und Reis oder Kartoffeln' },
+            { wer: 'Emma Baumeister', m: 'zwei Brötchen mit Butter, Käse und Wurst', mi: 'einen Döner oder eine Pizza', a: 'Fisch, Sushi' },
+            { wer: 'Lars & Ben Geiger', m: 'Obst (Apfel, Birne, Banane) & Brötchen mit Marmelade', mi: '(meistens nichts)', a: 'Brot, Salat oder eine Suppe' },
+        ];
+
+        const EINKAUF_DIALOG = [
+            { s: 'K', de: 'Entschuldigung, wo finde ich den Käse?', id: 'Permisi, di mana saya bisa menemukan keju?' },
+            { s: 'V', de: 'Der Käse ist gleich da links, neben der Milch.', id: 'Keju ada di sebelah kiri situ, di samping susu.' },
+            { s: 'K', de: 'Danke. Haben Sie auch frische Brötchen?', id: 'Terima kasih. Apakah ada roti segar juga?' },
+            { s: 'V', de: 'Ja, die Brötchen sind hinten bei der Bäckerei.', id: 'Ya, rotinya di belakang dekat bagian roti.' },
+            { s: 'K', de: 'Super. Was kostet das Hähnchen?', id: 'Bagus. Berapa harga ayamnya?' },
+            { s: 'V', de: 'Das Hähnchen kostet 6,90 Euro pro Kilo.', id: 'Ayamnya 6,90 Euro per kilo.' },
+            { s: 'K', de: 'Gut, ich nehme ein Kilo. Das ist alles.', id: 'Oke, saya ambil satu kilo. Itu saja.' },
+            { s: 'V', de: 'Gern. Das macht zusammen 14,50 Euro, bitte.', id: 'Baik. Semuanya jadi 14,50 Euro, ya.' },
+            { s: 'K', de: 'Können Sie wechseln? Ich habe nur 50 Euro.', id: 'Bisa tukar uang? Saya cuma punya 50 Euro.' },
+            { s: 'V', de: 'Kein Problem. 35,50 Euro zurück. Einen schönen Tag noch!', id: 'Tidak masalah. Kembali 35,50 Euro. Selamat beraktivitas!' },
+        ];
+
+        const artClass = (a) => a === 'der'
+            ? 'text-indigo-600 dark:text-indigo-400'
+            : a === 'die'
+                ? 'text-pink-600 dark:text-pink-400'
+                : 'text-emerald-600 dark:text-emerald-400';
+
+        function nomenCard(x) {
+            return `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 hover:shadow-md hover:-translate-y-1 transition-all">
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">
+                        <span class="${artClass(x.art)}">${x.art}</span> ${x.wort}
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.arti}</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">${x.pl}</p>
+                </div>`;
+        }
+
+        function worteCard(x) {
+            return `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3">
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">${x.de}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.id}</p>
+                </div>`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            renderSidebar();
+            loadTheme();
+
+            document.getElementById('lebensmittel').innerHTML = LEBENSMITTEL.map(g => `
+                <div>
+                    <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
+                        <span class="text-lg">${g.emoji}</span> ${g.gruppe}
+                        <span class="text-xs font-normal text-gray-400">${g.label}</span>
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        ${g.items.map(nomenCard).join('')}
+                    </div>
+                </div>`).join('');
+
+            document.getElementById('geschaefte').innerHTML = GESCHAEFTE.map(x => `
+                <div class="bg-amber-50 dark:bg-amber-950/30 rounded-lg p-4 border border-amber-200 dark:border-amber-800/30">
+                    <p class="font-bold text-gray-800 dark:text-gray-100">
+                        <span class="${artClass(x.art)}">${x.art}</span> ${x.wort}
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">— ${x.arti}</span>
+                    </p>
+                    <p class="text-sm text-gray-700 dark:text-gray-200 mt-1">${x.satz}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.satzId}</p>
+                </div>`).join('');
+
+            document.getElementById('packungen').innerHTML = PACKUNGEN.map(nomenCard).join('');
+            document.getElementById('verben').innerHTML = VERBEN.map(worteCard).join('');
+
+            document.getElementById('redemittel').innerHTML = REDEMITTEL.map(x => `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-orange-500">
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">${x.de}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">${x.id}</p>
+                </div>`).join('');
+
+            document.getElementById('adjektive').innerHTML = ADJEKTIVE.map(x => `
+                <span class="bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800/30 rounded-full px-3 py-1.5 text-sm">
+                    <b class="text-red-600 dark:text-red-400">${x.de}</b>
+                    <span class="text-gray-500 dark:text-gray-400">— ${x.id}</span>
+                </span>`).join('');
+
+            document.getElementById('einkaufDialog').innerHTML = EINKAUF_DIALOG.map(t => {
+                const isK = t.s === 'K';
+                return `
+                <div class="flex gap-3 ${isK ? '' : 'flex-row-reverse'}">
+                    <span class="shrink-0 w-8 h-8 rounded-full ${isK ? 'bg-indigo-500' : 'bg-pink-500'} text-white grid place-items-center font-bold text-sm">${t.s}</span>
+                    <div class="${isK ? 'bg-indigo-50 dark:bg-indigo-950/30 rounded-tl-none' : 'bg-pink-50 dark:bg-pink-950/30 rounded-tr-none'} rounded-lg p-3 flex-1">
+                        <p class="font-medium text-gray-800 dark:text-gray-100">${t.de}</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">${t.id}</p>
+                    </div>
+                </div>`;
+            }).join('');
+
+            document.getElementById('essgewohnheiten').innerHTML = ESSGEWOHNHEITEN.map(r => `
+                <tr class="align-top">
+                    <td class="px-3 py-3 font-semibold text-gray-800 dark:text-gray-100 whitespace-nowrap">${r.wer}</td>
+                    <td class="px-3 py-3 text-gray-600 dark:text-gray-300">${r.m}</td>
+                    <td class="px-3 py-3 text-gray-600 dark:text-gray-300">${r.mi}</td>
+                    <td class="px-3 py-3 text-gray-600 dark:text-gray-300">${r.a}</td>
+                </tr>`).join('');
+        });
+    </script>
+</body>
+
+</html>

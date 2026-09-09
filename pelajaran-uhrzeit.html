@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🕰️ Uhrzeit · Belajar Jerman</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-['Inter']">
+
+    <div id="app" class="flex min-h-screen">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside id="sidebarContainer"
+            class="fixed top-0 left-0 w-[220px] h-full bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 p-5 flex flex-col z-50 shadow-sm overflow-y-auto">
+            <!-- diisi oleh components/sidebar.js -->
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="flex-1 ml-[220px] p-7 md:p-9 min-h-screen">
+
+            <section class="page">
+
+                <!-- ===== HERO HEADER ===== -->
+                <div
+                    class="relative mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-600 to-blue-600 p-6 md:p-8 text-white shadow-xl">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-3xl">🕰️</span>
+                            <span
+                                class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Uhrzeit</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">Wie spät <span class="text-yellow-300">ist
+                                es?</span></h1>
+                        <p class="text-white/80 text-base max-w-xl">Membaca jam dalam bahasa Jerman — versi
+                            <b>inoffiziell</b> (sehari-hari, 12 jam) dan <b>offiziell</b> (resmi, 24 jam).</p>
+                    </div>
+                </div>
+
+                <!-- ===== PERTANYAAN ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">❓ Menanyakan Waktu</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-violet-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Wie spät ist es?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Jam berapa sekarang?</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">→ Es ist zehn Uhr. / Es ist 10
+                                Uhr.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-violet-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Wie viel Uhr ist es?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Jam berapa? (varian lain)</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">→ Es ist Viertel nach zehn.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-blue-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Um wie viel Uhr …?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Jam berapa (sesuatu terjadi)?</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">→ Um zehn Uhr. / Um halb elf.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-blue-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Hast du die Uhrzeit?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Kamu tahu jam berapa sekarang?</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">→ Ja, es ist fünf vor zwölf.</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-4">💡 Jawaban selalu diawali <b>Es ist …</b>, dan untuk jadwal
+                        pakai <b>Um …</b> (tanpa "Es ist").</p>
+                </div>
+
+                <!-- ===== INOFFIZIELL ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">🗣️ Inoffiziell <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(sehari-hari · jam 1–12)</span>
+                    </h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Dipakai dalam percakapan biasa. Pakai patokan
+                        <b>voll</b>, <b>Viertel</b> (seperempat), dan <b>halb</b> (setengah).</p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5" id="inoffGrid"></div>
+
+                    <div
+                        class="bg-amber-50 dark:bg-amber-950/30 rounded-lg p-4 border border-amber-200 dark:border-amber-800/30">
+                        <h3 class="font-bold text-amber-700 dark:text-amber-400 mb-1">⚠️ Hati-hati dengan <i>halb</i></h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300"><b>halb</b> mengarah ke jam <b>berikutnya</b>,
+                            bukan jam sekarang. <b>halb drei</b> = <b>02:30</b> (setengah menuju jam 3), <i>bukan</i>
+                            03:30. Logikanya sama seperti "setengah tiga" di bahasa Indonesia.</p>
+                    </div>
+
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3">
+                            <p class="text-gray-800 dark:text-gray-100"><b>nach</b> = lewat (menit 1–29)</p>
+                            <p class="text-gray-500 dark:text-gray-400">10:10 → <i>zehn nach zehn</i></p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3">
+                            <p class="text-gray-800 dark:text-gray-100"><b>vor</b> = kurang (menit 31–59)</p>
+                            <p class="text-gray-500 dark:text-gray-400">10:50 → <i>zehn vor elf</i></p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3">
+                            <p class="text-gray-800 dark:text-gray-100">Sekitar jam setengah (tingkat lanjut)</p>
+                            <p class="text-gray-500 dark:text-gray-400">10:25 → <i>fünf vor halb elf</i> · 10:35 →
+                                <i>fünf nach halb elf</i></p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3">
+                            <p class="text-gray-800 dark:text-gray-100">Tengah hari / tengah malam</p>
+                            <p class="text-gray-500 dark:text-gray-400">12:00 → <i>Mittag</i> · 00:00 →
+                                <i>Mitternacht</i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== OFFIZIELL ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">🏛️ Offiziell <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(resmi · jam 0–24)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Dipakai di jadwal kereta, bandara, radio, TV,
+                        dan janji resmi. Polanya sederhana dan tanpa <i>nach / vor / Viertel / halb</i>.</p>
+
+                    <div
+                        class="bg-indigo-50 dark:bg-indigo-950/30 rounded-lg p-4 border border-indigo-200 dark:border-indigo-800/30 mb-5">
+                        <p class="text-center text-lg font-bold text-indigo-700 dark:text-indigo-300">[Jam] <span
+                                class="text-gray-400 font-normal">+</span> Uhr <span
+                                class="text-gray-400 font-normal">+</span> [Menit]</p>
+                        <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-1">14:45 → <b>vierzehn Uhr
+                                fünfundvierzig</b></p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="offGrid"></div>
+                    <p class="text-xs text-gray-400 mt-4">💡 Kalau menitnya <b>00</b>, cukup sebut jamnya: 20:00 →
+                        <i>zwanzig Uhr</i>. Menit di bawah 10 disebut apa adanya: 09:05 → <i>neun Uhr fünf</i>.</p>
+                </div>
+
+                <!-- ===== TABEL PERBANDINGAN ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🔁 Tabel Perbandingan</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm border-collapse">
+                            <thead>
+                                <tr class="bg-gradient-to-r from-violet-600 via-indigo-600 to-blue-600 text-white">
+                                    <th class="text-left px-3 py-3 font-semibold rounded-tl-lg">Digital</th>
+                                    <th class="text-left px-3 py-3 font-semibold">Offiziell (24 jam)</th>
+                                    <th class="text-left px-3 py-3 font-semibold">Inoffiziell (12 jam)</th>
+                                    <th class="text-left px-3 py-3 font-semibold rounded-tr-lg">Arti</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vergleich" class="divide-y divide-gray-100 dark:divide-slate-700"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ===== JAM + BAGIAN HARI ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">🌗 Memperjelas Jam 12-an</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Karena versi inoffiziell tidak membedakan pagi
+                        &amp; malam, tambahkan keterangan waktu kalau perlu.</p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="tageszeit"></div>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mt-4">Contoh: <i>Es ist sieben Uhr <b>morgens</b>.</i>
+                        (07:00) vs <i>Es ist sieben Uhr <b>abends</b>.</i> (19:00)</p>
+                </div>
+
+                <!-- ===== CONTOH KALIMAT ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">💬 Contoh Kalimat</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="saetze"></div>
+                </div>
+
+                <!-- ===== MINI DIALOG ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🎧 Mini Dialog</h2>
+                    <div class="space-y-3 max-w-2xl" id="dialog"></div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== KOMPONEN ===== -->
+    <script src="components/sidebar.js"></script>
+
+    <script>
+        const INOFF = [
+            { clock: '03:00', de: 'drei Uhr', id: 'jam 3 tepat', tag: 'voll' },
+            { clock: '03:15', de: 'Viertel nach drei', id: 'jam 3 lewat seperempat', tag: 'Viertel' },
+            { clock: '03:30', de: 'halb vier', id: 'setengah 4', tag: 'halb' },
+            { clock: '03:45', de: 'Viertel vor vier', id: 'seperempat menuju jam 4', tag: 'Viertel' },
+            { clock: '03:05', de: 'fünf nach drei', id: 'jam 3 lewat 5', tag: 'nach' },
+            { clock: '03:20', de: 'zwanzig nach drei', id: 'jam 3 lewat 20', tag: 'nach' },
+            { clock: '03:40', de: 'zwanzig vor vier', id: '20 menit menuju jam 4', tag: 'vor' },
+            { clock: '03:55', de: 'fünf vor vier', id: '5 menit menuju jam 4', tag: 'vor' },
+        ];
+
+        const OFF = [
+            { clock: '08:00', de: 'acht Uhr' },
+            { clock: '09:05', de: 'neun Uhr fünf' },
+            { clock: '11:30', de: 'elf Uhr dreißig' },
+            { clock: '13:45', de: 'dreizehn Uhr fünfundvierzig' },
+            { clock: '16:15', de: 'sechzehn Uhr fünfzehn' },
+            { clock: '18:20', de: 'achtzehn Uhr zwanzig' },
+            { clock: '20:00', de: 'zwanzig Uhr' },
+            { clock: '23:50', de: 'dreiundzwanzig Uhr fünfzig' },
+        ];
+
+        const VERGLEICH = [
+            { d: '08:00', o: 'acht Uhr', i: 'acht Uhr', a: 'jam 8 pagi' },
+            { d: '08:15', o: 'acht Uhr fünfzehn', i: 'Viertel nach acht', a: 'jam 8 lewat 15' },
+            { d: '08:30', o: 'acht Uhr dreißig', i: 'halb neun', a: 'setengah 9' },
+            { d: '08:45', o: 'acht Uhr fünfundvierzig', i: 'Viertel vor neun', a: 'jam 8 lewat 45' },
+            { d: '08:50', o: 'acht Uhr fünfzig', i: 'zehn vor neun', a: 'jam 8 lewat 50' },
+            { d: '12:00', o: 'zwölf Uhr', i: 'Mittag', a: 'tengah hari' },
+            { d: '13:45', o: 'dreizehn Uhr fünfundvierzig', i: 'Viertel vor zwei', a: 'jam 2 kurang 15 (siang)' },
+            { d: '19:30', o: 'neunzehn Uhr dreißig', i: 'halb acht', a: 'setengah 8 malam' },
+            { d: '21:15', o: 'einundzwanzig Uhr fünfzehn', i: 'Viertel nach neun', a: 'jam 9 lewat 15 malam' },
+            { d: '00:00', o: 'null Uhr', i: 'Mitternacht', a: 'tengah malam' },
+        ];
+
+        const TAGESZEIT = [
+            { de: 'morgens', id: 'pagi hari', range: 'ca. 05–10', emoji: '🌅' },
+            { de: 'vormittags', id: 'menjelang siang', range: 'ca. 10–12', emoji: '🌤️' },
+            { de: 'mittags', id: 'tengah hari', range: 'ca. 12–14', emoji: '☀️' },
+            { de: 'nachmittags', id: 'sore hari', range: 'ca. 14–18', emoji: '🌇' },
+            { de: 'abends', id: 'malam hari', range: 'ca. 18–22', emoji: '🌆' },
+            { de: 'nachts', id: 'larut malam', range: 'ca. 22–05', emoji: '🌙' },
+        ];
+
+        const SAETZE = [
+            { de: 'Der Zug fährt um 14:23 Uhr ab.', id: 'Keretanya berangkat pukul 14:23.' },
+            { de: 'Der Film beginnt um Viertel vor acht.', id: 'Filmnya mulai jam 7:45.' },
+            { de: 'Ich stehe um halb sieben auf.', id: 'Saya bangun jam setengah 7 (06:30).' },
+            { de: 'Um wie viel Uhr hast du Termin? — Um zehn Uhr.', id: 'Jam berapa kamu ada janji? — Jam 10.' },
+            { de: 'Es ist schon fünf vor zwölf!', id: 'Sudah jam 11:55! (juga idiom: "hampir terlambat")' },
+            { de: 'Die Bank ist von neun bis siebzehn Uhr geöffnet.', id: 'Bank buka dari jam 9 sampai jam 17.' },
+        ];
+
+        const DIALOG = [
+            { s: 'A', de: 'Entschuldigung, wie spät ist es?', id: 'Permisi, jam berapa sekarang?' },
+            { s: 'B', de: 'Es ist zwanzig nach drei.', id: 'Jam 3 lewat 20 (15:20).' },
+            { s: 'A', de: 'Oh, schon so spät? Wann fährt der nächste Bus?', id: 'Wah, sudah selarut itu? Kapan bus berikutnya?' },
+            { s: 'B', de: 'Um halb vier, also in zehn Minuten.', id: 'Jam setengah 4, jadi 10 menit lagi.' },
+            { s: 'A', de: 'Super, danke! Dann schaffe ich das noch.', id: 'Bagus, makasih! Berarti masih keburu.' },
+        ];
+
+        const tagColor = {
+            voll: 'text-gray-500 dark:text-gray-400',
+            Viertel: 'text-violet-600 dark:text-violet-400',
+            halb: 'text-amber-600 dark:text-amber-400',
+            nach: 'text-emerald-600 dark:text-emerald-400',
+            vor: 'text-blue-600 dark:text-blue-400',
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            renderSidebar();
+            loadTheme();
+
+            document.getElementById('inoffGrid').innerHTML = INOFF.map(x => `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                    <p class="text-lg font-bold text-gray-800 dark:text-gray-100">${x.clock}</p>
+                    <p class="font-semibold ${tagColor[x.tag]}">${x.de}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.id}</p>
+                </div>`).join('');
+
+            document.getElementById('offGrid').innerHTML = OFF.map(x => `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                    <p class="text-lg font-bold text-gray-800 dark:text-gray-100">${x.clock}</p>
+                    <p class="font-semibold text-indigo-600 dark:text-indigo-400">${x.de}</p>
+                </div>`).join('');
+
+            document.getElementById('vergleich').innerHTML = VERGLEICH.map(r => `
+                <tr class="align-top">
+                    <td class="px-3 py-3 font-bold text-gray-800 dark:text-gray-100 whitespace-nowrap">${r.d}</td>
+                    <td class="px-3 py-3 text-indigo-600 dark:text-indigo-400">${r.o}</td>
+                    <td class="px-3 py-3 text-violet-600 dark:text-violet-400">${r.i}</td>
+                    <td class="px-3 py-3 text-gray-500 dark:text-gray-400">${r.a}</td>
+                </tr>`).join('');
+
+            document.getElementById('tageszeit').innerHTML = TAGESZEIT.map(x => `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center">
+                    <div class="text-2xl mb-1">${x.emoji}</div>
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">${x.de}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.id}</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">${x.range}</p>
+                </div>`).join('');
+
+            document.getElementById('saetze').innerHTML = SAETZE.map(x => `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-indigo-500">
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">${x.de}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">${x.id}</p>
+                </div>`).join('');
+
+            document.getElementById('dialog').innerHTML = DIALOG.map(t => {
+                const isA = t.s === 'A';
+                return `
+                <div class="flex gap-3 ${isA ? '' : 'flex-row-reverse'}">
+                    <span class="shrink-0 w-8 h-8 rounded-full ${isA ? 'bg-violet-500' : 'bg-blue-500'} text-white grid place-items-center font-bold text-sm">${t.s}</span>
+                    <div class="${isA ? 'bg-violet-50 dark:bg-violet-950/30 rounded-tl-none' : 'bg-blue-50 dark:bg-blue-950/30 rounded-tr-none'} rounded-lg p-3 flex-1">
+                        <p class="font-medium text-gray-800 dark:text-gray-100">${t.de}</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">${t.id}</p>
+                    </div>
+                </div>`;
+            }).join('');
+        });
+    </script>
+</body>
+
+</html>

@@ -17,6 +17,11 @@ const MENU_ITEMS = [
             { href: 'pelajaran-fragen.html', icon: 'fa-question-circle', label: 'Fragen' },
             { href: 'pelajaran-zahlen.html', icon: 'fa-hashtag', label: 'Zahlen' },
             { href: 'pelajaran-zeit.html', icon: 'fa-clock', label: 'Zeit & Hobby' },
+            { href: 'pelajaran-uhrzeit.html', icon: 'fa-stopwatch', label: 'Uhrzeit' },
+            { href: 'pelajaran-berufe.html', icon: 'fa-briefcase', label: 'Berufe' },
+            { href: 'pelajaran-stadt.html', icon: 'fa-city', label: 'Stadt' },
+            { href: 'pelajaran-essen.html', icon: 'fa-utensils', label: 'Essen' },
+            { href: 'pelajaran-familie.html', icon: 'fa-people-roof', label: 'Familie & Alltag' },
         ]
     },
 ];

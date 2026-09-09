@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🏙️ Stadt · Belajar Jerman</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-['Inter']">
+
+    <div id="app" class="flex min-h-screen">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside id="sidebarContainer"
+            class="fixed top-0 left-0 w-[220px] h-full bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 p-5 flex flex-col z-50 shadow-sm overflow-y-auto">
+            <!-- diisi oleh components/sidebar.js -->
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="flex-1 ml-[220px] p-7 md:p-9 min-h-screen">
+
+            <section class="page">
+
+                <!-- ===== HERO HEADER ===== -->
+                <div
+                    class="relative mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-sky-600 via-blue-600 to-cyan-500 p-6 md:p-8 text-white shadow-xl">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-3xl">🏙️</span>
+                            <span
+                                class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Stadt &amp;
+                                Wegbeschreibung</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">Kota &amp; <span class="text-yellow-300">Petunjuk
+                                Arah</span></h1>
+                        <p class="text-white/80 text-base max-w-xl">Nama tempat di kota, alat transportasi, cara bertanya
+                            &amp; menunjukkan arah, dan menyebut ukuran (panjang, lebar, tinggi).</p>
+                    </div>
+                </div>
+
+                <!-- ===== LEGENDA ARTIKEL ===== -->
+                <div class="flex flex-wrap gap-3 mb-6 text-sm">
+                    <span
+                        class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full px-3 py-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span> <span
+                            class="text-gray-600 dark:text-gray-300"><b class="text-indigo-600 dark:text-indigo-400">der</b>
+                            — maskulin</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full px-3 py-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span> <span
+                            class="text-gray-600 dark:text-gray-300"><b class="text-pink-600 dark:text-pink-400">die</b> —
+                            feminin</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full px-3 py-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> <span
+                            class="text-gray-600 dark:text-gray-300"><b
+                                class="text-emerald-600 dark:text-emerald-400">das</b> — netral</span>
+                    </span>
+                </div>
+
+                <!-- ===== NAMA TEMPAT ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">📍 Nama Tempat <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Ortsnamen)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">20 tempat umum di kota beserta artikel dan
+                        bentuk jamak.</p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="ortListe"></div>
+                </div>
+
+                <!-- ===== ALAT TRANSPORTASI ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">🚌 Alat Transportasi <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Verkehrsmittel)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Naik kendaraan pakai <b>mit</b> +
+                        Dativ — <i>mit dem Bus</i>, <i>mit der U-Bahn</i>. Jalan kaki = <i>zu Fuß gehen</i>.</p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="verkehrListe"></div>
+                </div>
+
+                <!-- ===== WEGBESCHREIBUNG ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🧭 Menunjukkan Arah <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Weg beschreiben)</span></h2>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+                        <div
+                            class="bg-sky-50 dark:bg-sky-950/30 rounded-lg p-4 text-center border border-sky-200 dark:border-sky-800/30">
+                            <div class="text-3xl mb-1">⬅️</div>
+                            <p class="font-bold text-sky-700 dark:text-sky-300">links</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">kiri</p>
+                        </div>
+                        <div
+                            class="bg-sky-50 dark:bg-sky-950/30 rounded-lg p-4 text-center border border-sky-200 dark:border-sky-800/30">
+                            <div class="text-3xl mb-1">➡️</div>
+                            <p class="font-bold text-sky-700 dark:text-sky-300">rechts</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">kanan</p>
+                        </div>
+                        <div
+                            class="bg-sky-50 dark:bg-sky-950/30 rounded-lg p-4 text-center border border-sky-200 dark:border-sky-800/30">
+                            <div class="text-3xl mb-1">⬆️</div>
+                            <p class="font-bold text-sky-700 dark:text-sky-300">geradeaus</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">lurus</p>
+                        </div>
+                        <div
+                            class="bg-sky-50 dark:bg-sky-950/30 rounded-lg p-4 text-center border border-sky-200 dark:border-sky-800/30">
+                            <div class="text-3xl mb-1">🎯</div>
+                            <p class="font-bold text-sky-700 dark:text-sky-300">in der Mitte</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">di tengah</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-blue-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Wo ist bitte …?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Di mana … ya?</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-blue-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Wie komme ich zum Bahnhof?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Bagaimana saya sampai ke stasiun?</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-cyan-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Das ist ganz einfach.</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Itu sangat mudah.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-cyan-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Gehen Sie zuerst rechts und dann
+                                geradeaus.</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Silakan belok kanan dulu, lalu lurus.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-emerald-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Ist das richtig? — Ja, genau!</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Apakah itu benar? — Ya, tepat sekali!</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-emerald-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Wo ist das? — Genau in der Mitte.
+                            </p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Di mana itu? — Tepat di tengah.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <h3 class="font-semibold text-gray-700 dark:text-gray-300 mb-3 text-sm uppercase tracking-wide">
+                            Kata bantu</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3" id="wegWorte"></div>
+                    </div>
+                </div>
+
+                <!-- ===== MASSE ANGEBEN ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">📐 Menyebut Ukuran <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Maße angeben)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Pola: <b>[benda] ist [angka] [satuan]
+                            [sifat].</b> Kata sifatnya di akhir kalimat.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="masseListe"></div>
+                </div>
+
+                <!-- ===== STADTTOUR KOSAKATA ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">🚏 Kata Saat Tur Kota <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Stadttour)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Kata &amp; ungkapan yang sering dipakai
+                        pemandu wisata dan saat keliling kota.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="stadttourListe"></div>
+                </div>
+
+                <!-- ===== STECKBRIEF CONTOH KOTA ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🗺️ Contoh Profil Kota <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Steckbrief)</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div
+                            class="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-5 border border-blue-200 dark:border-blue-800/30">
+                            <h3 class="font-bold text-blue-700 dark:text-blue-400 text-lg mb-2">🇩🇪 Hamburg</h3>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
+                                <li>• <b>1,9 Millionen</b> Menschen <span class="text-xs text-gray-400">(1,9 juta
+                                        penduduk)</span></li>
+                                <li>• <b>Hafen:</b> einer der größten Häfen Europas, 130 km² groß, über 8.000 Schiffe pro
+                                    Jahr</li>
+                                <li>• <b>Elbphilharmonie:</b> 110 Meter hoch, berühmtes Konzerthaus</li>
+                                <li>• <b>Speicherstadt:</b> größter historischer Lagerhauskomplex der Welt</li>
+                            </ul>
+                        </div>
+                        <div
+                            class="bg-cyan-50 dark:bg-cyan-950/30 rounded-lg p-5 border border-cyan-200 dark:border-cyan-800/30">
+                            <h3 class="font-bold text-cyan-700 dark:text-cyan-400 text-lg mb-2">🇵🇹 Lissabon</h3>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1.5">
+                                <li>• <b>510.000</b> Menschen <span class="text-xs text-gray-400">(510 ribu
+                                        penduduk)</span></li>
+                                <li>• <b>Hafen:</b> über 10 km lang, Platz für 1.100 Schiffe</li>
+                                <li>• <b>Ponte Vasco da Gama:</b> Brücke über 17 km lang</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== CONTOH DIALOG ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">💬 Contoh Dialog — Bikin Janji</h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4"><b>in + Akkusativ</b> untuk arah
+                        tujuan: <i>in den Supermarkt</i> (masuk ke supermarket). <b>denn</b> = sisipan halus
+                        (≈ "sih/dong"), <b>dann</b> = "kalau begitu / lalu".</p>
+                    <div class="space-y-3 max-w-2xl">
+                        <div class="flex gap-3">
+                            <span
+                                class="shrink-0 w-8 h-8 rounded-full bg-blue-500 text-white grid place-items-center font-bold text-sm">A</span>
+                            <div class="bg-blue-50 dark:bg-blue-950/30 rounded-lg rounded-tl-none p-3 flex-1">
+                                <p class="font-medium text-gray-800 dark:text-gray-100">Gehen wir in den Supermarkt?</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Kita ke supermarket yuk?</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 flex-row-reverse">
+                            <span
+                                class="shrink-0 w-8 h-8 rounded-full bg-emerald-500 text-white grid place-items-center font-bold text-sm">B</span>
+                            <div class="bg-emerald-50 dark:bg-emerald-950/30 rounded-lg rounded-tr-none p-3 flex-1">
+                                <p class="font-medium text-gray-800 dark:text-gray-100">Ja, gern. Wann denn?</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Boleh, dengan senang hati. Kapan
+                                    emangnya?</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span
+                                class="shrink-0 w-8 h-8 rounded-full bg-blue-500 text-white grid place-items-center font-bold text-sm">A</span>
+                            <div class="bg-blue-50 dark:bg-blue-950/30 rounded-lg rounded-tl-none p-3 flex-1">
+                                <p class="font-medium text-gray-800 dark:text-gray-100">Am Freitag?</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Hari Jumat?</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 flex-row-reverse">
+                            <span
+                                class="shrink-0 w-8 h-8 rounded-full bg-emerald-500 text-white grid place-items-center font-bold text-sm">B</span>
+                            <div class="bg-emerald-50 dark:bg-emerald-950/30 rounded-lg rounded-tr-none p-3 flex-1">
+                                <p class="font-medium text-gray-800 dark:text-gray-100">Am Freitag? Es tut mir leid, ich
+                                    kann nicht.</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Hari Jumat? Maaf, aku tidak bisa.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span
+                                class="shrink-0 w-8 h-8 rounded-full bg-blue-500 text-white grid place-items-center font-bold text-sm">A</span>
+                            <div class="bg-blue-50 dark:bg-blue-950/30 rounded-lg rounded-tl-none p-3 flex-1">
+                                <p class="font-medium text-gray-800 dark:text-gray-100">Dann am Samstag?</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Kalau begitu hari Sabtu?</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 flex-row-reverse">
+                            <span
+                                class="shrink-0 w-8 h-8 rounded-full bg-emerald-500 text-white grid place-items-center font-bold text-sm">B</span>
+                            <div class="bg-emerald-50 dark:bg-emerald-950/30 rounded-lg rounded-tr-none p-3 flex-1">
+                                <p class="font-medium text-gray-800 dark:text-gray-100">Ja, super. Bis Samstag!</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Oke, mantap. Sampai jumpa Sabtu!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== KOMPONEN ===== -->
+    <script src="components/sidebar.js"></script>
+
+    <script>
+        // ===== DATA (dari spreadsheet "Land in Deutsch") =====
+        const ORTE = [
+            { art: 'der', wort: 'Bahnhof', pl: 'die Bahnhöfe', arti: 'stasiun kereta', emoji: '🚉' },
+            { art: 'die', wort: 'Schule', pl: 'die Schulen', arti: 'sekolah', emoji: '🏫' },
+            { art: 'das', wort: 'Krankenhaus', pl: 'die Krankenhäuser', arti: 'rumah sakit', emoji: '🏥' },
+            { art: 'der', wort: 'Park', pl: 'die Parks', arti: 'taman', emoji: '🌳' },
+            { art: 'der', wort: 'Flughafen', pl: 'die Flughäfen', arti: 'bandara', emoji: '✈️' },
+            { art: 'die', wort: 'Bibliothek', pl: 'die Bibliotheken', arti: 'perpustakaan', emoji: '📚' },
+            { art: 'das', wort: 'Café', pl: 'die Cafés', arti: 'kafe', emoji: '☕' },
+            { art: 'das', wort: 'Restaurant', pl: 'die Restaurants', arti: 'restoran', emoji: '🍽️' },
+            { art: 'der', wort: 'Supermarkt', pl: 'die Supermärkte', arti: 'supermarket', emoji: '🛒' },
+            { art: 'die', wort: 'Apotheke', pl: 'die Apotheken', arti: 'apotek', emoji: '💊' },
+            { art: 'das', wort: 'Hotel', pl: 'die Hotels', arti: 'hotel', emoji: '🏨' },
+            { art: 'der', wort: 'Zoo', pl: 'die Zoos', arti: 'kebun binatang', emoji: '🦁' },
+            { art: 'die', wort: 'Universität', pl: 'die Universitäten', arti: 'universitas', emoji: '🎓' },
+            { art: 'das', wort: 'Kino', pl: 'die Kinos', arti: 'bioskop', emoji: '🎬' },
+            { art: 'der', wort: 'Tempel', pl: 'die Tempel', arti: 'kuil / pura', emoji: '🛕' },
+            { art: 'die', wort: 'Kirche', pl: 'die Kirchen', arti: 'gereja', emoji: '⛪' },
+            { art: 'das', wort: 'Museum', pl: 'die Museen', arti: 'museum', emoji: '🏛️' },
+            { art: 'der', wort: 'Markt', pl: 'die Märkte', arti: 'pasar', emoji: '🍎' },
+            { art: 'die', wort: 'Moschee', pl: 'die Moscheen', arti: 'masjid', emoji: '🕌' },
+            { art: 'der', wort: 'Hafen', pl: 'die Häfen', arti: 'pelabuhan', emoji: '⚓' },
+        ];
+
+        const VERKEHR = [
+            { art: 'der', wort: 'Bus', pl: 'die Busse', arti: 'bus', emoji: '🚌' },
+            { art: 'der', wort: 'Zug', pl: 'die Züge', arti: 'kereta', emoji: '🚆' },
+            { art: 'die', wort: 'U-Bahn', pl: 'die U-Bahnen', arti: 'kereta bawah tanah', emoji: '🚇' },
+            { art: 'die', wort: 'S-Bahn', pl: 'die S-Bahnen', arti: 'kereta komuter', emoji: '🚊' },
+            { art: 'die', wort: 'Straßenbahn', pl: 'die Straßenbahnen', arti: 'trem', emoji: '🚋' },
+            { art: 'das', wort: 'Fahrrad', pl: 'die Fahrräder', arti: 'sepeda', emoji: '🚲' },
+            { art: 'das', wort: 'Schiff', pl: 'die Schiffe', arti: 'kapal', emoji: '🚢' },
+            { art: 'das', wort: 'Flugzeug', pl: 'die Flugzeuge', arti: 'pesawat', emoji: '🛫' },
+            { art: 'die', wort: 'Fahrkarte', pl: 'die Fahrkarten', arti: 'tiket (transportasi)', emoji: '🎫' },
+            { art: 'die', wort: 'Station', pl: 'die Stationen', arti: 'stasiun / pemberhentian', emoji: '🚏' },
+            { art: 'der', wort: 'Weg', pl: 'die Wege', arti: 'jalan / rute', emoji: '🛣️' },
+            { art: 'der', wort: 'Plan', pl: 'die Pläne', arti: 'peta / rencana', emoji: '🗺️' },
+        ];
+
+        const WEG_WORTE = [
+            { de: 'zuerst', id: 'pertama-tama' },
+            { de: 'dann', id: 'lalu / kemudian' },
+            { de: 'also', id: 'jadi …' },
+            { de: 'da (Da ist das Hotel.)', id: 'di sana (Di sana ada hotel.)' },
+            { de: 'schon (Da ist schon das Hotel.)', id: 'sudah' },
+            { de: 'richtig', id: 'benar' },
+            { de: 'genau', id: 'tepat' },
+            { de: 'einfach', id: 'mudah / gampang' },
+            { de: 'zeigen', id: 'menunjukkan' },
+            { de: 'zeichnen', id: 'menggambar' },
+            { de: 'zu Fuß gehen', id: 'berjalan kaki' },
+            { de: 'nach (Der Zug fährt nach Berlin.)', id: 'menuju (ke kota/negara)' },
+        ];
+
+        const MASSE = [
+            { adj: 'lang', arti: 'panjang', satz: 'Die Brücke ist 12 Kilometer lang.', satzId: 'Jembatan itu panjangnya 12 km.' },
+            { adj: 'breit', arti: 'lebar', satz: 'Das Rathaus ist 111 Meter breit.', satzId: 'Balai kota itu lebarnya 111 meter.' },
+            { adj: 'hoch', arti: 'tinggi', satz: 'Der Turm ist 132 Meter hoch.', satzId: 'Menara itu tingginya 132 meter.' },
+            { adj: 'über', arti: 'lebih dari', satz: 'Das Haus ist über 100 Jahre alt.', satzId: 'Rumah itu berumur lebih dari 100 tahun.' },
+        ];
+
+        const STADTTOUR = [
+            { de: 'sehen, er sieht', ex: 'Da sieht man den Hafen.', id: 'melihat — Di sana terlihat pelabuhan.' },
+            { de: 'Das ist …', ex: 'Das ist die Elbphilharmonie.', id: 'Ini/itu adalah …' },
+            { de: 'interessant', ex: 'Das Museum ist interessant.', id: 'menarik' },
+            { de: 'schön', ex: 'Die Stadt ist sehr schön.', id: 'indah / bagus' },
+            { de: 'schnell', ex: 'Der Zug ist schnell.', id: 'cepat' },
+            { de: 'so (So ein Glück!)', ex: 'So ein Glück!', id: 'begitu — Beruntung sekali!' },
+            { de: 'heute', ex: 'Heute machen wir eine Stadttour.', id: 'hari ini' },
+            { de: 'jetzt', ex: 'Jetzt aber schnell!', id: 'sekarang — Ayo cepat!' },
+            { de: 'ein Mal, zwei Mal …', ex: 'Ich war schon zwei Mal in Berlin.', id: 'satu kali, dua kali …' },
+            { de: 'Vielen Dank!', ex: '— Vielen Dank für die Tour!', id: 'Terima kasih banyak!' },
+        ];
+
+        const artClass = (a) => a === 'der'
+            ? 'text-indigo-600 dark:text-indigo-400'
+            : a === 'die'
+                ? 'text-pink-600 dark:text-pink-400'
+                : 'text-emerald-600 dark:text-emerald-400';
+
+        function nomenCard(x) {
+            return `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                    <div class="text-3xl mb-1">${x.emoji}</div>
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">
+                        <span class="${artClass(x.art)}">${x.art}</span> ${x.wort}
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.arti}</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">${x.pl}</p>
+                </div>`;
+        }
+
+        function worteCard(x) {
+            return `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3">
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">${x.de}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.id}</p>
+                </div>`;
+        }
+
+        function masseCard(x) {
+            return `
+                <div class="bg-sky-50 dark:bg-sky-950/30 rounded-lg p-4 border border-sky-200 dark:border-sky-800/30">
+                    <p class="font-bold text-sky-700 dark:text-sky-300 text-lg">${x.adj}
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">— ${x.arti}</span></p>
+                    <p class="text-sm text-gray-700 dark:text-gray-200 mt-1">${x.satz}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.satzId}</p>
+                </div>`;
+        }
+
+        function stadttourCard(x) {
+            return `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-cyan-500">
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">${x.de}</p>
+                    <p class="text-sm text-indigo-600 dark:text-indigo-400">${x.ex}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.id}</p>
+                </div>`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            renderSidebar();
+            loadTheme();
+            document.getElementById('ortListe').innerHTML = ORTE.map(nomenCard).join('');
+            document.getElementById('verkehrListe').innerHTML = VERKEHR.map(nomenCard).join('');
+            document.getElementById('wegWorte').innerHTML = WEG_WORTE.map(worteCard).join('');
+            document.getElementById('masseListe').innerHTML = MASSE.map(masseCard).join('');
+            document.getElementById('stadttourListe').innerHTML = STADTTOUR.map(stadttourCard).join('');
+        });
+    </script>
+</body>
+
+</html>

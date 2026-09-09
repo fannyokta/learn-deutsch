@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>👨‍👩‍👧 Familie · Belajar Jerman</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-['Inter']">
+
+    <div id="app" class="flex min-h-screen">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside id="sidebarContainer"
+            class="fixed top-0 left-0 w-[220px] h-full bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 p-5 flex flex-col z-50 shadow-sm overflow-y-auto">
+            <!-- diisi oleh components/sidebar.js -->
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="flex-1 ml-[220px] p-7 md:p-9 min-h-screen">
+
+            <section class="page">
+
+                <!-- ===== HERO HEADER ===== -->
+                <div
+                    class="relative mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-rose-500 via-fuchsia-500 to-purple-600 p-6 md:p-8 text-white shadow-xl">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-3xl">👨‍👩‍👧‍👦</span>
+                            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Familie &amp;
+                                Alltag</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">Keluarga &amp; <span
+                                class="text-yellow-200">Kegiatan Sehari-hari</span></h1>
+                        <p class="text-white/80 text-base max-w-xl">Anggota keluarga, kata milik (mein/dein/…), status
+                            pernikahan, kata kerja terpisah, dan menceritakan rutinitas harian.</p>
+                    </div>
+                </div>
+
+                <!-- ===== LEGENDA ARTIKEL ===== -->
+                <div class="flex flex-wrap gap-3 mb-6 text-sm">
+                    <span
+                        class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full px-3 py-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span> <span
+                            class="text-gray-600 dark:text-gray-300"><b class="text-indigo-600 dark:text-indigo-400">der</b>
+                            — maskulin</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full px-3 py-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span> <span
+                            class="text-gray-600 dark:text-gray-300"><b class="text-pink-600 dark:text-pink-400">die</b> —
+                            feminin</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full px-3 py-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> <span
+                            class="text-gray-600 dark:text-gray-300"><b
+                                class="text-emerald-600 dark:text-emerald-400">das</b> — netral</span>
+                    </span>
+                </div>
+
+                <!-- ===== DIE FAMILIE ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">👪 Anggota Keluarga <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(die Familie)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Banyak yang berpasangan m/f: <i>Vater ↔
+                            Mutter</i>, <i>Bruder ↔ Schwester</i>, <i>Opa ↔ Oma</i>.</p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="familieGrid"></div>
+                </div>
+
+                <!-- ===== POSSESSIVARTIKEL ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🔑 Kata Milik <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Possessivartikel)</span></h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr class="bg-gradient-to-r from-rose-500 to-fuchsia-500 text-white">
+                                        <th class="text-left px-3 py-2.5 font-semibold rounded-tl-lg">Kata ganti</th>
+                                        <th class="text-left px-3 py-2.5 font-semibold">+ der / das</th>
+                                        <th class="text-left px-3 py-2.5 font-semibold rounded-tr-lg">+ die / jamak</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="possTable" class="divide-y divide-gray-100 dark:divide-slate-700"></tbody>
+                            </table>
+                        </div>
+
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-indigo-50 dark:bg-indigo-950/30 rounded-lg p-3 border border-indigo-200 dark:border-indigo-800/30">
+                                <p class="text-gray-800 dark:text-gray-100">Das ist <b class="text-indigo-600 dark:text-indigo-400">mein</b> Vater. <span class="text-gray-400">(der)</span></p>
+                            </div>
+                            <div class="bg-pink-50 dark:bg-pink-950/30 rounded-lg p-3 border border-pink-200 dark:border-pink-800/30">
+                                <p class="text-gray-800 dark:text-gray-100">Das ist <b class="text-pink-600 dark:text-pink-400">meine</b> Mutter. <span class="text-gray-400">(die)</span></p>
+                            </div>
+                            <div class="bg-emerald-50 dark:bg-emerald-950/30 rounded-lg p-3 border border-emerald-200 dark:border-emerald-800/30">
+                                <p class="text-gray-800 dark:text-gray-100">Das ist <b class="text-emerald-600 dark:text-emerald-400">mein</b> Kind. <span class="text-gray-400">(das)</span></p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3">
+                                <p class="text-gray-800 dark:text-gray-100">Das sind <b>meine</b> Eltern. <span class="text-gray-400">(jamak)</span></p>
+                            </div>
+                            <div class="bg-amber-50 dark:bg-amber-950/30 rounded-lg p-3 border border-amber-200 dark:border-amber-800/30">
+                                <p class="text-gray-700 dark:text-gray-200">⚠️ Di <b>Akkusativ</b>, bentuk maskulin +<b>-en</b>:
+                                    <br>Ich habe <b>einen</b> Bruder. · Ich liebe <b>meinen</b> Bruder.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== FAMILIENSTAND ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">💍 Status Pernikahan <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Familienstand)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Tanya: <i>Bist du verheiratet?</i> — Jawab:
+                        <i>Ich bin …</i></p>
+                    <div class="flex flex-wrap gap-2 mb-4" id="standChips"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-fuchsia-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Wie groß ist deine Familie?</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400">→ Meine Familie ist groß / klein.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-fuchsia-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Hast du Kinder?</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400">→ Ja, ich habe zwei Kinder. / Nein,
+                                noch nicht.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== TRENNBARE VERBEN ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">✂️ Kata Kerja Terpisah <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(trennbare Verben)</span></h2>
+
+                    <div
+                        class="bg-fuchsia-50 dark:bg-fuchsia-950/30 rounded-lg p-4 border border-fuchsia-200 dark:border-fuchsia-800/30 mb-5">
+                        <p class="text-center text-gray-700 dark:text-gray-200"><b>auf</b>·stehen → <span
+                                class="text-fuchsia-600 dark:text-fuchsia-400">Ich <b>stehe</b> um 6 Uhr <b>auf</b>.</span>
+                        </p>
+                        <p class="text-center text-xs text-gray-500 dark:text-gray-400 mt-1">Prefiks (auf-, an-, ein-, …)
+                            lepas dan pindah ke <b>akhir kalimat</b>.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="trennGrid"></div>
+
+                    <h3 class="font-semibold text-gray-700 dark:text-gray-300 mt-5 mb-3 text-sm uppercase tracking-wide">
+                        Kata kerja refleksif (sehari-hari)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="reflexGrid"></div>
+                </div>
+
+                <!-- ===== HÄUFIGKEIT ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">📊 Seberapa Sering <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(Häufigkeit)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Biasanya diletakkan <b>setelah kata kerja</b>:
+                        <i>Ich <b>koche</b> oft.</i> / di awal untuk penekanan: <i>Manchmal koche ich.</i></p>
+                    <div class="flex flex-wrap items-stretch gap-2" id="haeufigBar"></div>
+                </div>
+
+                <!-- ===== TAGESABLAUF ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-1">🕒 Rutinitas Harian Anna <span
+                            class="text-sm font-normal text-gray-500 dark:text-gray-400">(ein Tag im Leben)</span></h2>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Perhatikan kata kerja terpisah: <i>steht …
+                            auf</i>, <i>fängt … an</i>, <i>kauft … ein</i>, <i>räumt … auf</i>, <i>sieht … fern</i>.</p>
+                    <ol class="relative border-l-2 border-rose-200 dark:border-rose-800/40 ml-3 space-y-4" id="ablauf">
+                    </ol>
+                </div>
+
+                <!-- ===== MINI DIALOG ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">💬 Mini Dialog — Über die Familie
+                    </h2>
+                    <div class="space-y-3 max-w-2xl" id="dialog"></div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== KOMPONEN ===== -->
+    <script src="components/sidebar.js"></script>
+
+    <script>
+        const FAMILIE = [
+            { art: 'die', wort: 'Familie', pl: 'die Familien', arti: 'keluarga', emoji: '👨‍👩‍👧‍👦' },
+            { art: 'die', wort: 'Eltern', pl: 'nur Plural', arti: 'orang tua', emoji: '👫' },
+            { art: 'der', wort: 'Vater', pl: 'die Väter', arti: 'ayah', emoji: '👨' },
+            { art: 'die', wort: 'Mutter', pl: 'die Mütter', arti: 'ibu', emoji: '👩' },
+            { art: 'die', wort: 'Geschwister', pl: 'nur Plural', arti: 'saudara kandung', emoji: '🧒' },
+            { art: 'der', wort: 'Bruder', pl: 'die Brüder', arti: 'saudara laki-laki', emoji: '👦' },
+            { art: 'die', wort: 'Schwester', pl: 'die Schwestern', arti: 'saudara perempuan', emoji: '👧' },
+            { art: 'das', wort: 'Kind', pl: 'die Kinder', arti: 'anak', emoji: '🧒' },
+            { art: 'der', wort: 'Sohn', pl: 'die Söhne', arti: 'anak laki-laki', emoji: '👶' },
+            { art: 'die', wort: 'Tochter', pl: 'die Töchter', arti: 'anak perempuan', emoji: '👧' },
+            { art: 'das', wort: 'Baby', pl: 'die Babys', arti: 'bayi', emoji: '👶' },
+            { art: 'die', wort: 'Großeltern', pl: 'nur Plural', arti: 'kakek-nenek', emoji: '👴👵' },
+            { art: 'der', wort: 'Großvater / Opa', pl: 'die Großväter / Opas', arti: 'kakek', emoji: '👴' },
+            { art: 'die', wort: 'Großmutter / Oma', pl: 'die Großmütter / Omas', arti: 'nenek', emoji: '👵' },
+            { art: 'der', wort: 'Onkel', pl: 'die Onkel', arti: 'paman / om', emoji: '🧔' },
+            { art: 'die', wort: 'Tante', pl: 'die Tanten', arti: 'bibi / tante', emoji: '👩‍🦰' },
+            { art: 'der', wort: 'Cousin', pl: 'die Cousins', arti: 'sepupu (lk)', emoji: '🧑' },
+            { art: 'die', wort: 'Cousine', pl: 'die Cousinen', arti: 'sepupu (pr)', emoji: '👩' },
+            { art: 'der', wort: 'Mann / Ehemann', pl: 'die Männer', arti: 'suami', emoji: '🤵' },
+            { art: 'die', wort: 'Frau / Ehefrau', pl: 'die Frauen', arti: 'istri', emoji: '👰' },
+            { art: 'der', wort: 'Enkel', pl: 'die Enkel', arti: 'cucu (lk)', emoji: '👦' },
+            { art: 'die', wort: 'Enkelin', pl: 'die Enkelinnen', arti: 'cucu (pr)', emoji: '👧' },
+        ];
+
+        const POSS = [
+            { p: 'ich', mn: 'mein', f: 'meine', id: 'saya' },
+            { p: 'du', mn: 'dein', f: 'deine', id: 'kamu' },
+            { p: 'er / es', mn: 'sein', f: 'seine', id: 'dia (lk) / -nya' },
+            { p: 'sie', mn: 'ihr', f: 'ihre', id: 'dia (pr) / -nya' },
+            { p: 'wir', mn: 'unser', f: 'unsere', id: 'kami' },
+            { p: 'ihr', mn: 'euer', f: 'eure', id: 'kalian' },
+            { p: 'sie / Sie', mn: 'ihr / Ihr', f: 'ihre / Ihre', id: 'mereka / Anda' },
+        ];
+
+        const STAND = [
+            { de: 'ledig', id: 'lajang / belum menikah' },
+            { de: 'verheiratet', id: 'menikah' },
+            { de: 'geschieden', id: 'bercerai' },
+            { de: 'verwitwet', id: 'janda / duda' },
+            { de: 'getrennt', id: 'pisah (tidak tinggal bersama)' },
+            { de: 'in einer Beziehung', id: 'sedang berpacaran' },
+        ];
+
+        const TRENN = [
+            { de: 'auf·stehen', id: 'bangun tidur', ex: 'Ich stehe um 6 Uhr auf.' },
+            { de: 'an·fangen', id: 'mulai', ex: 'Die Arbeit fängt um 8 Uhr an.' },
+            { de: 'auf·hören', id: 'berhenti / selesai', ex: 'Der Kurs hört um 12 Uhr auf.' },
+            { de: 'ein·kaufen', id: 'berbelanja', ex: 'Am Samstag kaufe ich ein.' },
+            { de: 'fern·sehen', id: 'menonton TV', ex: 'Abends sehe ich fern.' },
+            { de: 'auf·räumen', id: 'membereskan', ex: 'Ich räume die Küche auf.' },
+            { de: 'ab·waschen', id: 'mencuci piring', ex: 'Nach dem Essen wasche ich ab.' },
+            { de: 'an·rufen', id: 'menelepon', ex: 'Ich rufe meine Oma an.' },
+        ];
+
+        const REFLEX = [
+            { de: 'sich waschen', id: 'mencuci diri', ex: 'Ich wasche mich.' },
+            { de: 'sich duschen', id: 'mandi (shower)', ex: 'Er duscht sich morgens.' },
+            { de: 'sich anziehen', id: 'berpakaian', ex: 'Sie zieht sich schnell an.' },
+            { de: 'sich die Zähne putzen', id: 'menyikat gigi', ex: 'Ich putze mir die Zähne.' },
+        ];
+
+        const HAEUFIG = [
+            { de: 'immer', id: 'selalu', pct: '100%' },
+            { de: 'meistens', id: 'kebanyakan', pct: '~80%' },
+            { de: 'oft', id: 'sering', pct: '~70%' },
+            { de: 'manchmal', id: 'kadang-kadang', pct: '~40%' },
+            { de: 'selten', id: 'jarang', pct: '~15%' },
+            { de: 'nie', id: 'tidak pernah', pct: '0%' },
+        ];
+
+        const ABLAUF = [
+            { t: '06:30', de: 'Anna steht auf.', id: 'Anna bangun tidur.' },
+            { t: '06:45', de: 'Sie duscht sich und zieht sich an.', id: 'Dia mandi dan berpakaian.' },
+            { t: '07:00', de: 'Sie frühstückt mit der Familie.', id: 'Dia sarapan bersama keluarga.' },
+            { t: '07:30', de: 'Sie bringt die Kinder zur Schule.', id: 'Dia mengantar anak-anak ke sekolah.' },
+            { t: '08:00', de: 'Die Arbeit fängt an.', id: 'Pekerjaan dimulai.' },
+            { t: '12:30', de: 'Sie macht Mittagspause.', id: 'Dia istirahat makan siang.' },
+            { t: '17:00', de: 'Sie kauft im Supermarkt ein.', id: 'Dia belanja di supermarket.' },
+            { t: '18:30', de: 'Die Familie isst zu Abend.', id: 'Keluarga makan malam.' },
+            { t: '20:00', de: 'Sie räumt die Küche auf und sieht fern.', id: 'Dia beres-beres dapur lalu nonton TV.' },
+            { t: '22:30', de: 'Sie geht ins Bett.', id: 'Dia pergi tidur.' },
+        ];
+
+        const DIALOG = [
+            { s: 'A', de: 'Hast du Geschwister?', id: 'Kamu punya saudara?' },
+            { s: 'B', de: 'Ja, ich habe einen Bruder und eine Schwester. Und du?', id: 'Ya, aku punya satu kakak/adik laki-laki dan satu perempuan. Kamu?' },
+            { s: 'A', de: 'Ich bin Einzelkind. Wohnen deine Großeltern auch hier?', id: 'Aku anak tunggal. Kakek-nenekmu tinggal di sini juga?' },
+            { s: 'B', de: 'Nein, meine Oma wohnt in Bandung. Mein Opa ist leider gestorben.', id: 'Tidak, nenekku tinggal di Bandung. Kakekku sayangnya sudah meninggal.' },
+            { s: 'A', de: 'Das tut mir leid. Was macht deine Familie am Wochenende?', id: 'Turut berduka. Apa yang keluargamu lakukan di akhir pekan?' },
+            { s: 'B', de: 'Wir besuchen oft meine Tante. Manchmal gehen wir zusammen essen.', id: 'Kami sering mengunjungi bibiku. Kadang kami makan bersama.' },
+        ];
+
+        const artClass = (a) => a === 'der'
+            ? 'text-indigo-600 dark:text-indigo-400'
+            : a === 'die'
+                ? 'text-pink-600 dark:text-pink-400'
+                : 'text-emerald-600 dark:text-emerald-400';
+
+        document.addEventListener('DOMContentLoaded', function () {
+            renderSidebar();
+            loadTheme();
+
+            document.getElementById('familieGrid').innerHTML = FAMILIE.map(x => `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                    <div class="text-2xl mb-1">${x.emoji}</div>
+                    <p class="font-semibold text-gray-800 dark:text-gray-100 text-sm">
+                        <span class="${artClass(x.art)}">${x.art}</span> ${x.wort}
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.arti}</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">${x.pl}</p>
+                </div>`).join('');
+
+            document.getElementById('possTable').innerHTML = POSS.map(x => `
+                <tr>
+                    <td class="px-3 py-2.5 text-gray-500 dark:text-gray-400">${x.p} <span class="text-xs text-gray-400">(${x.id})</span></td>
+                    <td class="px-3 py-2.5 font-semibold text-indigo-600 dark:text-indigo-400">${x.mn}</td>
+                    <td class="px-3 py-2.5 font-semibold text-pink-600 dark:text-pink-400">${x.f}</td>
+                </tr>`).join('');
+
+            document.getElementById('standChips').innerHTML = STAND.map(x => `
+                <span class="bg-fuchsia-50 dark:bg-fuchsia-950/30 border border-fuchsia-200 dark:border-fuchsia-800/30 rounded-full px-3 py-1.5 text-sm">
+                    <b class="text-fuchsia-600 dark:text-fuchsia-400">${x.de}</b>
+                    <span class="text-gray-500 dark:text-gray-400">— ${x.id}</span>
+                </span>`).join('');
+
+            const verbCard = (x) => `
+                <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-fuchsia-500">
+                    <p class="font-semibold text-gray-800 dark:text-gray-100">${x.de}
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">— ${x.id}</span></p>
+                    <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-0.5">${x.ex}</p>
+                </div>`;
+            document.getElementById('trennGrid').innerHTML = TRENN.map(verbCard).join('');
+            document.getElementById('reflexGrid').innerHTML = REFLEX.map(verbCard).join('');
+
+            document.getElementById('haeufigBar').innerHTML = HAEUFIG.map(x => `
+                <div class="flex-1 min-w-[110px] bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center">
+                    <p class="text-xs text-gray-400">${x.pct}</p>
+                    <p class="font-bold text-gray-800 dark:text-gray-100">${x.de}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.id}</p>
+                </div>`).join('');
+
+            document.getElementById('ablauf').innerHTML = ABLAUF.map(x => `
+                <li class="ml-6">
+                    <span class="absolute -left-[9px] w-4 h-4 rounded-full bg-rose-500 border-2 border-white dark:border-slate-800"></span>
+                    <p class="text-sm font-bold text-rose-600 dark:text-rose-400">${x.t}</p>
+                    <p class="font-medium text-gray-800 dark:text-gray-100">${x.de}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${x.id}</p>
+                </li>`).join('');
+
+            document.getElementById('dialog').innerHTML = DIALOG.map(t => {
+                const isA = t.s === 'A';
+                return `
+                <div class="flex gap-3 ${isA ? '' : 'flex-row-reverse'}">
+                    <span class="shrink-0 w-8 h-8 rounded-full ${isA ? 'bg-rose-500' : 'bg-fuchsia-500'} text-white grid place-items-center font-bold text-sm">${t.s}</span>
+                    <div class="${isA ? 'bg-rose-50 dark:bg-rose-950/30 rounded-tl-none' : 'bg-fuchsia-50 dark:bg-fuchsia-950/30 rounded-tr-none'} rounded-lg p-3 flex-1">
+                        <p class="font-medium text-gray-800 dark:text-gray-100">${t.de}</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">${t.id}</p>
+                    </div>
+                </div>`;
+            }).join('');
+        });
+    </script>
+</body>
+
+</html>

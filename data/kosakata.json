@@ -1,21 +1,867 @@
 {
     "kata_benda": [
         {
-            "kata": "Name",
-            "arti": "Nama",
+            "kata": "Apotheke",
+            "arti": "Apotek",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Apotheken",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Autobahn",
+            "arti": "Jalan Tol",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Autobahnen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Bahnhof",
+            "arti": "Stasiun kereta",
             "der": true,
             "die": false,
             "das": false,
-            "plural": "die Namen",
+            "plural": "die Bahnhöfe",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Bibliothek",
+            "arti": "Perpustakaan",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Bibliotheken",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Brücke",
+            "arti": "Jembatan",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Brücken",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Bäckerei",
+            "arti": "Toko roti",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Bäckereien",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Café",
+            "arti": "Kafe",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Cafés",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Firma",
+            "arti": "Perusahaan",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Firmen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Flughafen",
+            "arti": "Bandara",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Flughäfen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Fluss",
+            "arti": "Sungai",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Flüsse",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Geburtsort",
+            "arti": "Tempat lahir",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Geburtsorte",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Hafen",
+            "arti": "Pelabuhan",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Häfen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Haus",
+            "arti": "Rumah",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Häuser",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Hotel",
+            "arti": "Hotel",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Hotels",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Kantine",
+            "arti": "Kantin",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Kantinen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Kindergarten",
+            "arti": "Taman Anak-anak",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Kindergärten",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Kino",
+            "arti": "Bioskop",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Kinos",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Kirche",
+            "arti": "Gereja",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Kirchen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Konzerthaus",
+            "arti": "Gedung konser",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Konzerthäuser",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Krankenhaus",
+            "arti": "Rumah sakit",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Krankenhäuser",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Markt",
+            "arti": "Pasar",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Märkte",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Meer",
+            "arti": "Laut",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Meere",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Metzgerei",
+            "arti": "Toko daging",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Metzgereien",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Moschee",
+            "arti": "Masjid",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Moscheen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Museum",
+            "arti": "Museum",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Museen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Ort",
+            "arti": "Tempat",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Orte",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Park",
+            "arti": "Taman",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Parks",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Rathaus",
+            "arti": "Balai kota",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Rathäuser",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Restaurant",
+            "arti": "Restoran",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Restaurants",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Schule",
+            "arti": "Sekolah",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Schulen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Schwimmbad",
+            "arti": "Kolam renang",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Schwimmbäder",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "See",
+            "arti": "Danau",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Seen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Stadt",
+            "arti": "Kota",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Städte",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Station",
+            "arti": "Stasiun/pemberhentian",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Stationen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Straße",
+            "arti": "Jalan",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Straßen",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Supermarkt",
+            "arti": "Supermarket",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Supermärkte",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Tempel",
+            "arti": "Kuil / Pura",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Tempel",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Theater",
+            "arti": "Teater",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Theater",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Turm",
+            "arti": "Menara",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Türme",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Universität",
+            "arti": "Universitas",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Universitäten",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Weg",
+            "arti": "Jalan/rute",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Wege",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Wohnort",
+            "arti": "Tempat tinggal",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Wohnorte",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Zimmer",
+            "arti": "Kamar",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Zimmer",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Zoo",
+            "arti": "Kebun binatang",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Zoos",
+            "kategori": "Tempat"
+        },
+        {
+            "kata": "Anwalt",
+            "arti": "Pengacara / Advokat (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Anwälte",
             "kategori": "Orang"
         },
         {
-            "kata": "Vorname",
-            "arti": "Nama Depan",
+            "kata": "Anwältin",
+            "arti": "Pengacara / Advokat (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Anwältinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Architekt",
+            "arti": "Arsitek (laki-laki)",
             "der": true,
             "die": false,
             "das": false,
-            "plural": "die Vornamen",
+            "plural": "die Architekten",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Architektin",
+            "arti": "Arsitek (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Architektinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Arzt",
+            "arti": "Dokter (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Ärzte",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Besucher",
+            "arti": "Pengunjung (pria)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Besucher",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Besucherin",
+            "arti": "Pengunjung (wanita)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Besucherinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Buchhalter",
+            "arti": "Akuntan (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Buchhalter",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Buchhalterin",
+            "arti": "Akuntan (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Buchhalterinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Bäcker",
+            "arti": "Pembuat Roti / Tukang Roti (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Bäcker",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Bäckerin",
+            "arti": "Pembuat Roti / Tukang Roti (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Bäckerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Chor",
+            "arti": "Paduan suara",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Chöre",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Designer",
+            "arti": "Desainer (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Designer",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Designerin",
+            "arti": "Desainer (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Designerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Familienname",
+            "arti": "Nama keluarga",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Familiennamen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Forscher",
+            "arti": "Peneliti (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Forscher",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Forscherin",
+            "arti": "Peneliti (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Forscherinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Fotograf",
+            "arti": "Fotografer (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Fotografen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Fotografin",
+            "arti": "Fotografer (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Fotografinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Freund",
+            "arti": "Teman (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Freunde",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Freundin",
+            "arti": "Teman (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Freundinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Friseur",
+            "arti": "Penata rambut (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Friseure",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Friseurin",
+            "arti": "Penata rambut (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Friseurinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Gast",
+            "arti": "Tamu",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Gäste",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Gruppe",
+            "arti": "Kelompok",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Gruppen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Handwerker",
+            "arti": "Pekerja Terampil / Tukang (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Handwerker",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Handwerkerin",
+            "arti": "Tukang (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Handwerkerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Ingenieur",
+            "arti": "Insinyur (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Ingenieure",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Ingenieurin",
+            "arti": "Insinyur (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Ingenieurinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Journalist",
+            "arti": "Wartawan (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Journalisten",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Journalistin",
+            "arti": "Jurnalis / Wartawan (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Journalistinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Kellner",
+            "arti": "Pelayan / Waiter / Waitress (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Kellner",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Kellnerin",
+            "arti": "Pelayan (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Kellnerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Koch",
+            "arti": "Juru masak (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Köche",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Kollege",
+            "arti": "Rekan kerja (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Kollegen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Kollegin",
+            "arti": "Rekan kerja (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Kolleginnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Krankenpfleger",
+            "arti": "Perawat (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Krankenpfleger",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Krankenschwester",
+            "arti": "Perawat (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Krankenschwestern",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Köchin",
+            "arti": "Juru masak (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Köchinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Lehrer",
+            "arti": "Guru (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Lehrer",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Lehrerin",
+            "arti": "Guru (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Lehrerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Leute",
+            "arti": "Orang-orang",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Leute",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Manager",
+            "arti": "Manajer (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Manager",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Managerin",
+            "arti": "Manajer (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Managerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Mechaniker",
+            "arti": "Mekanik / Ahli Mesin (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Mechaniker",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Mechanikerin",
+            "arti": "Mekanik (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Mechanikerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Medikament",
+            "arti": "Obat",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Medikamente",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Mensch",
+            "arti": "Orang/manusia",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Menschen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Metzger",
+            "arti": "Tukang Daging / Jagal (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Metzger",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Metzgerin",
+            "arti": "Tukang Daging / Jagal (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Metzgerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Musiker",
+            "arti": "Musisi (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Musiker",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Musikerin",
+            "arti": "Musisi (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Musikerinnen",
             "kategori": "Orang"
         },
         {
@@ -28,58 +874,13 @@
             "kategori": "Orang"
         },
         {
-            "kata": "Stadt",
-            "arti": "Kota",
-            "der": false,
-            "die": true,
+            "kata": "Name",
+            "arti": "Nama",
+            "der": true,
+            "die": false,
             "das": false,
-            "plural": "Städte",
-            "kategori": "Tempat"
-        },
-        {
-            "kata": "E-Mail-Adresse",
-            "arti": "Alamat Email",
-            "der": false,
-            "die": true,
-            "das": false,
-            "plural": "E-Mail-Adressen",
-            "kategori": "Benda"
-        },
-        {
-            "kata": "Handynummer",
-            "arti": "Nomor HP",
-            "der": false,
-            "die": true,
-            "das": false,
-            "plural": "Handynummern",
-            "kategori": "Benda"
-        },
-        {
-            "kata": "Telefonnummer",
-            "arti": "Nomor Telepon",
-            "der": false,
-            "die": true,
-            "das": false,
-            "plural": "Telefonnummern",
-            "kategori": "Benda"
-        },
-        {
-            "kata": "Zahl",
-            "arti": "Angka",
-            "der": false,
-            "die": true,
-            "das": false,
-            "plural": "Zahlen",
-            "kategori": "Abstrak"
-        },
-        {
-            "kata": "Antwort",
-            "arti": "Jawaban",
-            "der": false,
-            "die": true,
-            "das": false,
-            "plural": "Antworten",
-            "kategori": "Abstrak"
+            "plural": "die Namen",
+            "kategori": "Orang"
         },
         {
             "kata": "Partner",
@@ -87,7 +888,7 @@
             "der": true,
             "die": false,
             "das": false,
-            "plural": "Partner",
+            "plural": "die Partner",
             "kategori": "Orang"
         },
         {
@@ -96,7 +897,7 @@
             "der": false,
             "die": true,
             "das": false,
-            "plural": "Partnerinnen",
+            "plural": "die Partnerinnen",
             "kategori": "Orang"
         },
         {
@@ -105,35 +906,449 @@
             "der": false,
             "die": true,
             "das": false,
-            "plural": "Personen",
+            "plural": "die Personen",
             "kategori": "Orang"
         },
         {
-            "kata": "Text",
-            "arti": "Teks",
+            "kata": "Polizist",
+            "arti": "Polisi (laki-laki)",
             "der": true,
             "die": false,
             "das": false,
-            "plural": "Texte",
-            "kategori": "Benda"
+            "plural": "die Polizisten",
+            "kategori": "Orang"
         },
         {
-            "kata": "Wort",
-            "arti": "Kata",
-            "der": false,
-            "die": false,
-            "das": true,
-            "plural": "Wörter",
-            "kategori": "Abstrak"
-        },
-        {
-            "kata": "Autobahn",
-            "arti": "Jalan Tol",
+            "kata": "Polizistin",
+            "arti": "Polisi (perempuan)",
             "der": false,
             "die": true,
             "das": false,
-            "plural": "Autobahnen",
-            "kategori": "Tempat"
+            "plural": "die Polizistinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Programmierer",
+            "arti": "Programmer / Pemrogram (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Programmierer",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Programmiererin",
+            "arti": "Programmer / Pemrogram (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Programmiererinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Publikum",
+            "arti": "Penonton",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "—",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Regisseur",
+            "arti": "Sutradara (pria)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Regisseure",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Regisseurin",
+            "arti": "Sutradara (wanita)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Regisseurinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Rentner",
+            "arti": "Pensiunan (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Rentner",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Rentnerin",
+            "arti": "Pensiunan (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Rentnerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Schauspieler",
+            "arti": "Aktor",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Schauspieler",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Schauspielerin",
+            "arti": "Aktris",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Schauspielerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Schüler",
+            "arti": "Pelajar / Murid (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Schüler",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Schülerin",
+            "arti": "Pelajar / Murid (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Schülerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Sekretär",
+            "arti": "Sekretaris (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Sekretäre",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Sekretärin",
+            "arti": "Sekretaris (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Sekretärinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Star",
+            "arti": "Bintang (selebriti)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Stars",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Student",
+            "arti": "Mahasiswa / Mahasiswi (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Studenten",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Studentin",
+            "arti": "Mahasiswi",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Studentinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Taxifahrer",
+            "arti": "Sopir taksi (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Taxifahrer",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Taxifahrerin",
+            "arti": "Sopir Taksi (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Taxifahrerinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Verkäufer",
+            "arti": "Pramuniaga / Penjual (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Verkäufer",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Verkäuferin",
+            "arti": "Pramuniaga (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Verkäuferinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Vorname",
+            "arti": "Nama Depan",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Vornamen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Zahnarzt",
+            "arti": "Dokter Gigi (laki-laki)",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Zahnärzte",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Zahnärztin",
+            "arti": "Dokter Gigi (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Zahnärztinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Ärztin",
+            "arti": "Dokter (perempuan)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Ärztinnen",
+            "kategori": "Orang"
+        },
+        {
+            "kata": "Apfel",
+            "arti": "Apel",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Äpfel",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Apfelsaft",
+            "arti": "Jus apel",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Apfelsäfte",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Auto",
+            "arti": "Mobil",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Autos",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Banane",
+            "arti": "Pisang",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Bananen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Becher",
+            "arti": "Cangkir/gelas",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Becher",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Bild",
+            "arti": "Gambar",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Bilder",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Birne",
+            "arti": "Pir",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Birnen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Brot",
+            "arti": "Roti",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Brote",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Brötchen",
+            "arti": "Roti kecil",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Brötchen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Buch",
+            "arti": "Buku",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Bücher",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Bus",
+            "arti": "Bus",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Busse",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Butter",
+            "arti": "Mentega",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Cola",
+            "arti": "Cola",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Colas",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Computer",
+            "arti": "Komputer",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Computer",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Dose",
+            "arti": "Kaleng",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Dosen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Ei",
+            "arti": "Telur",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Eier",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Einkaufswagen",
+            "arti": "Troli belanja",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Einkaufswagen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Essen",
+            "arti": "Makanan",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Essen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Essig",
+            "arti": "Cuka",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Essige",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Fahrkarte",
+            "arti": "Tiket (transportasi)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Fahrkarten",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Fahrrad",
+            "arti": "Sepeda",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Fahrräder",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Film",
+            "arti": "Film",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Filme",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Fisch",
+            "arti": "Ikan",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Fische",
+            "kategori": "Benda"
         },
         {
             "kata": "Flasche",
@@ -141,17 +1356,152 @@
             "der": false,
             "die": true,
             "das": false,
-            "plural": "Flaschen",
+            "plural": "die Flaschen",
             "kategori": "Benda"
         },
         {
-            "kata": "Kindergarten",
-            "arti": "Taman Anak-anak",
+            "kata": "Fleisch",
+            "arti": "Daging",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Flugzeug",
+            "arti": "Pesawat",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Flugzeuge",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Formular",
+            "arti": "Formulir",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Formulare",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Foto",
+            "arti": "Foto",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Fotos",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Fußball",
+            "arti": "Sepak bola",
             "der": true,
             "die": false,
             "das": false,
-            "plural": "Kindergärten",
-            "kategori": "Tempat"
+            "plural": "die Fußbälle",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Gemüse",
+            "arti": "Sayuran",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Gericht",
+            "arti": "Hidangan/masakan",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Gerichte",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Getränk",
+            "arti": "Minuman",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Getränke",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Glas",
+            "arti": "Gelas",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Gläser",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Gurke",
+            "arti": "Timun",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Gurken",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Hähnchen",
+            "arti": "Ayam",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Hähnchen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Joghurt",
+            "arti": "Yoghurt",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Joghurts",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Kaffee",
+            "arti": "Kopi",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Kaffees",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Kartoffel",
+            "arti": "Kentang",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Kartoffeln",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Kassenzettel",
+            "arti": "Struk belanja",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Kassenzettel",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Keks",
+            "arti": "Biskuit",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Kekse",
+            "kategori": "Benda"
         },
         {
             "kata": "Koffer",
@@ -159,8 +1509,1115 @@
             "der": true,
             "die": false,
             "das": false,
-            "plural": "Koffer",
+            "plural": "die Koffer",
             "kategori": "Benda"
+        },
+        {
+            "kata": "Konzertkarte",
+            "arti": "Tiket konser",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Konzertkarten",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Kuchen",
+            "arti": "Kue",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Kuchen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Käse",
+            "arti": "Keju",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Limonade",
+            "arti": "Limun",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Limonaden",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Marmelade",
+            "arti": "Selai",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Marmeladen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Milch",
+            "arti": "Susu",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Müsli",
+            "arti": "Musli",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Müslis",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Nudel",
+            "arti": "Mi/pasta",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Nudeln",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Obst",
+            "arti": "Buah-buahan",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Olive",
+            "arti": "Zaitun",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Oliven",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Orangensaft",
+            "arti": "Jus jeruk",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Orangensäfte",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Packung",
+            "arti": "Kemasan",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Packungen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Pfeffer",
+            "arti": "Merica",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Pizza",
+            "arti": "Pizza",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Pizzas/Pizzen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Plakat",
+            "arti": "Poster",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Plakate",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Pommes frites",
+            "arti": "Kentang goreng",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Reis",
+            "arti": "Nasi/beras",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "S-Bahn",
+            "arti": "Kereta komuter",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die S-Bahnen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Saft",
+            "arti": "Jus",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Säfte",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Sahne",
+            "arti": "Krim",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Salat",
+            "arti": "Selada",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Salate",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Salz",
+            "arti": "Garam",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Schiff",
+            "arti": "Kapal",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Schiffe",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Schinken",
+            "arti": "Ham",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Schinken",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Schlüssel",
+            "arti": "Kunci",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Schlüssel",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Schokolade",
+            "arti": "Coklat",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Schokoladen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Spritze",
+            "arti": "Jarum suntik",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Spritzen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Stift",
+            "arti": "Pulpen",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Stifte",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Straßenbahn",
+            "arti": "Trem",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Straßenbahnen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Stück",
+            "arti": "Potong/keping",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Stücke",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Suppe",
+            "arti": "Sup",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Suppen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Tablette",
+            "arti": "Tablet",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Tabletten",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Taxi",
+            "arti": "Taksi",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Taxis",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Tee",
+            "arti": "Teh",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Tees",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Ticket",
+            "arti": "Tiket",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Tickets",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Tomate",
+            "arti": "Tomat",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Tomaten",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Tüte",
+            "arti": "Kantong plastik",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Tüten",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "U-Bahn",
+            "arti": "Kereta bawah tanah",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die U-Bahnen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Wasser",
+            "arti": "Air",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Wurst",
+            "arti": "Sosis",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Würste",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Wörterbuch",
+            "arti": "Kamus",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Wörterbücher",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Würstchen",
+            "arti": "Sosis kecil",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Würstchen",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Zucker",
+            "arti": "Gula",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Zug",
+            "arti": "Kereta",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Züge",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Zwiebel",
+            "arti": "Bawang bombay",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Zwiebeln",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Öl",
+            "arti": "Minyak",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "—",
+            "kategori": "Benda"
+        },
+        {
+            "kata": "Abend",
+            "arti": "Sore/Malam",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Abende",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Abendessen",
+            "arti": "Makan malam",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Abendessen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Adresse",
+            "arti": "Alamat",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Adressen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Antwort",
+            "arti": "Jawaban",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Antworten",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "April",
+            "arti": "April",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "August",
+            "arti": "Agustus",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Ausstellung",
+            "arti": "Pameran",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Ausstellungen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Beispiel",
+            "arti": "Contoh",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Beispiele",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Dezember",
+            "arti": "Desember",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "E-Mail-Adresse",
+            "arti": "Alamat email",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die E-Mail-Adressen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Einladung",
+            "arti": "Undangan",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Einladungen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Euro",
+            "arti": "Euro",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Euros",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Event",
+            "arti": "Acara",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Events",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Februar",
+            "arti": "Februari",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Festival",
+            "arti": "Festival",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Festivals",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Frühling",
+            "arti": "Musim semi",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Frühstück",
+            "arti": "Sarapan",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Frühstücke",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Geburtsdatum",
+            "arti": "Tanggal lahir",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Geburtsdaten",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Geld",
+            "arti": "Uang",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "—",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Glück",
+            "arti": "Keberuntungan",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "—",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Gramm",
+            "arti": "Gram",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Gramm",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Handynummer",
+            "arti": "Nomor HP",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Handynummern",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Hausnummer",
+            "arti": "Nomor rumah",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Hausnummern",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Herbst",
+            "arti": "Musim gugur",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Hobby",
+            "arti": "Hobi",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Hobbys",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Information",
+            "arti": "Informasi",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Informationen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Jahr",
+            "arti": "Tahun",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Jahre",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Jahreszeit",
+            "arti": "Musim",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Jahreszeiten",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Januar",
+            "arti": "Januari",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Juli",
+            "arti": "Juli",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Juni",
+            "arti": "Juni",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Kilogramm",
+            "arti": "Kilogram",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Kilo",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Kilometer",
+            "arti": "Kilometer",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Kilometer",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Konzert",
+            "arti": "Konser",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Konzerte",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Kosten",
+            "arti": "Biaya",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Kosten",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Kurs",
+            "arti": "Kursus",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Kurse",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Liter",
+            "arti": "Liter",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Liter",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Lösung",
+            "arti": "Solusi",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Lösungen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Mai",
+            "arti": "Mei",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Meter",
+            "arti": "Meter",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Meter",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Mittag",
+            "arti": "Siang",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Mittage",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Mittagessen",
+            "arti": "Makan siang",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Mittagessen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Mitte",
+            "arti": "Tengah",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "—",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Moment",
+            "arti": "Momen/Saat",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Momente",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Monat",
+            "arti": "Bulan",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Monate",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Morgen",
+            "arti": "Pagi",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Morgen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Musik",
+            "arti": "Musik",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "—",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "März",
+            "arti": "Maret",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Nachmittag",
+            "arti": "Sore hari",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Nachmittage",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Nacht",
+            "arti": "Malam (larut)",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Nächte",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Notiz",
+            "arti": "Catatan",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Notizen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "November",
+            "arti": "November",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Oktober",
+            "arti": "Oktober",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Orchester",
+            "arti": "Orkestra",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Orchester",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Plan",
+            "arti": "Rencana/peta",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Pläne",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Postleitzahl",
+            "arti": "Kode pos",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Postleitzahlen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Preis",
+            "arti": "Harga",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Preise",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Rechnung",
+            "arti": "Tagihan",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Rechnungen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Seminar",
+            "arti": "Seminar",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Seminare",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "September",
+            "arti": "September",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Sommer",
+            "arti": "Musim panas",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Start",
+            "arti": "Mulai/start",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "—",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Stunde",
+            "arti": "Jam",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Stunden",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Tag",
+            "arti": "Hari",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Tage",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Telefonnummer",
+            "arti": "Nomor Telepon",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Telefonnummern",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Termin",
+            "arti": "Janji temu",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Termine",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Test",
+            "arti": "Tes",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Tests",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Text",
+            "arti": "Teks",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Texte",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Verabredung",
+            "arti": "Janji temu",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Verabredungen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Welt",
+            "arti": "Dunia",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Welten",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Winter",
+            "arti": "Musim dingin",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die —",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Woche",
+            "arti": "Minggu",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Wochen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Wochenende",
+            "arti": "Akhir pekan",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Wochenenden",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Wochentag",
+            "arti": "Hari kerja",
+            "der": true,
+            "die": false,
+            "das": false,
+            "plural": "die Wochentage",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Wort",
+            "arti": "Kata",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Wörter",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Zahl",
+            "arti": "Angka",
+            "der": false,
+            "die": true,
+            "das": false,
+            "plural": "die Zahlen",
+            "kategori": "Abstrak"
+        },
+        {
+            "kata": "Ziel",
+            "arti": "Tujuan/target",
+            "der": false,
+            "die": false,
+            "das": true,
+            "plural": "die Ziele",
+            "kategori": "Abstrak"
         }
     ]
 }

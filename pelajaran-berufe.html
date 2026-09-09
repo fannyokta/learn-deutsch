@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💼 Berufe · Belajar Jerman</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-['Inter']">
+
+    <div id="app" class="flex min-h-screen">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside id="sidebarContainer"
+            class="fixed top-0 left-0 w-[220px] h-full bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 p-5 flex flex-col z-50 shadow-sm overflow-y-auto">
+            <!-- diisi oleh components/sidebar.js -->
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="flex-1 ml-[220px] p-7 md:p-9 min-h-screen">
+
+            <section class="page">
+
+                <!-- ===== HERO HEADER ===== -->
+                <div
+                    class="relative mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-rose-500 p-6 md:p-8 text-white shadow-xl">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4">
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-3xl">💼</span>
+                            <span
+                                class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Berufe</span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">Pekerjaan dalam <span
+                                class="text-yellow-300">Bahasa Jerman</span></h1>
+                        <p class="text-white/80 text-base max-w-xl">Nama-nama profesi, pertanyaan tentang pekerjaan, dan
+                            cara menjawabnya.</p>
+                    </div>
+                </div>
+
+                <!-- ===== PERTANYAAN PEKERJAAN ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">❓ Pertanyaan tentang Pekerjaan
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-purple-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Was machst du beruflich?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Apa pekerjaanmu? (informal)</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">→ Ich bin Lehrer.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-pink-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Was machen Sie beruflich?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Apa pekerjaan Anda? (formal)</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">→ Ich bin Ärztin.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-emerald-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Wo arbeitest du?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Di mana kamu bekerja? (informal)</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">→ Ich arbeite in einer Schule.
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-amber-500">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Seit wann arbeitest du?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Sejak kapan kamu bekerja?</p>
+                            <p class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">→ Ich arbeite seit 2020.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== DAFTAR PEKERJAAN ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">👨‍💼 Daftar Pekerjaan</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👨‍🏫</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Lehrer</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">guru (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Lehrerin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👩‍⚕️</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Arzt</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">dokter (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Ärztin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👨‍💻</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Informatiker</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">IT (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Informatikerin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👩‍🔬</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Wissenschaftler</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">ilmuwan (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Wissenschaftlerin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👩‍🍳</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Koch</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">koki (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Köchin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👨‍🎨</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Künstler</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">seniman (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Künstlerin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👨‍✈️</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Pilot</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">pilot (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Pilotin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👩‍💼</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Manager</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">manajer (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Managerin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👨‍🔧</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Mechaniker</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">mekanik (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Mechanikerin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👩‍🎓</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Student</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">mahasiswa (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Studentin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👨‍💼</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Angestellter</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">karyawan (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Angestellte (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👨‍🍳</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Bäcker</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">tukang roti (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Bäckerin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👩‍🏫</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Professor</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">profesor (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Professorin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👨‍⚖️</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Anwalt</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">pengacara (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Anwältin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👩‍🚀</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Astronaut</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">astronot (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Astronautin (pr)</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-3 text-center hover:shadow-md hover:-translate-y-1 transition-all">
+                            <div class="text-3xl mb-1">👩‍🎨</div>
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Designer</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">desainer (lk)</p>
+                            <p class="text-xs text-indigo-600 dark:text-indigo-400 mt-1">Designerin (pr)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== ATURAN PEMBENTUKAN PEKERJAAN ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">📝 Aturan Pembentukan Pekerjaan
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div
+                            class="bg-purple-50 dark:bg-purple-950/30 rounded-lg p-4 border border-purple-200 dark:border-purple-800/30">
+                            <h3 class="font-bold text-purple-600 dark:text-purple-400 text-lg">👨 Maskulin → 👩 Feminin
+                            </h3>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 mt-2 space-y-2">
+                                <li>• <span class="font-medium">Lehrer</span> → <span
+                                        class="font-medium text-purple-600 dark:text-purple-400">Lehrerin</span> <span
+                                        class="text-xs text-gray-400">(guru)</span></li>
+                                <li>• <span class="font-medium">Arzt</span> → <span
+                                        class="font-medium text-purple-600 dark:text-purple-400">Ärztin</span> <span
+                                        class="text-xs text-gray-400">(dokter)</span></li>
+                                <li>• <span class="font-medium">Koch</span> → <span
+                                        class="font-medium text-purple-600 dark:text-purple-400">Köchin</span> <span
+                                        class="text-xs text-gray-400">(koki)</span></li>
+                                <li>• <span class="font-medium">Student</span> → <span
+                                        class="font-medium text-purple-600 dark:text-purple-400">Studentin</span> <span
+                                        class="text-xs text-gray-400">(mahasiswa)</span></li>
+                            </ul>
+                            <div class="mt-3 text-xs text-gray-400">
+                                <span class="font-medium text-purple-600">Aturan:</span> Tambahkan <span
+                                    class="font-medium">-in</span> untuk bentuk feminin (perhatikan perubahan vokal)
+                            </div>
+                        </div>
+                        <div
+                            class="bg-emerald-50 dark:bg-emerald-950/30 rounded-lg p-4 border border-emerald-200 dark:border-emerald-800/30">
+                            <h3 class="font-bold text-emerald-600 dark:text-emerald-400 text-lg">📌 Kata Kerja →
+                                Pekerjaan</h3>
+                            <ul class="text-sm text-gray-600 dark:text-gray-300 mt-2 space-y-2">
+                                <li>• <span class="font-medium">lehren</span> (mengajar) → <span
+                                        class="font-medium text-emerald-600 dark:text-emerald-400">Lehrer</span></li>
+                                <li>• <span class="font-medium">arbeiten</span> (bekerja) → <span
+                                        class="font-medium text-emerald-600 dark:text-emerald-400">Arbeiter</span>
+                                    (pekerja)</li>
+                                <li>• <span class="font-medium">kochen</span> (memasak) → <span
+                                        class="font-medium text-emerald-600 dark:text-emerald-400">Koch</span></li>
+                                <li>• <span class="font-medium">backen</span> (memanggang) → <span
+                                        class="font-medium text-emerald-600 dark:text-emerald-400">Bäcker</span></li>
+                            </ul>
+                            <div class="mt-3 text-xs text-gray-400">
+                                <span class="font-medium text-emerald-600">Aturan:</span> Ambil akar kata kerja + <span
+                                    class="font-medium">-er</span> (maskulin)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== CONTOH KALIMAT ===== -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-200 dark:border-slate-700 shadow-sm">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">💬 Contoh Kalimat Pekerjaan</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Ich bin <span
+                                    class="text-purple-600 dark:text-purple-400">Lehrer</span>.</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Saya seorang guru.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Sie ist <span
+                                    class="text-purple-600 dark:text-purple-400">Ärztin</span>.</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Dia (pr) adalah dokter.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Er arbeitet als <span
+                                    class="text-purple-600 dark:text-purple-400">Ingenieur</span>.</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Dia (lk) bekerja sebagai insinyur.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Ich arbeite in einem <span
+                                    class="text-purple-600 dark:text-purple-400">Krankenhaus</span>.</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Saya bekerja di rumah sakit.</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Was sind Sie von Beruf?</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Apa profesi Anda? (formal)</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4">
+                            <p class="font-semibold text-gray-800 dark:text-gray-100">Ich möchte <span
+                                    class="text-purple-600 dark:text-purple-400">Ärztin</span> werden.</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Saya ingin menjadi dokter.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== KOMPONEN ===== -->
+    <script src="components/sidebar.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderSidebar();
+            loadTheme();
+        });
+    </script>
+</body>
+
+</html>
