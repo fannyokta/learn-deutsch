@@ -9,6 +9,7 @@ const MENU_ITEMS = [
     { href: 'kosakata.html', icon: 'fa-book-open', label: 'Kosakata' },
     { href: 'tata-bahasa.html', icon: 'fa-graduation-cap', label: 'Tata Bahasa' },
     { href: 'pronomen.html', icon: 'fa-user-graduate', label: 'Pronomen' },
+    { href: 'modalverben.html', icon: 'fa-toolbox', label: 'Modalverben' },
     { 
         href: '#', 
         icon: 'fa-bookmark', 

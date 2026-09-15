@@ -1,0 +1,218 @@
+{
+    "penjelasan": {
+        "judul": "Apa itu Modalverben?",
+        "isi": "Modalverben (kata kerja modal) adalah kata kerja bantu yang mengubah makna kata kerja utama — misalnya menyatakan kemampuan, keharusan, izin, atau keinginan. Polanya: Modalverb dikonjugasi di posisi ke-2 kalimat, sedangkan kata kerja utama tetap dalam bentuk Infinitiv (tidak dikonjugasi) dan diletakkan di akhir kalimat.",
+        "contoh_pola": "Ich (1) kann (2) gut Deutsch sprechen (akhir).",
+        "keterangan_pola": "kann = modalverb (posisi 2) · sprechen = kata kerja utama, tetap Infinitiv (di akhir)"
+    },
+    "pronomen": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+    "bedeutungen": [
+        {
+            "verb": "können",
+            "bedeutung": "Fähigkeit / Möglichkeit / Erlaubnis",
+            "beispiele": [
+                { "de": "Ich kann schwimmen.", "keterangan": "Fähigkeit" },
+                { "de": "Sonntags kann man hier kein Brot kaufen.", "keterangan": "Möglichkeit" },
+                { "de": "Du kannst hereinkommen!", "keterangan": "Erlaubnis" }
+            ]
+        },
+        {
+            "verb": "dürfen",
+            "bedeutung": "Erlaubnis",
+            "beispiele": [
+                { "de": "Du darfst hier parken.", "keterangan": "" }
+            ]
+        },
+        {
+            "verb": "wollen",
+            "bedeutung": "Wille / Absicht",
+            "beispiele": [
+                { "de": "Ich will morgen nach Hamburg fahren.", "keterangan": "" }
+            ]
+        },
+        {
+            "verb": "möchte",
+            "bedeutung": "Wunsch (Konjunktiv II von mögen)",
+            "beispiele": [
+                { "de": "Möchtest du nach Hause gehen?", "keterangan": "" }
+            ]
+        },
+        {
+            "verb": "müssen",
+            "bedeutung": "Notwendigkeit",
+            "beispiele": [
+                { "de": "Du musst mir helfen.", "keterangan": "" }
+            ]
+        },
+        {
+            "verb": "sollen",
+            "bedeutung": "Auftrag / Empfehlung",
+            "beispiele": [
+                { "de": "Ich soll dir von Udo sagen, dass er kommt.", "keterangan": "Auftrag" },
+                { "de": "Du solltest weniger rauchen.", "keterangan": "Empfehlung" }
+            ]
+        },
+        {
+            "verb": "mögen",
+            "bedeutung": "Vorliebe, etwas gerne tun / haben",
+            "beispiele": [
+                { "de": "Ich mag lieber Kaffee als Tee.", "keterangan": "" }
+            ]
+        }
+    ],
+    "hinweise": [
+        "„möchte“ ist der Konjunktiv II von „mögen“ im modalen Gebrauch.",
+        "nicht müssen = nicht brauchen: z. B. „Du musst mir nicht helfen“ = „Du brauchst mir nicht (zu) helfen.“ Perfekt: „Du hast mir nicht (zu) helfen brauchen.“ (regional und umgangssprachlich auch ohne „zu“)"
+    ],
+    "dialog": {
+        "judul": "Mini Dialog: Eine Verabredung machen",
+        "keterangan": "Anna mengatur Familientermin (pertemuan keluarga) di akhir pekan — perhatikan kombinasi Personalpronomen, Modalverben, dan kosakata Zeit.",
+        "percakapan": [
+            { "s": "A", "de": "Hallo Ben! Hast du am Samstag Zeit? Ich möchte unsere Familie zum Essen einladen.", "id": "Halo Ben! Kamu ada waktu hari Sabtu? Aku ingin mengundang keluarga kita makan bersama." },
+            { "s": "B", "de": "Am Samstag? Moment, ich muss erst nachschauen ... Ja, ich kann kommen! Aber ich muss vorher noch einkaufen gehen.", "id": "Hari Sabtu? Sebentar, aku harus cek dulu ... Ya, aku bisa datang! Tapi aku harus belanja dulu sebelumnya." },
+            { "s": "A", "de": "Prima! Können wir uns um 18 Uhr treffen?", "id": "Bagus! Bisakah kita ketemu jam 6 sore?" },
+            { "s": "B", "de": "Ich glaube, meine Eltern können erst um 19 Uhr. Sie müssen erst meine Oma vom Bahnhof abholen.", "id": "Kupikir orang tuaku baru bisa jam 7 malam. Mereka harus jemput nenekku dulu dari stasiun." },
+            { "s": "A", "de": "Kein Problem, wir können auch später anfangen. Möchtest du deine Schwester auch einladen?", "id": "Tidak masalah, kita juga bisa mulai lebih lambat. Kamu mau mengundang adikmu juga?" },
+            { "s": "B", "de": "Ja, ich will sie fragen. Aber sie muss am Samstagmorgen noch arbeiten.", "id": "Ya, aku mau tanya dia. Tapi dia harus kerja dulu Sabtu pagi." },
+            { "s": "A", "de": "Verstehe. Sollen wir sie um 19:30 Uhr erwarten?", "id": "Mengerti. Haruskah kita tunggu dia jam 19:30?" },
+            { "s": "B", "de": "Gut, das sollte klappen. Ich sage ihr Bescheid.", "id": "Baik, itu seharusnya bisa. Aku akan kasih tahu dia." },
+            { "s": "A", "de": "Super, dann sehen wir uns am Samstag um 19 Uhr bei mir!", "id": "Bagus, sampai ketemu hari Sabtu jam 7 malam di rumahku!" },
+            { "s": "B", "de": "Ich freue mich schon! Bis dann!", "id": "Aku sudah tidak sabar! Sampai nanti!" }
+        ]
+    },
+    "modalverben": [
+        {
+            "verb": "können",
+            "arti": "bisa / mampu",
+            "icon": "💪",
+            "konteks": "Menyatakan kemampuan (skill) atau kemungkinan melakukan sesuatu.",
+            "konjugasi": {
+                "ich": "kann",
+                "du": "kannst",
+                "er_sie_es": "kann",
+                "wir": "können",
+                "ihr": "könnt",
+                "sie_Sie": "können"
+            },
+            "contoh": [
+                { "de": "Ich kann gut schwimmen.", "id": "Saya bisa berenang dengan baik." },
+                { "de": "Kannst du mir helfen?", "id": "Bisakah kamu membantuku?" },
+                { "de": "Wir können morgen kommen.", "id": "Kami bisa datang besok." }
+            ]
+        },
+        {
+            "verb": "müssen",
+            "arti": "harus",
+            "icon": "❗",
+            "konteks": "Menyatakan keharusan/kewajiban, biasanya karena aturan atau keadaan (bukan pilihan pribadi).",
+            "konjugasi": {
+                "ich": "muss",
+                "du": "musst",
+                "er_sie_es": "muss",
+                "wir": "müssen",
+                "ihr": "müsst",
+                "sie_Sie": "müssen"
+            },
+            "contoh": [
+                { "de": "Ich muss jetzt gehen.", "id": "Saya harus pergi sekarang." },
+                { "de": "Du musst die Hausaufgaben machen.", "id": "Kamu harus mengerjakan PR." },
+                { "de": "Man muss hier einen Ausweis zeigen.", "id": "Di sini orang harus menunjukkan kartu identitas." }
+            ]
+        },
+        {
+            "verb": "wollen",
+            "arti": "ingin / mau",
+            "icon": "🎯",
+            "konteks": "Menyatakan kehendak atau keinginan yang kuat dan tegas (agak to-the-point, kurang sopan untuk permintaan formal).",
+            "konjugasi": {
+                "ich": "will",
+                "du": "willst",
+                "er_sie_es": "will",
+                "wir": "wollen",
+                "ihr": "wollt",
+                "sie_Sie": "wollen"
+            },
+            "contoh": [
+                { "de": "Ich will nach Berlin fahren.", "id": "Saya mau pergi ke Berlin." },
+                { "de": "Was willst du essen?", "id": "Kamu mau makan apa?" },
+                { "de": "Sie wollen nächstes Jahr heiraten.", "id": "Mereka ingin menikah tahun depan." }
+            ]
+        },
+        {
+            "verb": "sollen",
+            "arti": "seharusnya / disuruh",
+            "icon": "📌",
+            "konteks": "Menyatakan anjuran, saran, atau perintah/keinginan dari orang lain (bukan keinginan sendiri).",
+            "konjugasi": {
+                "ich": "soll",
+                "du": "sollst",
+                "er_sie_es": "soll",
+                "wir": "sollen",
+                "ihr": "sollt",
+                "sie_Sie": "sollen"
+            },
+            "contoh": [
+                { "de": "Der Arzt sagt, ich soll mehr ausruhen.", "id": "Dokter bilang saya sebaiknya lebih banyak istirahat." },
+                { "de": "Du sollst nicht lügen.", "id": "Kamu tidak boleh (seharusnya tidak) berbohong." },
+                { "de": "Soll ich das Fenster schließen?", "id": "Apakah saya perlu menutup jendelanya?" }
+            ]
+        },
+        {
+            "verb": "dürfen",
+            "arti": "boleh",
+            "icon": "✅",
+            "konteks": "Menyatakan izin. Bentuk negatif (nicht dürfen) berarti larangan, bukan sekadar 'tidak harus'.",
+            "konjugasi": {
+                "ich": "darf",
+                "du": "darfst",
+                "er_sie_es": "darf",
+                "wir": "dürfen",
+                "ihr": "dürft",
+                "sie_Sie": "dürfen"
+            },
+            "contoh": [
+                { "de": "Darf ich reinkommen?", "id": "Bolehkah saya masuk?" },
+                { "de": "Hier darf man nicht rauchen.", "id": "Di sini tidak boleh merokok." },
+                { "de": "Ihr dürft am Wochenende länger schlafen.", "id": "Kalian boleh tidur lebih lama di akhir pekan." }
+            ]
+        },
+        {
+            "verb": "mögen",
+            "arti": "suka",
+            "icon": "❤️",
+            "konteks": "Menyatakan rasa suka terhadap sesuatu/seseorang. Sering dipakai tanpa kata kerja lain, langsung ke objek (kata benda).",
+            "konjugasi": {
+                "ich": "mag",
+                "du": "magst",
+                "er_sie_es": "mag",
+                "wir": "mögen",
+                "ihr": "mögt",
+                "sie_Sie": "mögen"
+            },
+            "contoh": [
+                { "de": "Ich mag Schokolade.", "id": "Saya suka cokelat." },
+                { "de": "Magst du Katzen?", "id": "Kamu suka kucing?" },
+                { "de": "Wir mögen diese Stadt sehr.", "id": "Kami sangat menyukai kota ini." }
+            ]
+        },
+        {
+            "verb": "möchten",
+            "arti": "ingin (lebih sopan)",
+            "icon": "🙏",
+            "konteks": "Bentuk Konjunktiv II dari mögen, dipakai untuk menyatakan keinginan secara sopan — cocok untuk memesan atau meminta sesuatu.",
+            "konjugasi": {
+                "ich": "möchte",
+                "du": "möchtest",
+                "er_sie_es": "möchte",
+                "wir": "möchten",
+                "ihr": "möchtet",
+                "sie_Sie": "möchten"
+            },
+            "contoh": [
+                { "de": "Ich möchte einen Kaffee, bitte.", "id": "Saya ingin secangkir kopi, tolong." },
+                { "de": "Möchtest du mitkommen?", "id": "Maukah kamu ikut?" },
+                { "de": "Wir möchten gern reservieren.", "id": "Kami ingin melakukan reservasi." }
+            ]
+        }
+    ]
+}
