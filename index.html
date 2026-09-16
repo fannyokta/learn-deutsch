@@ -4,20 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🇩🇪 Lernen · Belajar Jerman</title>
+    <title>🇩🇪 Lernen · Belajar Bahasa Jerman</title>
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
         rel="stylesheet" />
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -45,177 +40,236 @@
 
 <body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-['Inter']">
 
-    <div id="app" class="flex min-h-screen">
-
-        <!-- ===== SIDEBAR (KOMPONEN) ===== -->
-        <aside id="sidebarContainer"
-            class="fixed top-0 left-0 w-[220px] h-full bg-white dark:bg-slate-900 border-r border-gray-200 dark:border-slate-700 p-5 flex flex-col z-50 shadow-sm overflow-y-auto">
-            <!-- diisi oleh components/sidebar.js -->
-        </aside>
-
-        <!-- ===== MAIN CONTENT ===== -->
-        <main class="flex-1 ml-[220px] p-7 md:p-9 min-h-screen">
-
-            <section class="page">
-
-                <!-- ===== HERO SECTION ===== -->
-                <div
-                    class="relative mb-8 overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-6 md:p-8 text-white shadow-xl">
-                    <div
-                        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4">
-                    </div>
-
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-3xl">👋</span>
-                            <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">Hallo,
-                                Fanny!</span>
-                        </div>
-                        <h1 class="text-3xl md:text-4xl font-bold mb-2">Selamat Belajar <br class="sm:hidden" /><span
-                                class="text-yellow-300">Bahasa Jerman</span> 🇩🇪</h1>
-                        <p class="text-white/80 text-base max-w-xl">Kumpulan lengkap kosakata, tata bahasa, dan latihan
-                            interaktif dalam satu tempat.</p>
-
-                        <div class="flex flex-wrap gap-3 mt-4">
-                            <a href="pelajaran.html"
-                                class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-indigo-600 rounded-full font-medium hover:bg-gray-100 transition-all shadow-lg shadow-black/20">
-                                <i class="fas fa-rocket"></i> Mulai Belajar
-                            </a>
-                            <a href="kosakata.html"
-                                class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/20 backdrop-blur-sm border border-white/30 text-white rounded-full font-medium hover:bg-white/30 transition-all">
-                                <i class="fas fa-book-open"></i> Lihat Kosakata
-                            </a>
-                        </div>
-                    </div>
+    <!-- ===== HEADER / NAV ===== -->
+    <div class="sticky top-3 md:top-4 z-50 px-3 md:px-5 pb-2 md:pb-3">
+        <header
+            class="max-w-6xl mx-auto rounded-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/60 dark:border-slate-700/60 shadow-lg shadow-slate-900/5 dark:shadow-black/30">
+            <div class="px-4 md:px-6 py-2.5 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-2 shrink-0">
+                    <span class="text-2xl">🇩🇪</span>
+                    <span
+                        class="text-lg font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">Lernen</span>
                 </div>
-
-                <!-- ===== STATISTIK ===== -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                    <div
-                        class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">🌍</span>
-                            <div>
-                                <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400" id="totalNegara">0
-                                </div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">Negara</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">📚</span>
-                            <div>
-                                <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400" id="totalKata">0
-                                </div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">Kata Benda</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">🧩</span>
-                            <div>
-                                <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400" id="totalKasus">0
-                                </div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">Kasus</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                        <div class="flex items-center gap-3">
-                            <span class="text-2xl">📖</span>
-                            <div>
-                                <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400"
-                                    id="totalPelajaran">0</div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">Pertanyaan</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== FITUR UTAMA ===== -->
-                <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">🚀 Fitur Utama</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                    <a href="negara.html"
-                        class="group bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="text-2xl">🌍</span>
-                            <h3 class="font-semibold text-gray-800 dark:text-gray-200">Daftar Negara</h3>
-                        </div>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Nama negara dalam bahasa Jerman dan bahasa
-                            yang digunakan.</p>
-                        <span
-                            class="inline-block mt-3 text-indigo-500 text-sm font-medium group-hover:translate-x-1 transition-all">Pelajari
-                            →</span>
-                    </a>
-
-                    <a href="kosakata.html"
-                        class="group bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="text-2xl">📚</span>
-                            <h3 class="font-semibold text-gray-800 dark:text-gray-200">Kosakata</h3>
-                        </div>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">Kata benda Jerman dengan artikel &amp;
-                            kategori (Tempat, Orang, Benda).</p>
-                        <span
-                            class="inline-block mt-3 text-indigo-500 text-sm font-medium group-hover:translate-x-1 transition-all">Pelajari
-                            →</span>
-                    </a>
-
-                    <a href="tata-bahasa.html"
-                        class="group bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="text-2xl">🧩</span>
-                            <h3 class="font-semibold text-gray-800 dark:text-gray-200">Tata Bahasa</h3>
-                        </div>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">4 Kasus: Nominativ, Genitiv, Dativ,
-                            Akkusativ + contoh.</p>
-                        <span
-                            class="inline-block mt-3 text-indigo-500 text-sm font-medium group-hover:translate-x-1 transition-all">Pelajari
-                            →</span>
+                <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+                    <a href="#fitur"
+                        class="px-3.5 py-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-gray-100 hover:-translate-y-0.5 transition-all duration-200">Fitur</a>
+                    <a href="#pelajaran"
+                        class="px-3.5 py-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-gray-100 hover:-translate-y-0.5 transition-all duration-200">Topik
+                        Pelajaran</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button id="darkToggle"
+                        class="w-9 h-9 grid place-items-center rounded-full bg-gray-100/80 dark:bg-slate-700/80 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-600 transition-all">
+                        <i class="fas fa-moon" id="darkIcon"></i>
+                    </button>
+                    <a href="beranda.html"
+                        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full text-sm font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-indigo-500/30">
+                        <i class="fas fa-rocket"></i> Mulai Belajar
                     </a>
                 </div>
-
-                <!-- ===== QUICK ACCESS ===== -->
-                <div
-                    class="bg-indigo-50 dark:bg-indigo-950/30 rounded-xl p-6 border border-indigo-200 dark:border-indigo-800/30">
-                    <div class="flex flex-wrap items-center justify-between gap-4">
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">📖 Yang Sudah Aku
-                                Pelajari</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Kumpulan pertanyaan &amp; jawaban dalam
-                                bahasa Jerman.</p>
-                        </div>
-                        <a href="pelajaran.html"
-                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-700 transition-all shadow-md shadow-indigo-500/30">
-                            <i class="fas fa-arrow-right"></i> Lihat Semua
-                        </a>
-                    </div>
-                </div>
-
-            </section>
-
-        </main>
+            </div>
+        </header>
     </div>
 
-    <!-- ===== KOMPONEN SIDEBAR ===== -->
-    <script src="components/sidebar.js"></script>
+    <main>
 
-    <!-- ===== SCRIPT UTAMA ===== -->
-    <script src="script.js"></script>
+        <!-- ===== HERO ===== -->
+        <section class="relative overflow-hidden">
+            <div
+                class="absolute top-0 right-0 w-96 h-96 bg-indigo-400/20 dark:bg-indigo-500/10 rounded-full -translate-y-1/3 translate-x-1/4 blur-3xl">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-80 h-80 bg-pink-400/20 dark:bg-pink-500/10 rounded-full translate-y-1/3 -translate-x-1/4 blur-3xl">
+            </div>
+
+            <div class="relative max-w-4xl mx-auto px-5 md:px-8 pt-16 pb-14 md:pt-24 md:pb-20 text-center">
+                <span
+                    class="inline-flex items-center gap-2 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-300 px-4 py-1.5 rounded-full text-sm font-medium mb-5">
+                    ✨ Kosakata, tata bahasa &amp; percakapan dalam satu tempat
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Belajar Bahasa <span
+                        class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Jerman</span>
+                    Jadi Lebih Mudah
+                </h1>
+                <p class="text-gray-500 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
+                    Kumpulan kosakata, tata bahasa, kata kerja modal, dan contoh percakapan sehari-hari — lengkap
+                    dengan terjemahan bahasa Indonesia, disusun rapi biar belajarmu makin lancar. 🚀
+                </p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="beranda.html"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/30">
+                        <i class="fas fa-rocket"></i> Mulai Belajar
+                    </a>
+                    <a href="kosakata.html"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-200 rounded-full font-medium hover:bg-gray-50 dark:hover:bg-slate-700 transition-all">
+                        <i class="fas fa-book-open"></i> Lihat Kosakata
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FITUR ===== -->
+        <section id="fitur" class="max-w-6xl mx-auto px-5 md:px-8 py-10 md:py-14">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-2">🚀 Fitur Utama</h2>
+                <p class="text-gray-500 dark:text-gray-400">Semua yang kamu butuhkan untuk mulai belajar bahasa
+                    Jerman.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <a href="negara.html"
+                    class="group bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                    <div
+                        class="w-11 h-11 grid place-items-center rounded-lg bg-blue-100 dark:bg-blue-900/40 text-2xl mb-3">
+                        🌍</div>
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-100 mb-1">Daftar Negara</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Nama negara dalam bahasa Jerman dan bahasa
+                        yang digunakan.</p>
+                    <span
+                        class="inline-block mt-3 text-indigo-500 text-sm font-medium group-hover:translate-x-1 transition-all">Pelajari
+                        →</span>
+                </a>
+
+                <a href="kosakata.html"
+                    class="group bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                    <div
+                        class="w-11 h-11 grid place-items-center rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-2xl mb-3">
+                        📚</div>
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-100 mb-1">Kosakata</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Kata benda Jerman dengan artikel &amp;
+                        kategori (Tempat, Orang, Benda).</p>
+                    <span
+                        class="inline-block mt-3 text-indigo-500 text-sm font-medium group-hover:translate-x-1 transition-all">Pelajari
+                        →</span>
+                </a>
+
+                <a href="tata-bahasa.html"
+                    class="group bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                    <div
+                        class="w-11 h-11 grid place-items-center rounded-lg bg-purple-100 dark:bg-purple-900/40 text-2xl mb-3">
+                        🧩</div>
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-100 mb-1">Tata Bahasa</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">4 Kasus: Nominativ, Genitiv, Dativ, Akkusativ
+                        + contoh.</p>
+                    <span
+                        class="inline-block mt-3 text-indigo-500 text-sm font-medium group-hover:translate-x-1 transition-all">Pelajari
+                        →</span>
+                </a>
+
+                <a href="pronomen.html"
+                    class="group bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                    <div
+                        class="w-11 h-11 grid place-items-center rounded-lg bg-amber-100 dark:bg-amber-900/40 text-2xl mb-3">
+                        👤</div>
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-100 mb-1">Pronomen</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Kata ganti orang dan perubahannya di setiap
+                        kasus.</p>
+                    <span
+                        class="inline-block mt-3 text-indigo-500 text-sm font-medium group-hover:translate-x-1 transition-all">Pelajari
+                        →</span>
+                </a>
+
+                <a href="modalverben.html"
+                    class="group bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                    <div
+                        class="w-11 h-11 grid place-items-center rounded-lg bg-pink-100 dark:bg-pink-900/40 text-2xl mb-3">
+                        🔧</div>
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-100 mb-1">Modalverben</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Konjugasi können, müssen, wollen, sollen,
+                        dürfen &amp; mögen.</p>
+                    <span
+                        class="inline-block mt-3 text-indigo-500 text-sm font-medium group-hover:translate-x-1 transition-all">Pelajari
+                        →</span>
+                </a>
+
+                <a href="pelajaran-fragen.html"
+                    class="group bg-white dark:bg-slate-800 rounded-xl p-5 border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1">
+                    <div
+                        class="w-11 h-11 grid place-items-center rounded-lg bg-rose-100 dark:bg-rose-900/40 text-2xl mb-3">
+                        📖</div>
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-100 mb-1">Pelajaran &amp; Percakapan</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Pertanyaan-jawaban &amp; mini dialog untuk
+                        berbagai topik sehari-hari.</p>
+                    <span
+                        class="inline-block mt-3 text-indigo-500 text-sm font-medium group-hover:translate-x-1 transition-all">Pelajari
+                        →</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== TOPIK PELAJARAN ===== -->
+        <section id="pelajaran" class="max-w-6xl mx-auto px-5 md:px-8 py-10 md:py-14">
+            <div
+                class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl p-6 md:p-10 text-white shadow-xl relative overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/3">
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-2">📖 Topik Pelajaran</h2>
+                    <p class="text-white/80 mb-6 max-w-2xl">Pilih topik percakapan yang ingin kamu pelajari — lengkap
+                        dengan kosakata, aturan tata bahasa, dan contoh dialog.</p>
+                    <div class="flex flex-wrap gap-2.5">
+                        <a href="pelajaran-fragen.html"
+                            class="px-4 py-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-full text-sm font-medium transition-all">❓
+                            Fragen</a>
+                        <a href="pelajaran-zahlen.html"
+                            class="px-4 py-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-full text-sm font-medium transition-all">🔢
+                            Zahlen</a>
+                        <a href="pelajaran-zeit.html"
+                            class="px-4 py-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-full text-sm font-medium transition-all">⏰
+                            Zeit &amp; Hobby</a>
+                        <a href="pelajaran-uhrzeit.html"
+                            class="px-4 py-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-full text-sm font-medium transition-all">🕐
+                            Uhrzeit</a>
+                        <a href="pelajaran-berufe.html"
+                            class="px-4 py-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-full text-sm font-medium transition-all">💼
+                            Berufe</a>
+                        <a href="pelajaran-stadt.html"
+                            class="px-4 py-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-full text-sm font-medium transition-all">🏙️
+                            Stadt</a>
+                        <a href="pelajaran-essen.html"
+                            class="px-4 py-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-full text-sm font-medium transition-all">🍽️
+                            Essen</a>
+                        <a href="pelajaran-familie.html"
+                            class="px-4 py-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-full text-sm font-medium transition-all">👨‍👩‍👧
+                            Familie &amp; Alltag</a>
+                        <a href="pelajaran-zeit-mit-freundin.html"
+                            class="px-4 py-2 bg-white text-indigo-600 hover:bg-gray-100 rounded-full text-sm font-semibold transition-all">💑
+                            Zeit mit Freundin</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA AKHIR ===== -->
+        <section class="max-w-4xl mx-auto px-5 md:px-8 py-10 md:py-16 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3">Yuk, Mulai Belajar
+                Sekarang! 💪</h2>
+            <p class="text-gray-500 dark:text-gray-400 mb-6">Semua materi tersimpan rapi dan siap diakses kapan saja.
+            </p>
+            <a href="beranda.html"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/30">
+                <i class="fas fa-rocket"></i> Buka Dashboard
+            </a>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="border-t border-gray-200 dark:border-slate-700 py-6 text-center">
+        <p class="text-sm text-gray-400 dark:text-gray-500">🇩🇪 Lernen — Dibuat dengan ❤️ untuk belajar bahasa
+            Jerman.</p>
+    </footer>
+
+    <!-- ===== KOMPONEN (dark mode helper) ===== -->
+    <script src="components/sidebar.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            renderSidebar();
-            loadAllData();
             loadTheme();
+            const darkToggle = document.getElementById('darkToggle');
+            if (darkToggle) darkToggle.addEventListener('click', toggleDark);
         });
     </script>
 </body>

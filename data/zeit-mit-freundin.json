@@ -1,0 +1,197 @@
+{
+    "penjelasan": {
+        "judul": "Zeit mit der Freundin: Datum, Geburtstag & Ordinalzahlen",
+        "isi": "Saat menghabiskan waktu dengan pasangan (Freundin/Freund), kita sering menanyakan tanggal hari ini, kapan ulang tahun, atau kapan dan di mana seseorang lahir. Semua ini butuh Ordinalzahlen (angka bilangan tingkat) seperti erste, zweite, dritte — bukan angka biasa (eins, zwei, drei).",
+        "poin": [
+            "Datum (tanggal) & Geburtstag (ulang tahun) selalu memakai Ordinalzahl, bukan Kardinalzahl.",
+            "„Wann?“ dijawab dengan am + Ordinalzahl + Monat, misalnya am dritten Oktober.",
+            "„Geboren“ dipakai untuk menyatakan lahir kapan (Wann bist du geboren?) dan di mana (Wo bist du geboren?)."
+        ]
+    },
+    "ordinalzahlen": {
+        "aturan": [
+            {
+                "judul": "1️⃣ Angka 1–19",
+                "penjelasan": "Tambahkan akhiran -te pada angka kardinal.",
+                "contoh": "vier → vierte, neun → neunte, elf → elfte"
+            },
+            {
+                "judul": "2️⃣ Angka 20 ke atas",
+                "penjelasan": "Tambahkan akhiran -ste pada angka kardinal.",
+                "contoh": "zwanzig → zwanzigste, dreißig → dreißigste"
+            },
+            {
+                "judul": "3️⃣ Pengecualian (tidak beraturan)",
+                "penjelasan": "eins → erste, drei → dritte, sieben → siebte (bukan siebente), acht → achte (hanya tambah -e karena sudah berakhiran -t)",
+                "contoh": "der erste Mai, der dritte Mai, der siebte Mai, der achte Mai"
+            },
+            {
+                "judul": "4️⃣ Dipakai setelah „am“ untuk tanggal",
+                "penjelasan": "Karena am = an dem (Dativ), Ordinalzahl mendapat akhiran tambahan -n → -ten / -sten.",
+                "contoh": "am dritten Oktober, am zwanzigsten Juli"
+            },
+            {
+                "judul": "5️⃣ Penulisan singkat",
+                "penjelasan": "Dalam tulisan, Ordinalzahl untuk tanggal cukup ditulis angka + titik.",
+                "contoh": "der 3. Oktober (dibaca: der dritte Oktober), am 3. Oktober (dibaca: am dritten Oktober)"
+            }
+        ],
+        "tabel": [
+            { "angka": 1, "kardinal": "eins", "ordinal": "erste", "am_bentuk": "am ersten", "ditulis": "1." },
+            { "angka": 2, "kardinal": "zwei", "ordinal": "zweite", "am_bentuk": "am zweiten", "ditulis": "2." },
+            { "angka": 3, "kardinal": "drei", "ordinal": "dritte", "am_bentuk": "am dritten", "ditulis": "3." },
+            { "angka": 4, "kardinal": "vier", "ordinal": "vierte", "am_bentuk": "am vierten", "ditulis": "4." },
+            { "angka": 5, "kardinal": "fünf", "ordinal": "fünfte", "am_bentuk": "am fünften", "ditulis": "5." },
+            { "angka": 6, "kardinal": "sechs", "ordinal": "sechste", "am_bentuk": "am sechsten", "ditulis": "6." },
+            { "angka": 7, "kardinal": "sieben", "ordinal": "siebte", "am_bentuk": "am siebten", "ditulis": "7." },
+            { "angka": 8, "kardinal": "acht", "ordinal": "achte", "am_bentuk": "am achten", "ditulis": "8." },
+            { "angka": 9, "kardinal": "neun", "ordinal": "neunte", "am_bentuk": "am neunten", "ditulis": "9." },
+            { "angka": 10, "kardinal": "zehn", "ordinal": "zehnte", "am_bentuk": "am zehnten", "ditulis": "10." },
+            { "angka": 11, "kardinal": "elf", "ordinal": "elfte", "am_bentuk": "am elften", "ditulis": "11." },
+            { "angka": 12, "kardinal": "zwölf", "ordinal": "zwölfte", "am_bentuk": "am zwölften", "ditulis": "12." },
+            { "angka": 13, "kardinal": "dreizehn", "ordinal": "dreizehnte", "am_bentuk": "am dreizehnten", "ditulis": "13." },
+            { "angka": 14, "kardinal": "vierzehn", "ordinal": "vierzehnte", "am_bentuk": "am vierzehnten", "ditulis": "14." },
+            { "angka": 15, "kardinal": "fünfzehn", "ordinal": "fünfzehnte", "am_bentuk": "am fünfzehnten", "ditulis": "15." },
+            { "angka": 16, "kardinal": "sechzehn", "ordinal": "sechzehnte", "am_bentuk": "am sechzehnten", "ditulis": "16." },
+            { "angka": 17, "kardinal": "siebzehn", "ordinal": "siebzehnte", "am_bentuk": "am siebzehnten", "ditulis": "17." },
+            { "angka": 18, "kardinal": "achtzehn", "ordinal": "achtzehnte", "am_bentuk": "am achtzehnten", "ditulis": "18." },
+            { "angka": 19, "kardinal": "neunzehn", "ordinal": "neunzehnte", "am_bentuk": "am neunzehnten", "ditulis": "19." },
+            { "angka": 20, "kardinal": "zwanzig", "ordinal": "zwanzigste", "am_bentuk": "am zwanzigsten", "ditulis": "20." },
+            { "angka": 21, "kardinal": "einundzwanzig", "ordinal": "einundzwanzigste", "am_bentuk": "am einundzwanzigsten", "ditulis": "21." },
+            { "angka": 25, "kardinal": "fünfundzwanzig", "ordinal": "fünfundzwanzigste", "am_bentuk": "am fünfundzwanzigsten", "ditulis": "25." },
+            { "angka": 30, "kardinal": "dreißig", "ordinal": "dreißigste", "am_bentuk": "am dreißigsten", "ditulis": "30." },
+            { "angka": 31, "kardinal": "einunddreißig", "ordinal": "einunddreißigste", "am_bentuk": "am einunddreißigsten", "ditulis": "31." }
+        ]
+    },
+    "pertanyaan_jawaban": [
+        {
+            "nama": "Datum (Tanggal)",
+            "icon": "📅",
+            "items": [
+                {
+                    "pertanyaan": "Welches Datum ist heute?",
+                    "jawaban": "Heute ist der 15. September.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Der Wievielte ist heute?",
+                    "jawaban": "Heute ist der 15. September.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Den Wievielten haben wir heute?",
+                    "jawaban": "Wir haben heute den 15. September.",
+                    "tingkat": "informal"
+                }
+            ]
+        },
+        {
+            "nama": "Geburtstag (Ulang Tahun)",
+            "icon": "🎂",
+            "items": [
+                {
+                    "pertanyaan": "Wann hast du Geburtstag?",
+                    "jawaban": "Ich habe am 3. Oktober Geburtstag.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wann haben Sie Geburtstag?",
+                    "jawaban": "Ich habe am 3. Oktober Geburtstag.",
+                    "tingkat": "formal"
+                },
+                {
+                    "pertanyaan": "Wann ist dein Geburtstag?",
+                    "jawaban": "Mein Geburtstag ist am 3. Oktober.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "An welchem Tag hast du Geburtstag?",
+                    "jawaban": "Am 3. Oktober.",
+                    "tingkat": "informal"
+                }
+            ]
+        },
+        {
+            "nama": "Geboren (Lahir)",
+            "icon": "👶",
+            "items": [
+                {
+                    "pertanyaan": "Wann bist du geboren?",
+                    "jawaban": "Ich bin am 12. Mai 1998 geboren.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wann sind Sie geboren?",
+                    "jawaban": "Ich bin am 12. Mai 1998 geboren.",
+                    "tingkat": "formal"
+                },
+                {
+                    "pertanyaan": "In welchem Jahr bist du geboren?",
+                    "jawaban": "Ich bin im Jahr 1998 geboren.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wo bist du geboren?",
+                    "jawaban": "Ich bin in Jakarta geboren.",
+                    "tingkat": "informal"
+                },
+                {
+                    "pertanyaan": "Wo sind Sie geboren?",
+                    "jawaban": "Ich bin in Jakarta geboren.",
+                    "tingkat": "formal"
+                }
+            ]
+        }
+    ],
+    "aktivitas": {
+        "drinnen": [
+            { "icon": "🍳", "de": "zusammen kochen", "id": "masak bersama" },
+            { "icon": "🎲", "de": "Brettspiele spielen", "id": "main board game" },
+            { "icon": "🎬", "de": "einen Film schauen", "id": "nonton film" },
+            { "icon": "📖", "de": "zusammen lesen", "id": "membaca bersama" },
+            { "icon": "🧁", "de": "backen", "id": "membuat kue" },
+            { "icon": "🎵", "de": "Musik hören", "id": "mendengarkan musik" },
+            { "icon": "🃏", "de": "Karten spielen", "id": "main kartu" },
+            { "icon": "🧩", "de": "puzzeln", "id": "menyusun puzzle" }
+        ],
+        "draussen": [
+            { "icon": "🚶", "de": "spazieren gehen", "id": "jalan-jalan kaki" },
+            { "icon": "🚴", "de": "Rad fahren", "id": "bersepeda" },
+            { "icon": "🧺", "de": "picknicken", "id": "piknik" },
+            { "icon": "🥾", "de": "wandern", "id": "hiking / mendaki" },
+            { "icon": "🏖️", "de": "an den Strand gehen", "id": "pergi ke pantai" },
+            { "icon": "🔥", "de": "grillen", "id": "bakar-bakar (BBQ)" },
+            { "icon": "🌳", "de": "in den Park gehen", "id": "pergi ke taman" },
+            { "icon": "🎡", "de": "ein Straßenfest besuchen", "id": "mengunjungi festival jalanan" }
+        ]
+    },
+    "dialog_pesta": {
+        "judul": "Mini Dialog: Eine Party organisieren",
+        "keterangan": "Tom dan Lena merencanakan pesta ulang tahun Lena — perhatikan penggunaan Datum, Ordinalzahlen, dan pilihan aktivitas drinnen/draussen.",
+        "percakapan": [
+            { "s": "A", "nama": "Tom", "de": "Hey Lena, wann hast du eigentlich Geburtstag? Ich möchte eine Party für dich organisieren!", "id": "Hai Lena, kapan sebenarnya ulang tahunmu? Aku ingin mengadakan pesta untukmu!" },
+            { "s": "B", "nama": "Lena", "de": "Das ist lieb von dir! Ich habe am 20. Juli Geburtstag.", "id": "Kamu baik sekali! Ulang tahunku tanggal 20 Juli." },
+            { "s": "A", "nama": "Tom", "de": "Der Wievielte ist heute eigentlich?", "id": "Sebenarnya hari ini tanggal berapa ya?" },
+            { "s": "B", "nama": "Lena", "de": "Heute ist der 12. Juli. Wir haben also noch acht Tage Zeit.", "id": "Hari ini tanggal 12 Juli. Jadi kita masih punya waktu delapan hari." },
+            { "s": "A", "nama": "Tom", "de": "Perfekt! Sollen wir draußen im Park feiern, oder lieber drinnen bei dir zu Hause?", "id": "Sempurna! Kita rayakan di luar di taman, atau lebih baik di dalam rumah?" },
+            { "s": "B", "nama": "Lena", "de": "Im Juli ist es meistens warm, deshalb feiern wir lieber draußen. Wir können picknicken und grillen.", "id": "Bulan Juli biasanya hangat, jadi kita lebih baik merayakan di luar. Kita bisa piknik dan bakar-bakar." },
+            { "s": "A", "nama": "Tom", "de": "Gute Idee! Und falls es regnet, feiern wir drinnen und spielen Brettspiele.", "id": "Ide bagus! Dan seandainya hujan, kita rayakan di dalam dan main board game." },
+            { "s": "B", "nama": "Lena", "de": "Genau! Also, am zwanzigsten Juli, ab 16 Uhr, bei mir oder im Park.", "id": "Betul! Jadi, tanggal dua puluh Juli, mulai jam 4 sore, di rumahku atau di taman." },
+            { "s": "A", "nama": "Tom", "de": "Abgemacht! Ich freue mich schon auf deine Party!", "id": "Sepakat! Aku sudah tidak sabar dengan pestamu!" }
+        ]
+    },
+    "dialog_freizeit": {
+        "judul": "Mini Dialog: Freizeit am Wochenende",
+        "keterangan": "Max fragt seine Freundin Mia nach ihrer Freizeit am Wochenende — Beispiel für drinnen- und draußen-Aktivitäten.",
+        "percakapan": [
+            { "s": "A", "nama": "Max", "de": "Schatz, hast du am Samstag Zeit? Was möchtest du gern machen?", "id": "Sayang, kamu ada waktu hari Sabtu? Kamu ingin melakukan apa?" },
+            { "s": "B", "nama": "Mia", "de": "Ja, ich habe frei! Wie ist denn das Wetter am Samstag?", "id": "Ya, aku libur! Bagaimana cuacanya hari Sabtu?" },
+            { "s": "A", "nama": "Max", "de": "Es soll sonnig sein. Wollen wir draußen etwas unternehmen? Zum Beispiel wandern oder Rad fahren?", "id": "Katanya akan cerah. Mau melakukan sesuatu di luar? Misalnya hiking atau bersepeda?" },
+            { "s": "B", "nama": "Mia", "de": "Wandern klingt toll! Danach könnten wir picknicken.", "id": "Hiking kedengarannya asyik! Setelah itu kita bisa piknik." },
+            { "s": "A", "nama": "Max", "de": "Und am Abend, wenn es kälter wird, gehen wir wieder nach drinnen und schauen einen Film.", "id": "Dan malam harinya, kalau sudah dingin, kita masuk ke dalam lagi dan nonton film." },
+            { "s": "B", "nama": "Mia", "de": "Perfekt! Ein Tag draußen und ein gemütlicher Abend drinnen.", "id": "Sempurna! Sehari di luar dan malam yang nyaman di dalam." },
+            { "s": "A", "nama": "Max", "de": "Genau das meine ich. Ich hole dich um 9 Uhr ab.", "id": "Persis itu maksudku. Aku jemput kamu jam 9." },
+            { "s": "B", "nama": "Mia", "de": "Super, ich freue mich schon auf unsere Zeit zusammen!", "id": "Bagus, aku sudah tidak sabar dengan waktu kita bersama!" }
+        ]
+    }
+}
